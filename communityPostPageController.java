@@ -63,5 +63,11 @@ public class communityPostPageController {
         stage.setScene(scene);
         stage.show();
     }
-
+    public void goToProfile(ActionEvent event) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("profilePage.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
