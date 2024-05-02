@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="417.0" layoutX="472.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="179.0" />
+            <ScrollBar layoutX="632.0" layoutY="54.0" orientation="VERTICAL" prefHeight="214.0" prefWidth="16.0" />
+            <ImageView fitHeight="404.0" fitWidth="179.0" layoutX="471.0" layoutY="-3.0">
+               <image>
+                  <Image url="@Desktop/mavi.jpeg" />
+               </image>
+            </ImageView>
+            <Rectangle fx:id="createPlaylist" arcHeight="5.0" arcWidth="5.0" fill="#eb8f05" height="31.0" layoutX="472.0" layoutY="272.0" stroke="BLACK" strokeType="INSIDE" width="179.0" />
+            <Circle fx:id="playMusic" fill="#cfdad9" layoutX="560.0" layoutY="366.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Polygon fill="#c1cad3" layoutX="504.0" layoutY="322.0" points="-2.963592529296875, 42.14105224609375, 22.41064453125, 60.36004638671875, 22.41064453125, 25.9464111328125" stroke="BLACK" strokeType="INSIDE" />
+            <Text fx:id="communityText" fill="#575656" layoutX="54.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Community">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Text>
+            <Rectangle fx:id="backButtonRectangle" arcHeight="5.0" arcWidth="5.0" fill="#939597" height="8.0" layoutX="26.0" layoutY="30.0" stroke="BLACK" strokeType="INSIDE" width="23.0" />
+            <Polygon fx:id="backButtonTriangle" fill="#939597" layoutX="40.0" layoutY="39.0" points="-21.38007354736328, -6.760345458984375, -10.345657348632812, 9.791290283203125, -10.345657348632812, -20.001632690429688" stroke="BLACK" strokeType="INSIDE" />
+            <Rectangle fx:id="postsBox" arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="28.0" layoutX="26.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" width="179.0" />
+            <Rectangle fx:id="chatroomBox" arcHeight="5.0" arcWidth="5.0" fill="#cacdd0" height="28.0" layoutX="238.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" width="179.0" />
+            <Text fill="WHITE" layoutX="89.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POSTS" wrappingWidth="53.99658203125">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font></Text>
+            <Text fill="#053c75" layoutX="292.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHATROOM">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font></Text>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cacdd0" height="88.0" layoutX="25.0" layoutY="117.0" stroke="BLACK" strokeType="INSIDE" width="383.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="33.0" layoutY="122.0" stroke="BLACK" strokeType="INSIDE" width="367.0" />
+            <Text layoutX="38.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter text...">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font></Text>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="15.0" layoutX="35.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="15.0" layoutX="55.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="15.0" layoutX="75.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+            <Text fill="WHITE" layoutX="514.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlists" wrappingWidth="92.99658203125">
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+            </Text>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="16.0" layoutX="323.0" layoutY="181.0" stroke="#053c75" strokeType="INSIDE" width="77.0" />
+            <Circle fx:id="playMusic1" fill="#053c75" layoutX="397.0" layoutY="189.0" radius="8.0" stroke="#053c75" strokeType="INSIDE" />
+            <Circle fx:id="playMusic11" fill="#053c75" layoutX="325.0" layoutY="189.0" radius="8.0" stroke="#053c75" strokeType="INSIDE" />
+            <Text fill="WHITE" layoutX="329.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Post">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font></Text>
+            <Text fill="WHITE" layoutX="501.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREATE PLAYLIST" wrappingWidth="138.7144981337949">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font></Text>
+            <Polygon fill="#c1cad3" layoutX="572.0" layoutY="322.0" points="47.49627685546875, 45.17755126953125, 22.41064453125, 60.36004638671875, 22.41064453125, 25.9464111328125" stroke="BLACK" strokeType="INSIDE" />
+            <Polygon layoutX="530.0" layoutY="322.0" points="40.30889892578125, 43.64715576171875, 22.41064453125, 52.25054931640625, 22.41064453125, 34.031585693359375" stroke="BLACK" strokeType="INSIDE" />
+            <Button layoutX="490.0" layoutY="57.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="139.0" text="Liked Songs">
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font>
+            </Button>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb8f05" height="19.0" layoutX="301.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" width="111.0" />
+            <Text fill="WHITE" layoutX="309.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leave Community" wrappingWidth="94.833984375">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
