@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="376.0" prefWidth="654.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="400.0" layoutX="457.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+            <Rectangle fx:id="playlist1" arcHeight="5.0" arcWidth="5.0" fill="#babec3" height="31.0" layoutX="461.0" layoutY="63.0" stroke="BLACK" strokeType="INSIDE" width="166.0" />
+            <Rectangle fx:id="createPlaylist" arcHeight="5.0" arcWidth="5.0" fill="#eb8f05" height="31.0" layoutX="461.0" layoutY="295.0" stroke="BLACK" strokeType="INSIDE" width="192.0" />
+            <Circle fx:id="playMusic" fill="#cfdad9" layoutX="556.0" layoutY="354.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+            <Rectangle fx:id="postPanel" arcHeight="5.0" arcWidth="5.0" fill="#dde1e4" height="308.0" layoutX="60.0" layoutY="50.0" stroke="BLACK" strokeType="INSIDE" width="328.0" />
+            <Rectangle fx:id="post" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="228.0" layoutX="75.0" layoutY="83.0" stroke="BLACK" strokeType="INSIDE" width="291.0" />
+            <ImageView fx:id="likeImage" fitHeight="19.0" fitWidth="25.0" layoutX="78.0" layoutY="321.0">
+               <image>
+                  <Image url="@../Downloads/IMG_1E09B50D1AA5-2.jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="commentImage" fitHeight="21.75" fitWidth="25.0" layoutX="274.0" layoutY="319.0">
+               <image>
+                  <Image url="@../Downloads/IMG_2290.jpg" />
+               </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="comments" layoutX="304.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comments" />
+            <Polygon fill="#c1cad3" layoutX="506.0" layoutY="311.0" points="-5.175384521484375, 44.843231201171875, 22.41064453125, 61.394866943359375, 22.41064453125, 24.98126220703125" stroke="BLACK" strokeType="INSIDE" />
+            <Polygon fill="#c1cad3" layoutX="557.0" layoutY="310.0" points="50.720458984375, 40.85986328125, 22.41064453125, 61.394866943359375, 22.41064453125, 24.98126220703125" stroke="BLACK" strokeType="INSIDE" />
+            <Text fx:id="communityText" fill="#575656" layoutX="54.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Community">
+               <font>
+                  <Font name="Noto Serif Myanmar Black" size="14.0" />
+               </font>
+            </Text>
+            <Rectangle fx:id="backButtonRectangle" arcHeight="5.0" arcWidth="5.0" fill="#939597" height="8.0" layoutX="26.0" layoutY="30.0" stroke="#939597" strokeType="INSIDE" width="23.0" />
+            <Polygon fx:id="backButtonTriangle" fill="#939597" layoutX="40.0" layoutY="39.0" points="-21.38007354736328, -6.760345458984375, -10.345657348632812, 9.791290283203125, -10.345657348632812, -20.001632690429688" stroke="#939597" strokeType="INSIDE" />
+            <Text fill="WHITE" layoutX="515.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlists">
+               <font>
+                  <Font name="Kefa Bold" size="20.0" />
+               </font>
+            </Text>
+            <ScrollBar orientation="VERTICAL" />
+            <ScrollBar layoutX="634.0" layoutY="63.0" orientation="VERTICAL" prefHeight="214.0" prefWidth="16.0" />
+            <Text layoutX="515.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liked Songs" wrappingWidth="81.708984375">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

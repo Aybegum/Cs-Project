@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="409.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Circle fill="#b4bfc9" layoutX="146.0" layoutY="123.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#053c75" layoutX="146.0" layoutY="108.0" radius="15.0" stroke="#053c75" strokeType="INSIDE" />
+      <Circle fill="#053c75" layoutX="146.0" layoutY="145.0" radius="22.0" stroke="#053c75" strokeType="INSIDE" />
+      <Text fill="WHITE" layoutX="242.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Followers" />
+      <Text fill="WHITE" layoutX="242.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Followings" />
+      <Text fill="WHITE" layoutX="242.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlists" />
+      <Text fill="WHITE" layoutX="224.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PLAYLISTS">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dde1e4" height="99.0" layoutX="32.0" layoutY="244.0" stroke="#2e1414" strokeType="INSIDE" width="84.0" />
+      <Text layoutX="42.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liked Songs" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="39.0" layoutY="254.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="10.0" layoutX="34.0" layoutY="23.0" stroke="BLACK" strokeType="INSIDE" width="17.0" />
+      <Polygon layoutX="64.0" layoutY="-12.0" points="-50.0, 40.0, -28.4000244140625, 47.79998779296875, -28.4000244140625, 32.0" stroke="BLACK" strokeType="INSIDE" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="communityHubController">
+   <children>
+      <Text layoutX="12.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Community Hub">
+         <font>
+            <Font name="Gabriola" size="45.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb8f05" height="63.0" layoutX="10.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="293.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b4bfc9" height="63.0" layoutX="295.0" layoutY="44.0" stroke="#00152b" strokeType="INSIDE" width="125.0" />
+      <Text layoutX="21.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome back! Here's what your friend X has been listening to:" wrappingWidth="282.3994140625">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="82.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Let us know if you like it.">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Text>
+      <Circle fill="WHITE" layoutX="314.0" layoutY="76.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+      <Polygon layoutX="322.0" layoutY="34.0" points="4.20001220703125, 41.59999084472656, -13.5999755859375, 51.19999694824219, -13.5999755859375, 31.599990844726562" stroke="BLACK" strokeType="INSIDE" />
+      <Text layoutX="107.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Communities" wrappingWidth="235.0">
+         <font>
+            <Font name="Gabriola" size="40.0" />
+         </font>
+      </Text>
+      <Text layoutX="51.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text layoutX="33.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text layoutX="339.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text layoutX="125.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dde1e4" height="142.0" layoutX="224.0" layoutY="165.0" stroke="#2e1414" strokeType="INSIDE" width="84.0" />
+      <Text layoutX="230.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indie Community" textAlignment="CENTER" wrappingWidth="71.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="230.0" layoutY="174.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dde1e4" height="142.0" layoutX="121.0" layoutY="165.0" stroke="#2e1414" strokeType="INSIDE" width="84.0" />
+      <Text layoutX="127.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pop Community" textAlignment="CENTER" wrappingWidth="71.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="127.0" layoutY="174.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dde1e4" height="142.0" layoutX="22.0" layoutY="165.0" stroke="#2e1414" strokeType="INSIDE" width="84.0" />
+      <Text layoutX="27.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rock Community" textAlignment="CENTER" wrappingWidth="71.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="28.0" layoutY="174.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="22.0" layoutY="281.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+      <Text fill="WHITE" layoutX="23.0" layoutY="294.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dde1e4" height="142.0" layoutX="327.0" layoutY="165.0" stroke="#2e1414" strokeType="INSIDE" width="84.0" />
+      <Text layoutX="323.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classical Community" textAlignment="CENTER" wrappingWidth="88.40625">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="333.0" layoutY="174.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dde1e4" height="142.0" layoutX="21.0" layoutY="320.0" stroke="#2e1414" strokeType="INSIDE" width="84.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="27.0" layoutY="329.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
+      <Text layoutX="27.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jazz Community " textAlignment="CENTER" wrappingWidth="71.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dde1e4" height="142.0" layoutX="120.0" layoutY="320.0" stroke="#2e1414" strokeType="INSIDE" width="84.0" />
+      <Text layoutX="120.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Metal Community " textAlignment="CENTER" wrappingWidth="84.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="126.0" layoutY="329.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
+      <Text layoutX="130.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dde1e4" height="142.0" layoutX="224.0" layoutY="320.0" stroke="#2e1414" strokeType="INSIDE" width="84.0" />
+      <Text layoutX="230.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alternative Community" textAlignment="CENTER" wrappingWidth="71.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="230.0" layoutY="329.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
+      <Text layoutX="234.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dde1e4" height="142.0" layoutX="326.0" layoutY="320.0" stroke="#2e1414" strokeType="INSIDE" width="84.0" />
+      <Text layoutX="332.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rap Community " textAlignment="CENTER" wrappingWidth="71.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="332.0" layoutY="329.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="482.0" layoutX="428.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="176.0" />
+      <Rectangle fx:id="createPlaylist" arcHeight="5.0" arcWidth="5.0" fill="#eb8f05" height="31.0" layoutX="430.0" layoutY="338.0" stroke="BLACK" strokeType="INSIDE" width="170.0" />
+      <Circle fx:id="playMusic" fill="#cfdad9" layoutX="516.0" layoutY="396.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Polygon fill="#c1cad3" layoutX="470.0" layoutY="352.0" points="-5.175384521484375, 44.843231201171875, 22.41064453125, 61.394866943359375, 22.41064453125, 24.98126220703125" stroke="BLACK" strokeType="INSIDE" />
+      <Polygon fill="#c1cad3" layoutX="515.0" layoutY="352.0" points="50.720458984375, 40.85986328125, 22.41064453125, 61.394866943359375, 22.41064453125, 24.98126220703125" stroke="BLACK" strokeType="INSIDE" />
+      <Text fill="WHITE" layoutX="452.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlists">
+         <font>
+            <Font name="Gabriola" size="50.0" />
+         </font>
+      </Text>
+      <ScrollBar layoutX="583.0" layoutY="131.0" orientation="VERTICAL" prefHeight="192.0" prefWidth="16.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="120.0" layoutY="281.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+      <Text fill="WHITE" layoutX="122.0" layoutY="294.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="224.0" layoutY="280.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="327.0" layoutY="280.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="21.0" layoutY="433.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="120.0" layoutY="433.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="224.0" layoutY="433.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="327.0" layoutY="433.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+      <Text fill="WHITE" layoutX="224.0" layoutY="294.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="327.0" layoutY="293.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="21.0" layoutY="446.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="122.0" layoutY="446.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="224.0" layoutY="446.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="326.0" layoutY="446.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Text>
+      <Polygon layoutX="522.0" layoutY="355.0" points="4.20001220703125, 41.59999084472656, -13.5999755859375, 51.19999694824219, -13.5999755859375, 31.599990844726562" stroke="BLACK" strokeType="INSIDE" />
+      <Text layoutX="334.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Song Name" wrappingWidth="71.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Text>
+      <Button layoutX="439.0" layoutY="89.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="156.0" text="Liked Songs">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

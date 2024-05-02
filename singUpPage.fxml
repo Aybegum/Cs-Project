@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="welcomePageController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" fill="#053c75" height="478.0" layoutX="-3.0" layoutY="-71.0" stroke="#053c75" strokeType="INSIDE" width="607.0" />
+      <Circle fx:id="signUpButton" fill="#d9d9d9" layoutX="304.0" layoutY="67.0" radius="59.0" stroke="#d9d9d9" strokeType="INSIDE" />
+      <Text fill="WHITE" layoutX="263.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sing up">
+         <font>
+            <Font name="Gabriola" size="35.0" />
+         </font>
+      </Text>
+      <Polygon layoutX="309.0" layoutY="79.0" points="-27.0, -45.0, -27.0, 22.0, 40.0, -11.0" stroke="BLACK" strokeType="INSIDE" />
+      <TextField fx:id="singUpUsername" layoutX="195.0" layoutY="188.0" prefHeight="25.0" prefWidth="221.0" promptText="Create Username" />
+      <Text fill="WHITE" layoutX="195.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Username">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Text>
+      <TextField fx:id="singUpPassword" layoutX="193.0" layoutY="237.0" prefHeight="25.0" prefWidth="221.0" promptText="Create Password" />
+      <Text fill="WHITE" layoutX="197.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Password">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Text>
+      <TextField fx:id="singUpEMail" layoutX="193.0" layoutY="285.0" prefHeight="25.0" prefWidth="221.0" promptText="Enter E-Mail" />
+      <Text fill="WHITE" layoutX="197.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Mail">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2642d" height="24.0" layoutX="219.0" layoutY="319.0" onMouseClicked="#singUp" stroke="#f2642d" strokeType="INSIDE" width="170.0" />
+      <Circle fx:id="signUpButton1" fill="#f2642d" layoutX="387.0" layoutY="331.0" radius="12.0" stroke="#f2642d" strokeType="INSIDE" />
+      <Circle fx:id="signUpButton11" fill="#f2642d" layoutX="217.0" layoutY="331.0" radius="12.0" stroke="#f2642d" strokeType="INSIDE" />
+      <Text fill="WHITE" layoutX="274.0" layoutY="336.0" onMouseClicked="#singUp" strokeType="OUTSIDE" strokeWidth="0.0" text="Sing Up">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="191.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already have an account?">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="#f2642d" layoutX="365.0" layoutY="368.0" onMouseClicked="#goToLogInPage" strokeType="OUTSIDE" strokeWidth="0.0" text="Log in." underline="true">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
