@@ -80,7 +80,7 @@ public class PleaseProvideControllerClassName {
         stage.show();
     }
     public void goToCommunityPosts(ActionEvent event) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource(""));
+        Parent root = FXMLLoader.load(getClass().getResource("postPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
