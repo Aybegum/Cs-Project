@@ -5,7 +5,7 @@ import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
-public class PleaseProvideControllerClassName {
+public class settingsController {
 
     @FXML
     private Rectangle arrowPart1;
