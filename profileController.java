@@ -13,21 +13,24 @@ import javafx.fxml.FXMLLoader;
 import java.io.IOException;
 import org.w3c.dom.Text;
 import javafx.scene.Node;
-public void profileControler {
-  public void goToCommunityHub(MouseEvent event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-}
-public void goToSettings() {
-        Parent root = FXMLLoader.load(getClass().getResource("settings.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-}
+public void profileController {
+     private Stage stage;
+     private Scene scene;
+     private Parent root;
+     public void goToCommunityHub(MouseEvent event) throws Exception{
+          Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
+          stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+          scene = new Scene(root);
+          stage.setScene(scene);
+          stage.show();
+   }
+   public void goToSettings() {
+          Parent root = FXMLLoader.load(getClass().getResource("settings.fxml"));
+          stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+          scene = new Scene(root);
+          stage.setScene(scene);
+          stage.show();
+  }
 }
 
 
