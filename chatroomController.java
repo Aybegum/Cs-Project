@@ -7,7 +7,7 @@ import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
-public class PleaseProvideControllerClassName {
+public class chatroomController {
 
     @FXML
     private Rectangle backButtonRectangle;
