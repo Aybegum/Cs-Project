@@ -86,4 +86,10 @@ public class PleaseProvideControllerClassName {
         stage.setScene(scene);
         stage.show();
     }
+    public void postMessage(){
+        
+    }
+    public void deleteMessage(){
+        
+    }
 }
