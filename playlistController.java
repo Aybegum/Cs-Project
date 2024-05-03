@@ -1,4 +1,7 @@
 public class playlistController {
+  private Stage stage;
+    private Scene scene;
+    private Parent root;
   public void addSongToPlaylist (String songName) {
     
   }
