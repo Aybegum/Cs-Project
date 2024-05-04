@@ -9,22 +9,49 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="409.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-      <Circle fill="#b4bfc9" layoutX="146.0" layoutY="123.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#053c75" layoutX="146.0" layoutY="108.0" radius="15.0" stroke="#053c75" strokeType="INSIDE" />
-      <Circle fill="#053c75" layoutX="146.0" layoutY="145.0" radius="22.0" stroke="#053c75" strokeType="INSIDE" />
-      <Text fill="WHITE" layoutX="242.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Followers" />
-      <Text fill="WHITE" layoutX="242.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Followings" />
-      <Text fill="WHITE" layoutX="242.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlists" />
-      <Text fill="WHITE" layoutX="224.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PLAYLISTS">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="409.0" layoutY="-4.0" stroke="#053c75" strokeType="INSIDE" width="600.0" />
+      <Circle fill="#b4bfc9" layoutX="146.0" layoutY="131.0" radius="61.0" stroke="#b4bfc9" strokeType="INSIDE" />
+      <Circle fill="#053c75" layoutX="146.0" layoutY="108.0" radius="17.0" stroke="#053c75" strokeType="INSIDE" />
+      <Circle fill="#053c75" layoutX="146.0" layoutY="161.0" radius="35.0" stroke="#053c75" strokeType="INSIDE" />
+      <Text fill="WHITE" layoutX="240.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Followers">
          <font>
-            <Font size="20.0" />
+            <Font name="Times New Roman" size="20.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="240.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Followings">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="240.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlists">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="231.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PLAYLISTS" textAlignment="CENTER">
+         <font>
+            <Font name="Gabriola" size="30.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dde1e4" height="99.0" layoutX="32.0" layoutY="244.0" stroke="#2e1414" strokeType="INSIDE" width="84.0" />
-      <Text layoutX="42.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liked Songs" />
+      <Rectangle fx:id="likedSongs" arcHeight="5.0" arcWidth="5.0" fill="#dde1e4" height="99.0" layoutX="32.0" layoutY="244.0" stroke="#2e1414" strokeType="INSIDE" width="84.0" />
+      <Text layoutX="34.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liked Songs" textAlignment="CENTER" wrappingWidth="80.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="39.0" layoutY="254.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="10.0" layoutX="34.0" layoutY="23.0" stroke="BLACK" strokeType="INSIDE" width="17.0" />
-      <Polygon layoutX="64.0" layoutY="-12.0" points="-50.0, 40.0, -28.4000244140625, 47.79998779296875, -28.4000244140625, 32.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text fill="#e8a27a" layoutX="110.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Text>
+      <Polygon fx:id="backButtonTriangle" fill="#ff8800" layoutX="35.0" layoutY="34.0" points="-21.38007354736328, -6.760345458984375, -10.345657348632812, 9.791290283203125, -10.345657348632812, -20.001632690429688" stroke="#ff8800" strokeType="INSIDE" />
+      <Rectangle fx:id="backButtonRectangle" arcHeight="5.0" arcWidth="5.0" fill="#ff8800" height="8.0" layoutX="21.0" layoutY="25.0" stroke="#ff8800" strokeType="INSIDE" width="23.0" />
+      <Text fx:id="communityText" fill="WHITE" layoutX="55.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Community Hub ">
+         <font>
+            <Font name="Gabriola" size="40.0" />
+         </font>
+      </Text>
+      <Text fx:id="goToSettings" fill="WHITE" layoutX="457.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Go To Settings" underline="true">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
