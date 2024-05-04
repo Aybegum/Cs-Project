@@ -17,14 +17,14 @@ public class chatroomController {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    @FXML
+    /*@FXML
     private Rectangle backButtonRectangle;
 
     @FXML
     private Polygon backButtonTriangle;
 
     @FXML
-    private Rectangle chatroomBox;
+    private Rectangle chatroomBox;*/
 
     @FXML
     private Text chatroomText;
@@ -32,8 +32,8 @@ public class chatroomController {
     @FXML
     private Text communityText;
 
-    @FXML
-    private Rectangle createPlaylist;
+    //@FXML
+    //private Rectangle createPlaylist;
 
     @FXML
     private Text createPlaylistRectangle;
@@ -41,35 +41,35 @@ public class chatroomController {
     @FXML
     private TextField enterYourMessageTextField;
 
-    @FXML
-    private Rectangle likedSongs;
+    //@FXML
+    //private Rectangle likedSongs;
 
     @FXML
     private Text likedSongsPlaylistRectangle;
 
-    @FXML
-    private Polygon nextSongTriangle;
+    //@FXML
+    //private Polygon nextSongTriangle;
 
     @FXML
     private Circle playMusicCircle;
 
-    @FXML
+    /*@FXML
     private Polygon playMusicTriangle;
 
     @FXML
-    private ScrollBar playlistScrollBarr;
+    private ScrollBar playlistScrollBarr;*/
 
     @FXML
     private Text playlistsText;
 
-    @FXML
-    private Rectangle postsBox;
+   // @FXML
+    //private Rectangle postsBox;
 
     @FXML
     private Text postsText;
 
-    @FXML
-    private Polygon previousSongTriangle;
+    //@FXML
+    //private Polygon previousSongTriangle;
 
     @FXML
     private Button sendChatButton;
@@ -101,3 +101,4 @@ public class chatroomController {
         
     }
 }
+

@@ -29,9 +29,9 @@ import javafx.scene.Node;
         public void deletePlaylist () {
           
         }
-        public void createPlaylist (String playlistName, String coverURL, Song song) {
+        /*public void createPlaylist (String playlistName, String coverURL, Song song) {
               
-        }
+        }*/
         public void goToProfile(MouseEvent event) throws Exception{
               Parent root = FXMLLoader.load(getClass().getResource("profilePage.fxml"));
               stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -47,3 +47,4 @@ import javafx.scene.Node;
               stage.show();
         }
 } 
+
