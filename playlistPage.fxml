@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <AnchorPane layoutX="-6.0" layoutY="-14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="646.0">
+               <children>
+                  <Text layoutX="51.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text layoutX="33.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text layoutX="339.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text layoutX="125.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text layoutX="130.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text layoutX="234.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="476.0" layoutX="469.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="184.0" />
+                  <Rectangle fx:id="createPlaylist" arcHeight="5.0" arcWidth="5.0" fill="#eb8f05" height="31.0" layoutX="474.0" layoutY="343.0" stroke="BLACK" strokeType="INSIDE" width="170.0" />
+                  <Circle fx:id="playMusic" fill="#cfdad9" layoutX="557.0" layoutY="399.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Polygon fill="#c1cad3" layoutX="511.0" layoutY="355.0" points="-5.175384521484375, 44.843231201171875, 22.41064453125, 61.394866943359375, 22.41064453125, 24.98126220703125" stroke="BLACK" strokeType="INSIDE" />
+                  <Polygon fill="#c1cad3" layoutX="556.0" layoutY="355.0" points="50.720458984375, 40.85986328125, 22.41064453125, 61.394866943359375, 22.41064453125, 24.98126220703125" stroke="BLACK" strokeType="INSIDE" />
+                  <Text fill="WHITE" layoutX="524.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlists">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <ScrollBar layoutX="624.0" layoutY="134.0" orientation="VERTICAL" prefHeight="192.0" prefWidth="16.0" />
+                  <Polygon layoutX="563.0" layoutY="358.0" points="4.20001220703125, 41.59999084472656, -13.5999755859375, 51.19999694824219, -13.5999755859375, 31.599990844726562" stroke="BLACK" strokeType="INSIDE" />
+                  <Button layoutX="480.0" layoutY="92.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="156.0" text="Liked Songs">
+                     <font>
+                        <Font name="Times New Roman" size="16.0" />
+                     </font>
+                  </Button>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="138.0" layoutX="175.0" layoutY="46.0" stroke="BLACK" strokeType="INSIDE" width="138.0" />
+                  <Text layoutX="204.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlist Name" />
+               </children>
+            </AnchorPane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
