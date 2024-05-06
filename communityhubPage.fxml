@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="communityHubController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="611.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="communityHubController">
    <children>
       <Text layoutX="12.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Community Hub">
          <font>
@@ -95,17 +95,13 @@
             <Font name="Times New Roman" size="14.0" />
          </font></Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="332.0" layoutY="329.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="482.0" layoutX="428.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="176.0" />
-      <Rectangle fx:id="createPlaylist" arcHeight="5.0" arcWidth="5.0" fill="#eb8f05" height="31.0" layoutX="430.0" layoutY="338.0" stroke="BLACK" strokeType="INSIDE" width="170.0" />
-      <Circle fx:id="playMusic" fill="#cfdad9" layoutX="516.0" layoutY="396.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
-      <Polygon fill="#c1cad3" layoutX="470.0" layoutY="352.0" points="-5.175384521484375, 44.843231201171875, 22.41064453125, 61.394866943359375, 22.41064453125, 24.98126220703125" stroke="BLACK" strokeType="INSIDE" />
-      <Polygon fill="#c1cad3" layoutX="515.0" layoutY="352.0" points="50.720458984375, 40.85986328125, 22.41064453125, 61.394866943359375, 22.41064453125, 24.98126220703125" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="478.0" layoutX="433.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="180.0" />
       <Text fill="WHITE" layoutX="452.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlists">
          <font>
             <Font name="Gabriola" size="50.0" />
          </font>
       </Text>
-      <ScrollBar layoutX="583.0" layoutY="131.0" orientation="VERTICAL" prefHeight="192.0" prefWidth="16.0" />
+      <ScrollBar layoutX="591.0" layoutY="89.0" orientation="VERTICAL" prefHeight="233.0" prefWidth="16.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="120.0" layoutY="281.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
       <Text fill="WHITE" layoutX="122.0" layoutY="294.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
          <font>
@@ -148,16 +144,35 @@
             <Font name="Times New Roman" size="14.0" />
          </font>
       </Text>
-      <Polygon layoutX="522.0" layoutY="355.0" points="4.20001220703125, 41.59999084472656, -13.5999755859375, 51.19999694824219, -13.5999755859375, 31.599990844726562" stroke="BLACK" strokeType="INSIDE" />
       <Text layoutX="334.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Song Name" wrappingWidth="71.0">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>
       </Text>
-      <Button layoutX="439.0" layoutY="89.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="156.0" text="Liked Songs">
+      <Button layoutX="437.0" layoutY="87.0" mnemonicParsing="false" onMouseClicked="#goToPlaylist" prefHeight="29.0" prefWidth="149.0" text="Liked Songs">
          <font>
             <Font name="Times New Roman" size="16.0" />
          </font>
       </Button>
+      <Rectangle fx:id="createPlaylist" arcHeight="5.0" arcWidth="5.0" fill="#eb8f05" height="30.0" layoutX="440.0" layoutY="334.0" stroke="BLACK" strokeType="INSIDE" width="163.0" />
+      <Text fx:id="createPlaylist1" fill="WHITE" layoutX="444.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Playlist" textAlignment="CENTER" wrappingWidth="156.0">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="442.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Song Name" textAlignment="CENTER" wrappingWidth="156.0">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="449.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist" textAlignment="CENTER" wrappingWidth="148.5380859375">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </Text>
+      <Polygon fill="#c1cad3" layoutX="473.0" layoutY="398.0" points="-2.963592529296875, 42.14105224609375, 22.41064453125, 60.36004638671875, 22.41064453125, 25.9464111328125" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="playButton1" fill="#cfdad9" layoutX="523.0" layoutY="442.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+      <Polygon fill="#c1cad3" layoutX="529.0" layoutY="398.0" points="47.49627685546875, 45.17755126953125, 22.41064453125, 60.36004638671875, 22.41064453125, 25.9464111328125" stroke="BLACK" strokeType="INSIDE" />
+      <Polygon fx:id="playButton" layoutX="494.0" layoutY="399.0" points="40.30889892578125, 43.64715576171875, 22.41064453125, 52.25054931640625, 22.41064453125, 34.031585693359375" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>

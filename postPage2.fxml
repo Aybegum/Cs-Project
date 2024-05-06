@@ -1,40 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--
-  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
-  All rights reserved. Use is subject to license terms.
-
-  This file is available and licensed under the following license:
-
-  Redistribution and use in source and binary forms, with or without
-  modification, are permitted provided that the following conditions
-  are met:
-
-  - Redistributions of source code must retain the above copyright
-    notice, this list of conditions and the following disclaimer.
-  - Redistributions in binary form must reproduce the above copyright
-    notice, this list of conditions and the following disclaimer in
-    the documentation and/or other materials provided with the distribution.
-  - Neither the name of Oracle Corporation nor the names of its
-    contributors may be used to endorse or promote products derived
-    from this software without specific prior written permission.
-
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
--->
-
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
@@ -43,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playlistController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="postPageController">
    <children>
       <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="416.0" prefWidth="643.0" VBox.vgrow="ALWAYS">
          <children>
@@ -53,17 +22,41 @@
             <Circle fx:id="playButton" fill="#cfdad9" layoutX="566.0" layoutY="387.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
             <Polygon fill="#c1cad3" layoutX="518.0" layoutY="343.0" points="-2.963592529296875, 42.14105224609375, 22.41064453125, 60.36004638671875, 22.41064453125, 25.9464111328125" stroke="BLACK" strokeType="INSIDE" />
-            <Text fx:id="communityText" layoutX="52.0" layoutY="43.0" onMouseClicked="#goToCommunityHub" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlist Page">
+            <Text fx:id="communityText" layoutX="52.0" layoutY="43.0" onMouseClicked="#goToCommunityHub" strokeType="OUTSIDE" strokeWidth="0.0" text="Community">
                <font>
                   <Font name="Gabriola" size="40.0" />
                </font>
             </Text>
             <Rectangle fx:id="backButtonRectangle" arcHeight="5.0" arcWidth="5.0" fill="#939597" height="8.0" layoutX="26.0" layoutY="30.0" onMouseClicked="#goToCommunityHub" stroke="#939597" strokeType="INSIDE" width="23.0" />
             <Polygon fx:id="backButtonTriangle" fill="#939597" layoutX="40.0" layoutY="39.0" onMouseClicked="#goToCommunityHub" points="-21.38007354736328, -6.760345458984375, -10.345657348632812, 9.791290283203125, -10.345657348632812, -20.001632690429688" stroke="#939597" strokeType="INSIDE" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="122.0" layoutX="175.0" layoutY="72.0" stroke="BLACK" strokeType="INSIDE" width="124.0" />
+            <Rectangle fx:id="postsBox" arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="30.0" layoutX="26.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+            <Rectangle fx:id="chatroomBox" arcHeight="5.0" arcWidth="5.0" fill="#cacdd0" height="30.0" layoutX="252.0" layoutY="65.0" onMouseClicked="#goToChatroom" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+            <Text fill="WHITE" layoutX="26.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Posts" textAlignment="CENTER" wrappingWidth="200.0">
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#053c75" layoutX="252.0" layoutY="86.0" onMouseClicked="#goToChatroom" strokeType="OUTSIDE" strokeWidth="0.0" text="Chatroom" textAlignment="CENTER" wrappingWidth="200.0">
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+            </Text>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cacdd0" height="88.0" layoutX="25.0" layoutY="117.0" stroke="BLACK" strokeType="INSIDE" width="427.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="33.0" layoutY="122.0" stroke="BLACK" strokeType="INSIDE" width="367.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="15.0" layoutX="35.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="15.0" layoutX="55.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="15.0" layoutX="75.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
             <Text fill="WHITE" layoutX="477.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlists" textAlignment="CENTER" wrappingWidth="170.0">
                <font>
                   <Font name="Gabriola" size="45.0" />
+               </font>
+            </Text>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="16.0" layoutX="362.0" layoutY="182.0" stroke="#053c75" strokeType="INSIDE" width="77.0" />
+            <Circle fx:id="playMusic1" fill="#053c75" layoutX="440.0" layoutY="190.0" radius="8.0" stroke="#053c75" strokeType="INSIDE" />
+            <Circle fx:id="playMusic11" fill="#053c75" layoutX="362.0" layoutY="190.0" radius="8.0" stroke="#053c75" strokeType="INSIDE" />
+            <Text fill="WHITE" layoutX="362.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Post" textAlignment="CENTER" wrappingWidth="77.0">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
                </font>
             </Text>
             <Text fx:id="createPlaylist" fill="WHITE" layoutX="480.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Playlist" textAlignment="CENTER" wrappingWidth="179.0">
@@ -73,7 +66,7 @@
             </Text>
             <Polygon fill="#c1cad3" layoutX="568.0" layoutY="342.0" points="47.49627685546875, 45.17755126953125, 22.41064453125, 60.36004638671875, 22.41064453125, 25.9464111328125" stroke="BLACK" strokeType="INSIDE" />
             <Polygon fx:id="playButton" layoutX="537.0" layoutY="343.0" points="40.30889892578125, 43.64715576171875, 22.41064453125, 52.25054931640625, 22.41064453125, 34.031585693359375" stroke="BLACK" strokeType="INSIDE" />
-            <Button fx:id="likedSongs" layoutX="480.0" layoutY="72.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="154.0" text="Liked Songs">
+            <Button fx:id="likedSongs" layoutX="480.0" layoutY="72.0" mnemonicParsing="false" onMouseClicked="#goToPlaylist" prefHeight="29.0" prefWidth="154.0" text="Liked Songs">
                <font>
                   <Font name="Times New Roman" size="16.0" />
                </font>
@@ -95,18 +88,13 @@
                   <Font name="Times New Roman" size="16.0" />
                </font>
             </Text>
-            <Circle fill="#053c75" layoutX="439.0" layoutY="19.0" onMouseClicked="#goToProfile" radius="6.0" stroke="#053c75" strokeType="INSIDE" />
-            <Circle fill="#053c75" layoutX="439.0" layoutY="36.0" onMouseClicked="#goToProfile" radius="9.0" stroke="#053c75" strokeType="INSIDE" />
-            <Text layoutX="170.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlist Name" textAlignment="CENTER" wrappingWidth="134.0">
-               <font>
-                  <Font name="Times New Roman" size="20.0" />
-               </font>
-            </Text>
-            <Text layoutX="19.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Playlist" textAlignment="CENTER" underline="true" wrappingWidth="88.0">
+            <TextField fx:id="postText" alignment="TOP_LEFT" layoutX="32.0" layoutY="122.0" prefHeight="52.0" prefWidth="415.0" promptText="Enter Text ...">
                <font>
                   <Font name="Times New Roman" size="16.0" />
                </font>
-            </Text>
+            </TextField>
+            <Circle fill="#053c75" layoutX="439.0" layoutY="19.0" onMouseClicked="#goToProfile" radius="6.0" stroke="#053c75" strokeType="INSIDE" />
+            <Circle fill="#053c75" layoutX="439.0" layoutY="36.0" onMouseClicked="#goToProfile" radius="9.0" stroke="#053c75" strokeType="INSIDE" />
          </children>
       </AnchorPane>
       <Accordion />

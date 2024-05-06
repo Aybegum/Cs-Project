@@ -17,17 +17,22 @@ public class communityHubController {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    @FXML
-    private Button likedSongs;
+
+
     public void goToCommunity(MouseEvent event) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("postPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
     }
 
-    public void goToPlaylist(MouseEvent event, String name) throws Exception{
-
+    public void goToPlaylist(MouseEvent event)throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("playlistPage.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

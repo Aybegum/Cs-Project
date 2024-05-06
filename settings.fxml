@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="settingsController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
@@ -55,7 +55,7 @@
                      <font>
                         <Font name="Times New Roman" size="18.0" />
                      </font></Text>
-                  <Button layoutX="422.0" layoutY="293.0" mnemonicParsing="false" text="Save Changes">
+                  <Button layoutX="422.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#saveChanges" text="Save Changes">
                      <font>
                         <Font name="Times New Roman" size="16.0" />
                      </font></Button>
@@ -79,9 +79,9 @@
                         <Font name="Times New Roman" size="13.0" />
                      </font>
                   </PasswordField>
-                  <Polygon fx:id="backButtonTriangle" fill="#ff8800" layoutX="35.0" layoutY="33.0" points="-21.38007354736328, -6.760345458984375, -10.345657348632812, 9.791290283203125, -10.345657348632812, -20.001632690429688" stroke="#ff8800" strokeType="INSIDE" />
-                  <Rectangle fx:id="backButtonRectangle" arcHeight="5.0" arcWidth="5.0" fill="#ff8800" height="8.0" layoutX="19.0" layoutY="24.0" stroke="#ff8800" strokeType="INSIDE" width="23.0" />
-                  <Text fx:id="communityText" fill="WHITE" layoutX="46.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile">
+                  <Polygon fx:id="backButtonTriangle" fill="#ff8800" layoutX="35.0" layoutY="33.0" onMouseClicked="#goToProfile" points="-21.38007354736328, -6.760345458984375, -10.345657348632812, 9.791290283203125, -10.345657348632812, -20.001632690429688" stroke="#ff8800" strokeType="INSIDE" />
+                  <Rectangle fx:id="backButtonRectangle" arcHeight="5.0" arcWidth="5.0" fill="#ff8800" height="8.0" layoutX="19.0" layoutY="24.0" onMouseClicked="#goToProfile" stroke="#ff8800" strokeType="INSIDE" width="23.0" />
+                  <Text fx:id="communityText" fill="WHITE" layoutX="46.0" layoutY="40.0" onMouseClicked="#goToProfile" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
                      <font>
                         <Font name="Gabriola" size="40.0" />
                      </font>

@@ -1,4 +1,4 @@
-import javafx.event.ActionEvent;
+import javafx.event.ActionEvent ;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
@@ -17,77 +17,30 @@ public class chatroomController {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    /*@FXML
-    private Rectangle backButtonRectangle;
+    
 
-    @FXML
-    private Polygon backButtonTriangle;
-
-    @FXML
-    private Rectangle chatroomBox;*/
-
-    @FXML
-    private Text chatroomText;
-
-    @FXML
-    private Text communityText;
-
-    //@FXML
-    //private Rectangle createPlaylist;
-
-    @FXML
-    private Text createPlaylistRectangle;
-
-    @FXML
-    private TextField enterYourMessageTextField;
-
-    //@FXML
-    //private Rectangle likedSongs;
-
-    @FXML
-    private Text likedSongsPlaylistRectangle;
-
-    //@FXML
-    //private Polygon nextSongTriangle;
-
-    @FXML
-    private Circle playMusicCircle;
-
-    /*@FXML
-    private Polygon playMusicTriangle;
-
-    @FXML
-    private ScrollBar playlistScrollBarr;*/
-
-    @FXML
-    private Text playlistsText;
-
-   // @FXML
-    //private Rectangle postsBox;
-
-    @FXML
-    private Text postsText;
-
-    //@FXML
-    //private Polygon previousSongTriangle;
-
-    @FXML
-    private Button sendChatButton;
-    public void goToCommunityHub(ActionEvent event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("communityhub.fxml"));
+    public void goToCommunityHub(MouseEvent  event) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-    public void goToProfile(ActionEvent event) throws Exception{
+    public void goToPlaylist(MouseEvent event)throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("playlistPage.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void goToProfile(MouseEvent  event) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("profilePage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-    public void goToCommunityPosts(ActionEvent event) throws Exception {
+    public void goToCommunityPosts(MouseEvent  event) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("postPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);

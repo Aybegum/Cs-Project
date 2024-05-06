@@ -19,48 +19,30 @@ public class postPageController {
     private Stage stage;
     private Scene scene;
     private Parent root;
-@FXML
-    private Rectangle backButtonRectangle;
 
-    @FXML
-    private Polygon backButtonTriangle;
-
-    @FXML
-    private Rectangle chatroomBox;
-
-    @FXML
-    private Text communityText;
-
-    @FXML
-    private Rectangle createPlaylist;
-
-    @FXML
-    private Circle playMusic;
-
-    @FXML
-    private Circle playMusic1;
-
-    @FXML
-    private Circle playMusic11;
-
-    @FXML
-    private Rectangle postsBox;
     public void goToChatroom(MouseEvent event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("logInPage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("chatroomPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-    public void goToCommunityHub(ActionEvent event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("communityhub.fxml"));
+    public void goToCommunityHub(MouseEvent  event) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-    public void goToProfile(ActionEvent event) throws Exception{
+    public void goToProfile(MouseEvent  event) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("profilePage.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void goToPlaylist(MouseEvent event)throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("playlistPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

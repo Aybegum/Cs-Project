@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="profileController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="409.0" layoutY="-4.0" stroke="#053c75" strokeType="INSIDE" width="600.0" />
       <Circle fill="#b4bfc9" layoutX="146.0" layoutY="131.0" radius="61.0" stroke="#b4bfc9" strokeType="INSIDE" />
@@ -41,14 +41,14 @@
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Text>
-      <Polygon fx:id="backButtonTriangle" fill="#ff8800" layoutX="35.0" layoutY="34.0" points="-21.38007354736328, -6.760345458984375, -10.345657348632812, 9.791290283203125, -10.345657348632812, -20.001632690429688" stroke="#ff8800" strokeType="INSIDE" />
-      <Rectangle fx:id="backButtonRectangle" arcHeight="5.0" arcWidth="5.0" fill="#ff8800" height="8.0" layoutX="21.0" layoutY="25.0" stroke="#ff8800" strokeType="INSIDE" width="23.0" />
-      <Text fx:id="communityText" fill="WHITE" layoutX="55.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Community Hub ">
+      <Polygon fx:id="backButtonTriangle" fill="#ff8800" layoutX="35.0" layoutY="34.0" onMouseClicked="#goToCommunityHub" points="-21.38007354736328, -6.760345458984375, -10.345657348632812, 9.791290283203125, -10.345657348632812, -20.001632690429688" stroke="#ff8800" strokeType="INSIDE" />
+      <Rectangle fx:id="backButtonRectangle" arcHeight="5.0" arcWidth="5.0" fill="#ff8800" height="8.0" layoutX="21.0" layoutY="25.0" onMouseClicked="#goToCommunityHub" stroke="#ff8800" strokeType="INSIDE" width="23.0" />
+      <Text fx:id="communityText" fill="WHITE" layoutX="55.0" layoutY="40.0" onMouseClicked="#goToCommunityHub" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile Page">
          <font>
             <Font name="Gabriola" size="40.0" />
          </font>
       </Text>
-      <Text fx:id="goToSettings" fill="WHITE" layoutX="457.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Go To Settings" underline="true">
+      <Text fx:id="goToSettings" fill="WHITE" layoutX="457.0" layoutY="35.0" onMouseClicked="#goToSettings" strokeType="OUTSIDE" strokeWidth="0.0" text="Go To Settings" underline="true">
          <font>
             <Font name="Times New Roman" size="20.0" />
          </font>
