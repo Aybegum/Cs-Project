@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
@@ -17,14 +18,16 @@
                   <Font name="Gabriola" size="35.0" />
                </font>
             </Text>
-            <TextField fx:id="logInUsername" layoutX="195.0" layoutY="188.0" prefHeight="25.0" prefWidth="221.0" promptText="Enter Username" />
+            <TextField fx:id="logInUsername" layoutX="193.0" layoutY="188.0" prefHeight="25.0" prefWidth="221.0" promptText="Enter Username">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font></TextField>
             <Text fill="WHITE" layoutX="195.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
                <font>
                   <Font name="Times New Roman Bold" size="15.0" />
                </font>
             </Text>
-            <TextField fx:id="logInPassword" layoutX="193.0" layoutY="237.0" prefHeight="25.0" prefWidth="221.0" promptText="Enter Password" />
-            <Text fill="WHITE" layoutX="197.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+            <Text fill="WHITE" layoutX="195.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
                <font>
                   <Font name="Times New Roman Bold" size="15.0" />
                </font>
@@ -50,6 +53,11 @@
             <Circle fx:id="logInButton" fill="#d9d9d9" layoutX="297.0" layoutY="73.0" radius="59.0" stroke="#d9d9d9" strokeType="INSIDE" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="67.0" layoutX="274.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="67.0" layoutX="307.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+            <PasswordField layoutX="193.0" layoutY="237.0" prefHeight="25.0" prefWidth="221.0" promptText="Enter Password">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </PasswordField>
          </children>
       </AnchorPane>
    </children>

@@ -43,7 +43,7 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="15.0" layoutX="35.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="15.0" layoutX="55.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="15.0" layoutX="75.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
-            <Text fill="WHITE" layoutX="477.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlists" textAlignment="CENTER" wrappingWidth="170.0">
+            <Text fill="WHITE" layoutX="482.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlists" textAlignment="CENTER" wrappingWidth="170.0">
                <font>
                   <Font name="Gabriola" size="45.0" />
                </font>
@@ -67,9 +67,9 @@
                </font>
             </Button>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb8f05" height="20.0" layoutX="299.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="111.0" />
-            <Text fill="WHITE" layoutX="299.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leave Community" textAlignment="CENTER" wrappingWidth="111.0">
+            <Text fill="WHITE" layoutX="300.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leave Community" textAlignment="CENTER" wrappingWidth="111.0">
                <font>
-                  <Font name="Times New Roman" size="13.0" />
+                  <Font name="Times New Roman" size="14.0" />
                </font>
             </Text>
             <Circle fill="#b4bfc9" layoutX="440.0" layoutY="29.0" onMouseClicked="#goToProfile" radius="16.0" stroke="#b4bfc9" strokeType="INSIDE" />
