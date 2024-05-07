@@ -1,5 +1,3 @@
-package com.comusicly.main;
-
 import java.sql.Connection;
 import java.util.Scanner;
 import java.sql.DriverManager;

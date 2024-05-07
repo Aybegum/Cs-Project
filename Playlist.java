@@ -1,4 +1,3 @@
-package com.comusicly.main;
 
 import java.util.ArrayList;
 import java.sql.*;
