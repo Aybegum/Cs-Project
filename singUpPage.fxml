@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
@@ -18,19 +19,24 @@
          </font>
       </Text>
       <Polygon layoutX="309.0" layoutY="79.0" points="-27.0, -45.0, -27.0, 22.0, 40.0, -11.0" stroke="BLACK" strokeType="INSIDE" />
-      <TextField fx:id="singUpUsername" layoutX="195.0" layoutY="188.0" prefHeight="25.0" prefWidth="221.0" promptText="Create Username" />
+      <TextField fx:id="singUpUsername" layoutX="193.0" layoutY="188.0" prefHeight="25.0" prefWidth="221.0" promptText="Create Username">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></TextField>
       <Text fill="WHITE" layoutX="195.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Username">
          <font>
             <Font name="Times New Roman Bold" size="15.0" />
          </font>
       </Text>
-      <TextField fx:id="singUpPassword" layoutX="193.0" layoutY="237.0" prefHeight="25.0" prefWidth="221.0" promptText="Create Password" />
       <Text fill="WHITE" layoutX="197.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Password">
          <font>
             <Font name="Times New Roman Bold" size="15.0" />
          </font>
       </Text>
-      <TextField fx:id="singUpEMail" layoutX="193.0" layoutY="285.0" prefHeight="25.0" prefWidth="221.0" promptText="Enter E-Mail" />
+      <TextField fx:id="singUpEMail" layoutX="193.0" layoutY="285.0" prefHeight="25.0" prefWidth="221.0" promptText="Enter E-Mail">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></TextField>
       <Text fill="WHITE" layoutX="197.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Mail">
          <font>
             <Font name="Times New Roman Bold" size="15.0" />
@@ -54,5 +60,10 @@
             <Font name="Times New Roman Bold" size="15.0" />
          </font>
       </Text>
+      <PasswordField layoutX="193.0" layoutY="237.0" prefHeight="25.0" prefWidth="221.0" promptText="Create Password">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </PasswordField>
    </children>
 </AnchorPane>

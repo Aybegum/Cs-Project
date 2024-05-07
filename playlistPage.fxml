@@ -61,7 +61,7 @@
             <Rectangle fx:id="backButtonRectangle" arcHeight="5.0" arcWidth="5.0" fill="#939597" height="8.0" layoutX="26.0" layoutY="30.0" onMouseClicked="#goToCommunityHub" stroke="#939597" strokeType="INSIDE" width="23.0" />
             <Polygon fx:id="backButtonTriangle" fill="#939597" layoutX="40.0" layoutY="39.0" onMouseClicked="#goToCommunityHub" points="-21.38007354736328, -6.760345458984375, -10.345657348632812, 9.791290283203125, -10.345657348632812, -20.001632690429688" stroke="#939597" strokeType="INSIDE" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="122.0" layoutX="175.0" layoutY="72.0" stroke="BLACK" strokeType="INSIDE" width="124.0" />
-            <Text fill="WHITE" layoutX="477.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlists" textAlignment="CENTER" wrappingWidth="170.0">
+            <Text fill="WHITE" layoutX="482.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlists" textAlignment="CENTER" wrappingWidth="170.0">
                <font>
                   <Font name="Gabriola" size="45.0" />
                </font>

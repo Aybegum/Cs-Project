@@ -1,6 +1,7 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
@@ -20,25 +21,18 @@ public class welcomePageController {
     @FXML
     private TextField singUpUsername;
     @FXML
-    private TextField singUpPassword;
+    private  PasswordField singUpPassword;
     @FXML
     private TextField singUpEMail;
     @FXML
     private TextField logInUsername;
     @FXML
-    private TextField logInPassword;
+    private PasswordField logInPassword;
 
     public void logIn (MouseEvent event) throws Exception{
-        String userName = logInUsername.getText();
-        String passWord = logInPassword.getText();
-        System.out.println("Username: "+userName+" Password: "+passWord);
         goToCommunittyHub(event);
     }
     public void singUp (MouseEvent event) throws Exception{
-        String userName = singUpUsername.getText();
-        String passWord = singUpPassword.getText();
-        String eMail = singUpEMail.getText();
-        System.out.println("Username: "+userName+"\nPassword: "+passWord + "\nE-mail: "+eMail);
         goToCommunittyHub(event);
     }
     public void goToSingUpPage(MouseEvent event) throws Exception{
