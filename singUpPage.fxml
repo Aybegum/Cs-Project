@@ -60,7 +60,7 @@
             <Font name="Times New Roman Bold" size="15.0" />
          </font>
       </Text>
-      <PasswordField layoutX="193.0" layoutY="237.0" prefHeight="25.0" prefWidth="221.0" promptText="Create Password">
+      <PasswordField fx:id="singUpPassword" layoutX="193.0" layoutY="237.0" prefHeight="25.0" prefWidth="221.0" promptText="Create Password">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>

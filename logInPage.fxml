@@ -53,7 +53,7 @@
             <Circle fx:id="logInButton" fill="#d9d9d9" layoutX="297.0" layoutY="73.0" radius="59.0" stroke="#d9d9d9" strokeType="INSIDE" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="67.0" layoutX="274.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="67.0" layoutX="307.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
-            <PasswordField layoutX="193.0" layoutY="237.0" prefHeight="25.0" prefWidth="221.0" promptText="Enter Password">
+            <PasswordField fx:id="logInPassword" layoutX="193.0" layoutY="237.0" prefHeight="25.0" prefWidth="221.0" promptText="Enter Password">
                <font>
                   <Font name="Times New Roman" size="14.0" />
                </font>
