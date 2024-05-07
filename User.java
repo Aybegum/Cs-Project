@@ -9,6 +9,8 @@ public class User {
 	private String pictureUrl;
 	private String email;
 	private String password;
+
+	private static User currentUser;
 	
 	public User(int id, String username, String password, String pictureUrl, String email) throws SQLException {
 		
@@ -21,6 +23,14 @@ public class User {
 	}
 	
 	//Getters and setters
+	public static User getCurrentUser() {
+		return currentUser;
+	}
+
+	public static void setCurrentUser(User currentUser) {
+		User.currentUser = currentUser;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -106,21 +116,9 @@ public class User {
 
 	}
 	
-	public static User signUp() throws SQLException {
+	public static User signUp(String username, String password, String pictureUrl, String email) throws SQLException {
 		
 		Scanner scanner = new Scanner(System.in);
-		
-		System.out.print("Enter username: ");
-		String username = scanner.nextLine();
-		
-		System.out.print("Enter password: ");
-		String password = scanner.nextLine();
-		
-		System.out.print("Enter picture URL: ");
-		String pictureUrl = scanner.nextLine();
-		
-		System.out.print("Enter E-mail: ");
-		String email = scanner.nextLine();
 		
 		Connection connection = DriverManager.getConnection(Main.getMySqlUrl(), Main.getMySqlUsername(), Main.getMySqlPassword());
 		Statement idStatement = connection.createStatement();

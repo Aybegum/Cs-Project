@@ -29,10 +29,15 @@ public class welcomePageController {
     @FXML
     private PasswordField logInPassword;
 
-    public void logIn (MouseEvent event) throws Exception{
+    public void logIn (MouseEvent event) throws Exception {
         goToCommunittyHub(event);
     }
-    public void singUp (MouseEvent event) throws Exception{
+    public void singUp (MouseEvent event) throws Exception {
+        String username = singUpUsername.getText();
+        String password = singUpPassword.getText();
+        String email = singUpEMail.getText();
+        String pictureUrl = "Profile/profile_default";
+        User.setCurrentUser(User.signUp(username, password, pictureUrl, email));
         goToCommunittyHub(event);
     }
     public void goToSingUpPage(MouseEvent event) throws Exception{
