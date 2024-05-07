@@ -30,6 +30,9 @@ public class welcomePageController {
     private PasswordField logInPassword;
 
     public void logIn (MouseEvent event) throws Exception {
+        String username = logInUsername.getText();
+        String password = logInPassword.getText();
+        User.setCurrentUser(User.logIn(username, password));
         goToCommunittyHub(event);
     }
     public void singUp (MouseEvent event) throws Exception {
@@ -56,12 +59,13 @@ public class welcomePageController {
     }
 
     public void goToCommunittyHub(MouseEvent event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-
+        if (User.getCurrentUser() != null) {
+            Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 
 

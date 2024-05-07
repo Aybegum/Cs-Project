@@ -177,6 +177,27 @@ public class Playlist {
 		
 	}
 
+	public static Playlist getPlaylistByIdAndUser(int id, User user) throws SQLException {
+		
+		Connection connection = Main.connect();
+		Statement statement = connection.createStatement();
+		ResultSet rs = statement.executeQuery("select * from playlists where id = '" + id + "' and creatorId = '" + user.getId() +"'");
+		
+		String name;
+		String pictureUrl;
+		
+		if(rs.next()) {
+			
+			name = rs.getString("name");
+			pictureUrl = rs.getString("pictureurl");
+			return new Playlist(name, pictureUrl, id, user.getId());
+			
+		}
+		return null;
+		
+	}
+
+
 
 
 }

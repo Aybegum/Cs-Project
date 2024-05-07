@@ -134,15 +134,7 @@ public class User {
 
 	}
 	
-	public static User logIn() throws SQLException { 
-		
-		Scanner scanner = new Scanner(System.in);
-		System.out.print("Enter username: ");
-		String username = scanner.nextLine();
-		
-		System.out.print("Enter password: ");
-		String password = scanner.nextLine();
-		
+	public static User logIn(String username, String password) throws SQLException { 
 		
 		ResultSet r = getByUsername(username);
 		if (r.next() && r.getString("password").equals(password)) {
@@ -155,7 +147,7 @@ public class User {
 			
 		}
 		
-		System.out.println("The username or password you provided is wrong");
+		welcomePage.showInvalidLoginError();
 		return null;
 		
 	}

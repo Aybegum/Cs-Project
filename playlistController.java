@@ -11,24 +11,47 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
 import org.w3c.dom.Text;
+
+import com.mysql.cj.xdevapi.AddResult;
+
 import javafx.scene.Node;
     public class playlistController {
         private Stage stage;
         private Scene scene;
         private Parent root;
-        public void addSongToPlaylist (String songName) {
-          
-        }
-        public void deleteSongToPlaylist (String songName) {
-          
-        }
-        public void changePlaylistImage (String urlOfImage) {
-          
-        }
-        public void deletePlaylist () {
-          
-        }
+
+        private static Playlist playlistOnScreen;
+
+
+      public void renderPlaylistsOnSidebar() throws SQLException {
+
+            ArrayList<Playlist> playlists = new ArrayList<>();
+
+            Connection connection = Main.connect();
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("select * from playlists where creatorid = '" + User.getCurrentUser().getId() + "' order by id desc");
+            int count;
+            if (rs.next()) {
+                  count = rs.getInt("id");
+                  for (int i = count - 1; i >= 0; i--) {
+                        playlists.add(Playlist.getPlaylistByIdAndUser(i, User.getCurrentUser()));
+                  }
+            }
+
+            
+            /* TODO: (Frontendciler baksın)
+            Bu method şu anlık playlists arraylisti oluşturup playlists arraylistine databasede current userın createlediği
+            tüm playlistleri ekliyor. Bu arraylisti kullanarak renderlama methodunu yazarsınız. 
+            */
+      }
+
         /*public void createPlaylist (String playlistName, String coverURL, Song song) {
               
         }*/
