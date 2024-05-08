@@ -26,7 +26,8 @@ import javafx.scene.Node;
         private Stage stage;
         private Scene scene;
         private Parent root;
-
+        private static int coordinateY = 0;
+        private static int playlistNoNCounter = 1;
         private static Playlist playlistOnScreen;
 
 
@@ -44,12 +45,9 @@ import javafx.scene.Node;
                         playlists.add(Playlist.getPlaylistByIdAndUser(i, User.getCurrentUser()));
                   }
             }
-
-            
-            /* TODO: (Frontendciler baksın)
-            Bu method şu anlık playlists arraylisti oluşturup playlists arraylistine databasede current userın createlediği
-            tüm playlistleri ekliyor. Bu arraylisti kullanarak renderlama methodunu yazarsınız. 
-            */
+            Button newPlaylist = new Button("Playlist " + playlistNoNCounter);
+            newPlaylist.setLayout(0, coordinateY);
+            root.getChildren().add(newPlaylist);
       }
 
         /*public void createPlaylist (String playlistName, String coverURL, Song song) {
