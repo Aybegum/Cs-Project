@@ -164,12 +164,23 @@ public class User {
 		statement.setString(3, password);
 		statement.setString(2, pictureUrl);
 		statement.setString(4, email);
-		int count = statement.executeUpdate();
+		statement.executeUpdate();
 		
 		statement.close();
 		connection.close();
 		
 		return user;
 	}
-	
+
+	public static void deleteAccount(User currentUser) throws SQLException {
+
+		Connection connection = Main.connect();
+		int currentUserId = currentUser.getId();
+
+		String query = "DELETE FROM users WHERE userid = ?";
+		PreparedStatement statement = connection.prepareStatement(query);
+		statement.setInt(1, currentUserId);
+		statement.executeUpdate();
+	}
+
 }

@@ -11,6 +11,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 import org.w3c.dom.Text;
 import javafx.scene.Node;
 public class chatroomController {
@@ -18,6 +21,19 @@ public class chatroomController {
     private Scene scene;
     private Parent root;
     
+
+    public void renderMessages() throws SQLException {
+
+        ArrayList<Message> messages = Message.getMessages();
+
+        for (Message message : messages) {
+            if(message.isSentByCurrentUser()) {
+                //TODO: Render on the right
+            } else {
+                //TODO: Render on the left
+            }
+        }
+    }
 
     public void goToCommunityHub(MouseEvent  event) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
@@ -48,7 +64,8 @@ public class chatroomController {
         stage.show();
     }
     public void postMessage(){
-        
+        String text = messageField.getText(); //TODO: Add a reference to the text field
+        Message.createMessage(User.getCurrentUser().getId(), , text)
     }
     public void deleteMessage(){
         

@@ -1,7 +1,10 @@
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
 public class Message {
 	
@@ -52,26 +55,40 @@ public class Message {
 		statement.setInt(2, communityId);
 		statement.setString(3, body);
 		
-		int count = statement.executeUpdate();
-		
 		return message;
 		
 	}
 	
 	public boolean isSentByCurrentUser() {
 		
-		if (Main.getCurrentUser().getId() == senderId) {
+		if (User.getCurrentUser().getId() == senderId) {
 			return true;
 		}
 		
 		return false;
-		
+
 	}
-	
-	public static void renderMessage() {
-		
-		
-		
+
+	public static ArrayList<Message> getMessages() throws SQLException {
+
+		    ArrayList<Message> messages = new ArrayList<>();
+
+            Connection connection = Main.connect();
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("select count(*) from messages");
+            long count;
+			ResultSet rs2 = statement.executeQuery("select * from messages");
+            if (rs.next()) {
+                  count = rs.getLong(1);
+                  for (long i = count - 1; i >= 0; i--) {
+						int senderId = rs2.getInt("senderid");
+						String body = rs2.getString("body");
+						int communityId = rs2.getInt("communityid");
+                        messages.add(new Message(senderId, communityId, body));
+                  }
+            }
+
+			return messages;
 	}
 	
 }
