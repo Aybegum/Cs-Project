@@ -51,7 +51,7 @@ import javafx.scene.Node;
                   }
             }      
       */
-      public void renderPlaylistsOnSidebar() throws SQLException, IOException {
+      public void renderPlaylistsOnSidebar(MouseEvent event) throws SQLException, IOException {
 
             ArrayList<Playlist> playlists = new ArrayList<>();
 
@@ -90,9 +90,6 @@ import javafx.scene.Node;
             coordinateY += 35;
       }
 
-        /*public void createPlaylist (String playlistName, String coverURL, Song song) {
-              
-        }*/
         public void goToProfile(MouseEvent event) throws Exception{
               Parent root = FXMLLoader.load(getClass().getResource("profilePage.fxml"));
               stage = (Stage)((Node)event.getSource()).getScene().getWindow();
