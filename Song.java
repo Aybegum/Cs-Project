@@ -112,15 +112,11 @@ public class Song {
     }
 
     public static void main(String[] args) {
-        // Database connection details
-        String url = "jdbc:mysql://localhost:3306/comusiclyPrototype";
-        String user = "root";
-        String password = "Merhaba123*";
+        
 
         // Folder containing your songs
         String folderPath = "C:\\Users\\beren\\OneDrive\\Masaüstü\\songs";
 
-        // Upload songs to the database
-        //uploadSongs(folderPath, url, user, password);
+        uploadSongs(folderPath);
 	}
 }
