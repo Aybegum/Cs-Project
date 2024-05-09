@@ -27,7 +27,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import org.w3c.dom.Text;
 import javafx.scene.Node;
 public class chatroomController {
     private Stage stage;
@@ -69,7 +68,6 @@ public class chatroomController {
 private Pane createMessagePane(String text, String alignment) {
     FlowPane messagePane = new FlowPane();
     messagePane.setPrefWidth(400); 
-    messagePane.setStyle("-fx-background-color: #c1cad3; -fx-padding: 5px; -fx-background-radius: 5px;");
 
     Text messageText = new Text(text);
     messageText.setFont(Font.font("Times New Roman", 14));
@@ -78,8 +76,10 @@ private Pane createMessagePane(String text, String alignment) {
     messagePane.getChildren().add(messageText);
 
     if (alignment.equals("right")) {
+        messagePane.setStyle("-fx-background-color: #053c75; -fx-padding: 5px; -fx-background-radius: 5px;");
         messagePane.setAlignment(Pos.CENTER_RIGHT);
     } else {
+        messagePane.setStyle("-fx-background-color: #b4bfc9; -fx-padding: 5px; -fx-background-radius: 5px;");
         messagePane.setAlignment(Pos.CENTER_LEFT);
     }
 
@@ -115,12 +115,10 @@ private Pane createMessagePane(String text, String alignment) {
         stage.show();
     }
     public void postMessage()throws SQLException{
-        String text = messageField.getText(); //TODO: Add a reference to the text field
-<<<<<<< HEAD
-        Message.createMessage(User.getCurrentUser().getId(),Community.getCurrentCommunityId(), text);
-=======
+        String text = messageField.getText(); 
         Message.createMessage(User.getCurrentUser().getId(), Community.getCurrentCommunityId(), text);
->>>>>>> 30a3aae72fa838f50116cc29b0ce79b4c3c51486
+        renderMessages();
+        messageField.setText("");
     }
 }
 

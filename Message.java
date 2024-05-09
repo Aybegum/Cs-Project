@@ -54,6 +54,7 @@ public class Message {
 		statement.setInt(1, senderId);
 		statement.setInt(2, communityId);
 		statement.setString(3, body);
+		int count = statement.executeUpdate();
 		
 		return message;
 		
@@ -77,16 +78,23 @@ public class Message {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("select count(*) from messages");
             long count;
-			ResultSet rs2 = statement.executeQuery("select * from messages");
             if (rs.next()) {
                   count = rs.getLong(1);
+				  ResultSet rs2 = statement.executeQuery("select * from messages");
+				  rs2.next();
                   for (long i = count - 1; i >= 0; i--) {
 						int senderId = rs2.getInt("senderid");
 						String body = rs2.getString("body");
 						int communityId = rs2.getInt("communityid");
                         messages.add(new Message(senderId, communityId, body));
+						rs2.next();
                   }
+				  rs2.close();
             }
+
+			rs.close();
+	
+			connection.close();
 
 			return messages;
 	}

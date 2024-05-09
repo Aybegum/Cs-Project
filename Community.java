@@ -2,10 +2,10 @@ public class Community {
 
     private int id;
     private String name;
-    private static int currentCommunityId;
+    private static int currentCommunityId = 0; //To be changed
 
     public Community(int id, String name) {
-        this.id = id;
+        this.id = id++;
         this.name = name;
     }
 
