@@ -124,7 +124,7 @@
                                     <Font name="Times New Roman" size="14.0" />
                                  </font>
                               </TextField>
-                            <Button layoutX="367.0" layoutY="-1.0" minWidth="0.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="59.0" text="Send" textFill="#eb8f05">
+                            <Button layoutX="367.0" layoutY="-1.0" minWidth="0.0" mnemonicParsing="false" onMouseClicked="#postMessage" prefHeight="33.0" prefWidth="59.0" text="Send" textFill="#eb8f05">
                                  <font>
                                     <Font name="Times New Roman" size="16.0" />
                                  </font>
