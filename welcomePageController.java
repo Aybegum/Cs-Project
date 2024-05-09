@@ -50,7 +50,7 @@ public class welcomePageController {
         stage.setScene(scene);
         stage.show();
     }
-    public void goToLogInPage(MouseEvent event) throws Exception{
+    public void goToLogInPage(MouseEvent event) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("logInPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -58,7 +58,7 @@ public class welcomePageController {
         stage.show();
     }
 
-    public void goToCommunittyHub(MouseEvent event) throws Exception{
+    public void goToCommunittyHub(MouseEvent event) throws Exception {
         if (User.getCurrentUser() != null) {
             Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();

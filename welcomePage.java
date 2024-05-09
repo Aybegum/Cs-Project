@@ -35,8 +35,32 @@ public class welcomePage extends Application {
     public static void showInvalidLoginError() {
         Alert alert = new Alert(AlertType.ERROR);
         alert.setTitle("Error");
-        //alert.setHeaderText("hata");
         alert.setContentText("Username or password is incorrect.");
+        alert.showAndWait();
+    }
+    public static void showInvalidPasswordError() {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setContentText("Password should at least be 8 characters long and should contain at least 1 number, 1 uppercase letter and 1 special character.");
+        alert.showAndWait();
+    }
+    public static void showInvalidUsernameError() {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setContentText("Username should at least be 3 characters long and cannot contain any spaces or any uppercase letters.");
+        alert.showAndWait();
+    }
+
+    public static void showNotUniqueUsernameError() {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setContentText("This username is already taken.");
+        alert.showAndWait();
+    }
+    public static void showInvalidEmailError() {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setContentText("Invalid email. Please enter a correct email.");
         alert.showAndWait();
     }
 }

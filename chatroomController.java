@@ -116,7 +116,11 @@ private Pane createMessagePane(String text, String alignment) {
     }
     public void postMessage()throws SQLException{
         String text = messageField.getText(); //TODO: Add a reference to the text field
+<<<<<<< HEAD
         Message.createMessage(User.getCurrentUser().getId(),Community.getCurrentCommunityId(), text);
+=======
+        Message.createMessage(User.getCurrentUser().getId(), Community.getCurrentCommunityId(), text);
+>>>>>>> 30a3aae72fa838f50116cc29b0ce79b4c3c51486
     }
     public void deleteMessage(){
         
