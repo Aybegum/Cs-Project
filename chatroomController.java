@@ -65,7 +65,7 @@ public class chatroomController {
     }
     public void postMessage(){
         String text = messageField.getText(); //TODO: Add a reference to the text field
-        Message.createMessage(User.getCurrentUser().getId(), , text)
+        Message.createMessage(User.getCurrentUser().getId(), Community.getCurrentCommunityId(), text);
     }
     public void deleteMessage(){
         
