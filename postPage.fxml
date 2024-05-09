@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Polygon?>
@@ -16,7 +17,6 @@
       <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="416.0" prefWidth="643.0" VBox.vgrow="ALWAYS">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="417.0" layoutX="472.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="190.0" />
-            <ScrollBar layoutX="640.0" layoutY="67.0" orientation="VERTICAL" prefHeight="214.0" prefWidth="16.0" />
             <Rectangle fx:id="createPlaylist" arcHeight="5.0" arcWidth="5.0" fill="#eb8f05" height="30.0" layoutX="477.0" layoutY="288.0" stroke="BLACK" strokeType="INSIDE" width="180.0" />
             <Circle fx:id="playButton" fill="#cfdad9" layoutX="566.0" layoutY="387.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
@@ -61,11 +61,6 @@
                </font></Text>
             <Polygon fill="#c1cad3" layoutX="568.0" layoutY="342.0" points="47.49627685546875, 45.17755126953125, 22.41064453125, 60.36004638671875, 22.41064453125, 25.9464111328125" stroke="BLACK" strokeType="INSIDE" />
             <Polygon fx:id="playButton" layoutX="537.0" layoutY="343.0" points="40.30889892578125, 43.64715576171875, 22.41064453125, 52.25054931640625, 22.41064453125, 34.031585693359375" stroke="BLACK" strokeType="INSIDE" />
-            <Button fx:id="likedSongs" layoutX="480.0" layoutY="72.0" mnemonicParsing="false" onMouseClicked="#goToPlaylist" prefHeight="29.0" prefWidth="154.0" text="Liked Songs">
-               <font>
-                  <Font name="Times New Roman" size="16.0" />
-               </font>
-            </Button>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb8f05" height="20.0" layoutX="299.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="111.0" />
             <Text fill="WHITE" layoutX="300.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leave Community" textAlignment="CENTER" wrappingWidth="111.0">
                <font>
@@ -90,6 +85,16 @@
             </TextField>
             <Circle fill="#053c75" layoutX="439.0" layoutY="19.0" onMouseClicked="#goToProfile" radius="6.0" stroke="#053c75" strokeType="INSIDE" />
             <Circle fill="#053c75" layoutX="439.0" layoutY="36.0" onMouseClicked="#goToProfile" radius="9.0" stroke="#053c75" strokeType="INSIDE" />
+            <FlowPane layoutX="481.0" layoutY="56.0" orientation="VERTICAL" prefHeight="228.0" prefWidth="170.0">
+               <children>
+                  <Button fx:id="likedSongs" mnemonicParsing="false" onMouseClicked="#goToPlaylist" prefHeight="29.0" prefWidth="154.0" text="Liked Songs">
+                     <font>
+                        <Font name="Times New Roman" size="16.0" />
+                     </font>
+                  </Button>
+                  <ScrollBar orientation="VERTICAL" prefHeight="214.0" prefWidth="16.0" />
+               </children>
+            </FlowPane>
          </children>
       </AnchorPane>
    </children>
