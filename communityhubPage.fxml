@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="611.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playlistController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="611.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="communityHubController">
    <children>
       <Text layoutX="12.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Community Hub">
          <font>
@@ -150,7 +150,7 @@
          </font>
       </Text>
       <Rectangle fx:id="createPlaylist" arcHeight="5.0" arcWidth="5.0" fill="#eb8f05" height="30.0" layoutX="440.0" layoutY="334.0" stroke="BLACK" strokeType="INSIDE" width="163.0" />
-      <Text fx:id="createPlaylist1" fill="WHITE" layoutX="444.0" layoutY="355.0" onMouseClicked="#renderPlaylistsOnSidebar" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Playlist" textAlignment="CENTER" wrappingWidth="156.0">
+      <Text fx:id="createPlaylist1" fill="WHITE" layoutX="444.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Playlist" textAlignment="CENTER" wrappingWidth="156.0">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>

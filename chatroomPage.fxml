@@ -46,7 +46,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playlistController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chatroomController">
    <children>
       <VBox prefHeight="400.0" prefWidth="640.0">
          <children>
@@ -83,7 +83,7 @@
                      </font>
                   </Text>
                   <Rectangle fx:id="createPlaylist" arcHeight="5.0" arcWidth="5.0" fill="#eb8f05" height="30.0" layoutX="477.0" layoutY="288.0" stroke="BLACK" strokeType="INSIDE" width="180.0" />
-                  <Text fx:id="createPlaylist" fill="WHITE" layoutX="480.0" layoutY="309.0" onMouseClicked="#renderPlaylistsOnSidebar" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Playlist" textAlignment="CENTER" wrappingWidth="179.0">
+                  <Text fx:id="createPlaylist" fill="WHITE" layoutX="480.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Playlist" textAlignment="CENTER" wrappingWidth="179.0">
                      <font>
                         <Font name="Times New Roman" size="18.0" />
                      </font>
