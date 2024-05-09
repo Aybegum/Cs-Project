@@ -34,24 +34,7 @@ import javafx.scene.Node;
         private static Playlist playlistOnScreen;
 
 
-        /*
-            public void renderMessages() throws SQLException {
-                  ArrayList<Message> messages = Message.getMessages();
-                  for (Message message : messages) {
-                        if (message.isSentByCurrentUser()) {
-                        // Render on the right
-                        Pane messagePane = createMessagePane(message.getBody(), "right");
-                        chatPane.getChildren().add(messagePane);
-                        }
-                         else {
-                        // Render on the left
-                        Pane messagePane = createMessagePane(message.getBody(), "left");
-                        chatPane.getChildren().add(messagePane);
-                        }
-                  }
-            }      
-      */
-      public void renderPlaylistsOnSidebar() throws SQLException, IOException {
+      public void renderPlaylistsOnSidebar() throws SQLException {
 
             ArrayList<Playlist> playlists = new ArrayList<>();
 
@@ -66,22 +49,9 @@ import javafx.scene.Node;
                   }
             }
             for (Playlist playlist : playlists) {
-                  Button newPlaylist = new Button("Playlist " + playlistNoNCounter);
+                  Button newPlaylist = new Button("Playlist");
                   flowPane.getChildren().add(newPlaylist);
-                  playlistNoNCounter++; 
-                  // Create the scene
-                  newPlaylist.setOnAction(e -> {
-                        // Create the scene or perform any other action
-                        try {
-                              root = FXMLLoader.load(getClass().getResource("playlistPage.fxml"));
-                        } catch (IOException e1) {
-                              e1.printStackTrace();
-                        }
-                        Scene scene = new Scene(root, 800, 600);
-                        stage.setScene(scene);
-                    });
             }
-
             Button newPlaylist = new Button("Playlist " + playlistNoNCounter);
             newPlaylist.setLayoutX(437); // it is the coordinate of the liked songs button
             newPlaylist.setLayoutY(coordinateY);

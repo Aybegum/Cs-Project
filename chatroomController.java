@@ -50,6 +50,7 @@ public class chatroomController {
         }
     }*/
     public void renderMessages() throws SQLException {
+
     ArrayList<Message> messages = Message.getMessages();
     for (Message message : messages) {
         if (message.isSentByCurrentUser()) {
