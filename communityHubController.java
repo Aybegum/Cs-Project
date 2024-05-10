@@ -20,7 +20,7 @@ public class communityHubController {
 
 
     public void goToCommunity(MouseEvent event) throws Exception{
-        root = FXMLLoader.load(getClass().getResource("postPage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("postPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
