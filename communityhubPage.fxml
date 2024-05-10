@@ -31,7 +31,7 @@
       </Text>
       <Circle fill="WHITE" layoutX="314.0" layoutY="76.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
       <Polygon layoutX="322.0" layoutY="34.0" points="4.20001220703125, 41.59999084472656, -13.5999755859375, 51.19999694824219, -13.5999755859375, 31.599990844726562" stroke="BLACK" strokeType="INSIDE" />
-      <Text layoutX="107.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Communities" wrappingWidth="235.0">
+      <Text layoutX="107.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Communities" wrappingWidth="235.0">
          <font>
             <Font name="Gabriola" size="40.0" />
          </font>
@@ -58,7 +58,7 @@
             <Font name="Times New Roman" size="14.0" />
          </font></Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="28.0" layoutY="174.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="22.0" layoutY="281.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+      <Rectangle fx:id="rock" arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="22.0" layoutY="281.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
       <Text fill="WHITE" layoutX="23.0" layoutY="294.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
          <font>
             <Font name="Times New Roman" size="14.0" />
@@ -102,18 +102,18 @@
             <Font name="Gabriola" size="50.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="120.0" layoutY="281.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+      <Rectangle fx:id="pop" arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="120.0" layoutY="281.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
       <Text fill="WHITE" layoutX="122.0" layoutY="294.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="224.0" layoutY="280.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="327.0" layoutY="280.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="21.0" layoutY="433.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="120.0" layoutY="433.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="224.0" layoutY="433.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="327.0" layoutY="433.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+      <Rectangle fx:id="indie" arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="224.0" layoutY="280.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+      <Rectangle fx:id="classical" arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="327.0" layoutY="280.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+      <Rectangle fx:id="jazz" arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="21.0" layoutY="433.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+      <Rectangle fx:id="metal" arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="120.0" layoutY="433.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+      <Rectangle fx:id="alternative" arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="224.0" layoutY="433.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+      <Rectangle fx:id="rap" arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="327.0" layoutY="433.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
       <Text fill="WHITE" layoutX="224.0" layoutY="294.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
          <font>
             <Font name="Times New Roman" size="14.0" />
