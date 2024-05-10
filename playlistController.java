@@ -23,7 +23,7 @@ import org.w3c.dom.Text;
 import com.mysql.cj.xdevapi.AddResult;
 
 import javafx.scene.Node;
-    public class playlistController {
+public class playlistController {
       @FXML
       private FlowPane flowPane;
         private Stage stage;
@@ -34,7 +34,7 @@ import javafx.scene.Node;
         private static Playlist playlistOnScreen;
 
 
-        public void renderPlaylistsOnSidebar() throws SQLException {
+      public void renderPlaylistsOnSidebar() throws SQLException {
 
             ArrayList<Playlist> playlists = new ArrayList<>();
 
@@ -78,3 +78,4 @@ import javafx.scene.Node;
               stage.show();
         }
 } 
+
