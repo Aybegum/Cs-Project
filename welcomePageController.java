@@ -44,14 +44,14 @@ public class welcomePageController {
         goToCommunittyHub(event);
     }
     public void goToSingUpPage(MouseEvent event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("singUpPage.fxml"));
+        root = FXMLLoader.load(getClass().getResource("singUpPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
     public void goToLogInPage(MouseEvent event) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("logInPage.fxml"));
+        root = FXMLLoader.load(getClass().getResource("logInPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -60,7 +60,7 @@ public class welcomePageController {
 
     public void goToCommunittyHub(MouseEvent event) throws Exception {
         if (User.getCurrentUser() != null) {
-            Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
+            root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);

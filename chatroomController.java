@@ -97,28 +97,28 @@ private Pane createMessagePane(String text, String alignment) throws SQLExceptio
     return messagePane;
 }
     public void goToCommunityHub(MouseEvent  event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
+        root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
     public void goToPlaylist(MouseEvent event)throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("playlistPage.fxml"));
+        root = FXMLLoader.load(getClass().getResource("playlistPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
     public void goToProfile(MouseEvent  event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("profilePage.fxml"));
+        root = FXMLLoader.load(getClass().getResource("profilePage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
     public void goToCommunityPosts(MouseEvent  event) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("postPage.fxml"));
+        root = FXMLLoader.load(getClass().getResource("postPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
