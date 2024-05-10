@@ -39,8 +39,13 @@ public class welcomePageController {
         String username = singUpUsername.getText();
         String password = singUpPassword.getText();
         String email = singUpEMail.getText();
+<<<<<<< Updated upstream
         String pictureUrl = "Profile/profile_default";
         User.setCurrentUser(User.signUp(username, password, pictureUrl, email));
+=======
+        String pictureUrl = "Profile/profile_default.jpg";
+        User.signUp(username, password, pictureUrl, email);
+>>>>>>> Stashed changes
         goToCommunittyHub(event);
     }
     public void goToSingUpPage(MouseEvent event) throws Exception{

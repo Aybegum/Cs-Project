@@ -1,0 +1,26 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Java\\javafx-sdk-22\\lib\\javafx.base.jar",
+        "c:\\Java\\javafx-sdk-22\\lib\\javafx.controls.jar",
+        "c:\\Java\\javafx-sdk-22\\lib\\javafx.fxml.jar",
+        "c:\\Java\\javafx-sdk-22\\lib\\javafx.graphics.jar",
+        "c:\\Java\\javafx-sdk-22\\lib\\javafx.media.jar",
+        "c:\\Java\\javafx-sdk-22\\lib\\javafx.swing.jar",
+        "c:\\Java\\javafx-sdk-22\\lib\\javafx.web.jar",
+        "c:\\Java\\javafx-sdk-22\\lib\\javafx-swt.jar",
+<<<<<<< Updated upstream
+        "c:\\Users\\hp\\Downloads\\mysql-connector-j-8.4.0.jar"
+=======
+        "c:\\Users\\beren\\Downloads\\openjfx-22.0.1_windows-x64_bin-sdk\\javafx-sdk-22.0.1\\lib\\javafx.base.jar",
+        "c:\\Users\\beren\\Downloads\\openjfx-22.0.1_windows-x64_bin-sdk\\javafx-sdk-22.0.1\\lib\\javafx.controls.jar",
+        "c:\\Users\\beren\\Downloads\\openjfx-22.0.1_windows-x64_bin-sdk\\javafx-sdk-22.0.1\\lib\\javafx.fxml.jar",
+        "c:\\Users\\beren\\Downloads\\openjfx-22.0.1_windows-x64_bin-sdk\\javafx-sdk-22.0.1\\lib\\javafx.graphics.jar",
+        "c:\\Users\\beren\\Downloads\\openjfx-22.0.1_windows-x64_bin-sdk\\javafx-sdk-22.0.1\\lib\\javafx.media.jar",
+        "c:\\Users\\beren\\Downloads\\openjfx-22.0.1_windows-x64_bin-sdk\\javafx-sdk-22.0.1\\lib\\javafx.swing.jar",
+        "c:\\Users\\beren\\Downloads\\openjfx-22.0.1_windows-x64_bin-sdk\\javafx-sdk-22.0.1\\lib\\javafx.web.jar",
+        "c:\\Users\\beren\\Downloads\\openjfx-22.0.1_windows-x64_bin-sdk\\javafx-sdk-22.0.1\\lib\\javafx-swt.jar",
+        "c:\\Users\\beren\\Downloads\\mysql-connector-j-8.3.0.jar"
+>>>>>>> Stashed changes
+    ]
+}
