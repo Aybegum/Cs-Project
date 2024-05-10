@@ -34,7 +34,7 @@ import javafx.scene.Node;
         private static Playlist playlistOnScreen;
 
 
-      public void renderPlaylistsOnSidebar() throws SQLException {
+        public void renderPlaylistsOnSidebar() throws SQLException {
 
             ArrayList<Playlist> playlists = new ArrayList<>();
 
@@ -78,4 +78,3 @@ import javafx.scene.Node;
               stage.show();
         }
 } 
-
