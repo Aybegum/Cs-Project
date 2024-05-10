@@ -40,9 +40,9 @@
                </font></Text>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cacdd0" height="88.0" layoutX="25.0" layoutY="117.0" stroke="BLACK" strokeType="INSIDE" width="427.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="33.0" layoutY="122.0" stroke="BLACK" strokeType="INSIDE" width="367.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="15.0" layoutX="35.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="15.0" layoutX="55.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="15.0" layoutX="75.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="15.0" layoutX="35.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="15.0" layoutX="100.0" layoutY="183.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="15.0" layoutX="171.0" layoutY="183.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
             <Text fill="WHITE" layoutX="482.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlists" textAlignment="CENTER" wrappingWidth="170.0">
                <font>
                   <Font name="Gabriola" size="45.0" />
@@ -95,6 +95,21 @@
                   <ScrollBar orientation="VERTICAL" prefHeight="214.0" prefWidth="16.0" />
                </children>
             </FlowPane>
+            <Text fill="#053c75" layoutX="42.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ Image">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#053c75" layoutX="108.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ Song">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#053c75" layoutX="176.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ Playlist">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </children>
