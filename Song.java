@@ -69,16 +69,32 @@ public class Song {
 	}
 	
 	// Method to upload songs from a folder to a database table
-    public static void uploadSongs(int id, String folderPath, String url, String user, String password) {
+    public static void uploadSongs() throws SQLException{
+		Connection connection = Main.connect();
+		String query = "insert into songs values (?, ?, ?, ?)";
+		PreparedStatement statement = connection.prepareStatement(query);
+  
+		String directoryPath = "C:/Users/beren/OneDrive/Masaüstü/songs";         
+		File directory = new File(directoryPath); 
+		  
+		File[] files = directory.listFiles();
+		
+		for (int i = 0; i < files.length; i++) {
+			String url = directoryPath + "/" + files[i].getName();
+			String name = files[i].getName().split("-")[1].trim().split(".w")[0];
+			String artist = files[i].getName().split("-")[0].trim();
+			statement.setInt(1, i+1);
+			statement.setString(2, name);
+			statement.setString(3, url);
+			statement.setString(4, artist);
+			statement.executeUpdate();
+		}
 
     }
 	
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         
 		Class.forName("com.mysql.cj.jdbc.Driver");
-
-        String folderPath = "C:\\Users\\beren\\OneDrive\\Masaüstü\\songs";
-
-        uploadSongs(folderPath);
+        uploadSongs();
 	}
 }

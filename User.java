@@ -86,18 +86,26 @@ public class User {
 
 	}
 
-	public static ResultSet getById(int id) throws SQLException {
+	public static User getById(int id) throws SQLException {
 
 		Connection connection = Main.connect();
 		String query = "select * from users where id = ?";
 		PreparedStatement stat = connection.prepareStatement(query);
 		stat.setInt(1, id);
 		ResultSet r = stat.executeQuery();
+		if(r.next()) {
+			String username = r.getString("username");
+			String password = r.getString("password");
+			String email = r.getString("email");
+			String pictureUrl = r.getString("pictureUrl");
+			stat.close();
+			connection.close();
+			return new User(id, username, password, pictureUrl, email);
+		}
 
 		stat.close();
 		connection.close();
-
-		return r;
+		return null;
 
 	}
 

@@ -64,28 +64,38 @@ public class chatroomController {
         }
     }
 }
+private Pane createMessagePane(String text, String alignment) throws SQLException{
+    // Create an HBox to hold the text
+    HBox messageBox = new HBox();
+    messageBox.setSpacing(10); // Set spacing between elements
+    messageBox.setAlignment(Pos.CENTER); // Align text to center horizontally
 
-private Pane createMessagePane(String text, String alignment) {
-    FlowPane messagePane = new FlowPane();
-    messagePane.setPrefWidth(400); 
-
+    // Create the text node
     Text messageText = new Text(text);
     messageText.setFont(Font.font("Times New Roman", 14));
-    messageText.setFill(Color.WHITE);
 
-    messagePane.getChildren().add(messageText);
+    // Add the text to the HBox
+    messageBox.getChildren().add(messageText);
 
-    if (alignment.equals("right")) {
-        messagePane.setStyle("-fx-background-color: #053c75; -fx-padding: 5px; -fx-background-radius: 5px;");
-        messagePane.setAlignment(Pos.CENTER_RIGHT);
+    // Create a Pane to contain the HBox
+    FlowPane messagePane = new FlowPane();
+    messagePane.setPrefWidth(400); // Set preferred width
+
+    // Set alignment of the HBox within the Pane based on the specified alignment
+    if ("right".equals(alignment)) {
+        messageText.setFill(Color.WHITE);
+        messageBox.setStyle("-fx-background-color: #053c75; -fx-padding: 5px; -fx-background-radius: 5px;");
+        messagePane.getChildren().add(messageBox); // Add the HBox to the Pane
+        messagePane.setAlignment(Pos.CENTER_RIGHT); // Align the HBox to the right
     } else {
-        messagePane.setStyle("-fx-background-color: #b4bfc9; -fx-padding: 5px; -fx-background-radius: 5px;");
-        messagePane.setAlignment(Pos.CENTER_LEFT);
+        messageText.setFill(Color.BLACK);
+        messageBox.setStyle("-fx-background-color: #b4bfc9; -fx-padding: 5px; -fx-background-radius: 5px;");
+        messagePane.getChildren().add(messageBox); // Add the HBox to the Pane
+        messagePane.setAlignment(Pos.CENTER_LEFT); // Align the HBox to the left
     }
 
     return messagePane;
 }
-
     public void goToCommunityHub(MouseEvent  event) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

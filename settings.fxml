@@ -51,7 +51,7 @@
                         <Font name="Times New Roman" size="16.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" layoutX="30.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log out" underline="true">
+                  <Text fill="WHITE" layoutX="30.0" layoutY="358.0" onMouseClicked="#logOut" strokeType="OUTSIDE" strokeWidth="0.0" text="Log out" underline="true">
                      <font>
                         <Font name="Times New Roman" size="18.0" />
                      </font></Text>
