@@ -14,9 +14,6 @@ public class welcomePage extends Application {
     @FXML
     @Override
     public void start(Stage stage) {
-
-
-
         try{
             Parent root = FXMLLoader.load(getClass().getResource("welcomePage.fxml"));
             Scene scene= new Scene(root);
