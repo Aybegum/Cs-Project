@@ -4,11 +4,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Main {
-	
+
 	private static String mySqlUrl = "jdbc:mysql://localhost:3306/comusiclyPrototype";
 	private static String mySqlUsername = "root";
 	private static String mySqlPassword = "Merhaba123*";
-	
+
 	public static String getMySqlUrl() {
 		return mySqlUrl;
 	}
@@ -36,10 +36,10 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 	}
-	
+
 	public static Connection connect() throws SQLException {
-		
-		 return DriverManager.getConnection(getMySqlUrl(), getMySqlUsername(), getMySqlPassword());
-		
+
+		return DriverManager.getConnection(getMySqlUrl(), getMySqlUsername(), getMySqlPassword());
+
 	}
 }

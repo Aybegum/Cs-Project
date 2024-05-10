@@ -7,17 +7,16 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class Message {
-	
+
 	private int senderId;
 	private int communityId;
 	private String body;
-	
+
 	public Message(int senderId, int communityId, String body) {
-		
+
 		this.senderId = senderId;
 		this.communityId = communityId;
 		this.body = body;
-		
 	}
 
 	public int getSenderId() {
@@ -43,11 +42,11 @@ public class Message {
 	public void setBody(String body) {
 		this.body = body;
 	}
-	
+
 	public static Message createMessage(int senderId, int communityId, String body) throws SQLException {
-		
+
 		Connection connection = Main.connect();
-		
+
 		Message message = new Message(senderId, communityId, body);
 		String query = "insert into messages values (?, ?, ?)";
 		PreparedStatement statement = connection.prepareStatement(query);
@@ -55,48 +54,41 @@ public class Message {
 		statement.setInt(2, communityId);
 		statement.setString(3, body);
 		int count = statement.executeUpdate();
-		
+
 		return message;
-		
+
 	}
-	
+
 	public boolean isSentByCurrentUser() {
-		
 		if (User.getCurrentUser().getId() == senderId) {
 			return true;
 		}
-		
 		return false;
-
 	}
 
 	public static ArrayList<Message> getMessages() throws SQLException {
 
-		    ArrayList<Message> messages = new ArrayList<>();
+		ArrayList<Message> messages = new ArrayList<>();
 
-            Connection connection = Main.connect();
-            Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("select count(*) from messages");
-            long count;
-            if (rs.next()) {
-                  count = rs.getLong(1);
-				  ResultSet rs2 = statement.executeQuery("select * from messages");
-				  rs2.next();
-                  for (long i = count - 1; i >= 0; i--) {
-						int senderId = rs2.getInt("senderid");
-						String body = rs2.getString("body");
-						int communityId = rs2.getInt("communityid");
-                        messages.add(new Message(senderId, communityId, body));
-						rs2.next();
-                  }
-				  rs2.close();
-            }
-
-			rs.close();
-	
-			connection.close();
-
-			return messages;
+		Connection connection = Main.connect();
+		Statement statement = connection.createStatement();
+		ResultSet rs = statement.executeQuery("select count(*) from messages");
+		long count;
+		if (rs.next()) {
+			count = rs.getLong(1);
+			ResultSet rs2 = statement.executeQuery("select * from messages");
+			rs2.next();
+			for (long i = count - 1; i >= 0; i--) {
+				int senderId = rs2.getInt("senderid");
+				String body = rs2.getString("body");
+				int communityId = rs2.getInt("communityid");
+				messages.add(new Message(senderId, communityId, body));
+				rs2.next();
+			}
+			rs2.close();
+		}
+		rs.close();
+		connection.close();
+		return messages;
 	}
-	
 }

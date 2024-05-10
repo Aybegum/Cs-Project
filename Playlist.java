@@ -191,7 +191,6 @@ public class Playlist {
 			name = rs.getString("name");
 			pictureUrl = rs.getString("pictureurl");
 			return new Playlist(name, pictureUrl, id, user.getId());
-			
 		}
 		return null;
 		

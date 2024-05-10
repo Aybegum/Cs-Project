@@ -1,6 +1,9 @@
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import javax.management.loading.PrivateClassLoader;
 
 public class User {
 
@@ -9,6 +12,9 @@ public class User {
 	private String pictureUrl;
 	private String email;
 	private String password;
+	private ArrayList<User> following;
+	private ArrayList<User> followers;
+
 
 	private static User currentUser;
 
@@ -280,4 +286,54 @@ public class User {
 		statement.executeUpdate();
 	}
 
+	public ArrayList<User> follow(User user) throws SQLException{
+		ArrayList<User> followingList = new ArrayList<User>();
+		Connection connection = null;
+		Statement statement = null;
+		try {
+			connection = Main.connect();
+			String query = "INSERT INTO follower_following VALUES('"+ currentUser.id +"', '"+ user.id +"')";
+			statement = connection.createStatement();
+			statement.executeUpdate(query);
+
+			followingList.add(user);
+		}
+		finally {
+			if (statement != null) {
+                statement.close();
+            }
+            if (connection != null) {
+                connection.close();
+            }
+		}
+		return followingList;
+	}
+
+	public ArrayList<User> unfollow(User user) throws SQLException {
+		ArrayList<User> remainingFollowers = new ArrayList<User>();
+		Connection connection = null;
+        Statement statement = null;
+
+		try {
+			connection = Main.connect();
+			String query = "DELETE FROM follower_following VALUES('"+ currentUser.id +"', '"+ user.id +"')";
+			statement = connection.createStatement();
+			statement.executeUpdate(query);
+
+			remainingFollowers.remove(user);
+		}
+		finally {
+			if (statement != null) {
+                statement.close();
+            }
+            if (connection != null) {
+                connection.close();
+            }
+		}
+		return remainingFollowers;
+	}
+
+	/* public boolean isFriendsWith (User user) {
+
+	} */
 }
