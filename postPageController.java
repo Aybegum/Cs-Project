@@ -28,7 +28,7 @@ public class postPageController {
     public void postImage(MouseEvent event){
 
     }
-
+    
     public void goToChatroom(MouseEvent event) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("chatroomPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
