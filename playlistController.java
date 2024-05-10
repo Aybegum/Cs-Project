@@ -78,14 +78,14 @@ import javafx.scene.Node;
               
         }*/
         public void goToProfile(MouseEvent event) throws Exception{
-              root = FXMLLoader.load(getClass().getResource("profilePage.fxml"));
+              Parent root = FXMLLoader.load(getClass().getResource("profilePage.fxml"));
               stage = (Stage)((Node)event.getSource()).getScene().getWindow();
               scene = new Scene(root);
               stage.setScene(scene);
               stage.show();
         }
         public void goToCommunityHub(MouseEvent event) throws Exception{
-              root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
+              Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
               stage = (Stage)((Node)event.getSource()).getScene().getWindow();
               scene = new Scene(root);
               stage.setScene(scene);

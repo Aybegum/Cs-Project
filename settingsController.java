@@ -23,14 +23,14 @@ public class settingsController {
     }
     public void logOut(MouseEvent event) throws Exception{
       //userı null yapmak lazım :)))
-      root = FXMLLoader.load(getClass().getResource("welcomePage.fxml"));
+      Parent root = FXMLLoader.load(getClass().getResource("welcomePage.fxml"));
       stage = (Stage)((Node)event.getSource()).getScene().getWindow();
       scene = new Scene(root);
       stage.setScene(scene);
       stage.show();
     }
     public void goToProfile (MouseEvent event) throws Exception {
-      root = FXMLLoader.load(getClass().getResource("profilePage.fxml"));
+      Parent root = FXMLLoader.load(getClass().getResource("profilePage.fxml"));
       stage = (Stage)((Node)event.getSource()).getScene().getWindow();
       scene = new Scene(root);
       stage.setScene(scene);

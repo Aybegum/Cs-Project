@@ -19,14 +19,14 @@ public class profileController {
      private Scene scene;
      private Parent root;
      public void goToCommunityHub(MouseEvent event) throws Exception{
-          root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
+          Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
           stage = (Stage)((Node)event.getSource()).getScene().getWindow();
           scene = new Scene(root);
           stage.setScene(scene);
           stage.show();
    }
    public void goToSettings(MouseEvent event)throws Exception{
-          root = FXMLLoader.load(getClass().getResource("settings.fxml"));
+          Parent root = FXMLLoader.load(getClass().getResource("settings.fxml"));
           stage = (Stage)((Node)event.getSource()).getScene().getWindow();
           scene = new Scene(root);
           stage.setScene(scene);
