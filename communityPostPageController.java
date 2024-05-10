@@ -19,9 +19,8 @@ public class communityPostPageController {
     private Scene scene;
     private Parent root;
     
-
-    public void goToCommunityHub(MouseEvent  event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
+public void goToPost(MouseEvent  event) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("postPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
