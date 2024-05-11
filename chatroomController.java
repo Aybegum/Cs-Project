@@ -90,24 +90,27 @@ private Pane createMessagePane(String userName, String text, String alignment) t
   
     messageBox.getChildren().add(messageText);
     FlowPane messagePane = new FlowPane();
+    FlowPane messageP = new FlowPane();
     messagePane.setPrefWidth(400); 
 
     if ("right".equals(alignment)) {
         messageText.setFill(Color.WHITE);
         name.setFill(Color.WHITE);
         messageBox.setStyle("-fx-background-color: #053c75; -fx-padding: 5px; -fx-background-radius: 5px;");
-        messagePane.getChildren().add(messageBox); 
-        messagePane.getChildren().add(name);
-        messagePane.setOrientation(Orientation.VERTICAL);
-        messagePane.setAlignment(Pos.CENTER_RIGHT); 
+        messageP.getChildren().add(messageBox); 
+        messageP.getChildren().add(name);
+        messageP.setOrientation(Orientation.VERTICAL);
+        messagePane.getChildren().add(messageP);
+        messagePane.setAlignment(Pos.BOTTOM_RIGHT); 
     } else {
         messageText.setFill(Color.BLACK);
         name.setFill(Color.BLACK);
         messageBox.setStyle("-fx-background-color: #b4bfc9; -fx-padding: 5px; -fx-background-radius: 5px;");
-        messagePane.getChildren().add(messageBox); 
-        messagePane.getChildren().add(name);
-        messagePane.setOrientation(Orientation.VERTICAL);
-        messagePane.setAlignment(Pos.CENTER_LEFT); 
+        messageP.getChildren().add(messageBox); 
+        messageP.getChildren().add(name);
+        messageP.setOrientation(Orientation.VERTICAL);
+        messagePane.getChildren().add(messageP);
+        messagePane.setAlignment(Pos.BOTTOM_LEFT); 
     }
 
     return messagePane;
