@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -30,7 +31,10 @@
                   <Text fill="WHITE" layoutX="67.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Profile Picture" textAlignment="CENTER" wrappingWidth="128.3076171875">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
-                     </font></Text>
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></Text>
                   <Text fill="WHITE" layoutX="230.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Username">
                      <font>
                         <Font name="Times New Roman" size="16.0" />
@@ -54,11 +58,17 @@
                   <Text fill="WHITE" layoutX="30.0" layoutY="358.0" onMouseClicked="#logOut" strokeType="OUTSIDE" strokeWidth="0.0" text="Log out" underline="true">
                      <font>
                         <Font name="Times New Roman" size="18.0" />
-                     </font></Text>
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></Text>
                   <Button layoutX="422.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#saveChanges" text="Save Changes">
                      <font>
                         <Font name="Times New Roman" size="16.0" />
-                     </font></Button>
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></Button>
                   <TextField layoutX="370.0" layoutY="125.0" prefHeight="25.0" prefWidth="165.0" promptText="Enter Username...">
                      <font>
                         <Font name="Times New Roman" size="13.0" />
@@ -79,12 +89,21 @@
                         <Font name="Times New Roman" size="13.0" />
                      </font>
                   </PasswordField>
-                  <Polygon fx:id="backButtonTriangle" fill="#ff8800" layoutX="35.0" layoutY="33.0" onMouseClicked="#goToProfile" points="-21.38007354736328, -6.760345458984375, -10.345657348632812, 9.791290283203125, -10.345657348632812, -20.001632690429688" stroke="#ff8800" strokeType="INSIDE" />
-                  <Rectangle fx:id="backButtonRectangle" arcHeight="5.0" arcWidth="5.0" fill="#ff8800" height="8.0" layoutX="19.0" layoutY="24.0" onMouseClicked="#goToProfile" stroke="#ff8800" strokeType="INSIDE" width="23.0" />
+                  <Polygon fx:id="backButtonTriangle" fill="#ff8800" layoutX="35.0" layoutY="33.0" onMouseClicked="#goToProfile" points="-21.38007354736328, -6.760345458984375, -10.345657348632812, 9.791290283203125, -10.345657348632812, -20.001632690429688" stroke="#ff8800" strokeType="INSIDE">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></Polygon>
+                  <Rectangle fx:id="backButtonRectangle" arcHeight="5.0" arcWidth="5.0" fill="#ff8800" height="8.0" layoutX="19.0" layoutY="24.0" onMouseClicked="#goToProfile" stroke="#ff8800" strokeType="INSIDE" width="23.0">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></Rectangle>
                   <Text fx:id="communityText" fill="WHITE" layoutX="46.0" layoutY="40.0" onMouseClicked="#goToProfile" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
                      <font>
                         <Font name="Gabriola" size="40.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
                   </Text>
                </children>
             </AnchorPane>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -42,13 +43,25 @@
             <Font name="Times New Roman Bold" size="15.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2642d" height="24.0" layoutX="219.0" layoutY="319.0" onMouseClicked="#singUp" stroke="#f2642d" strokeType="INSIDE" width="170.0" />
-      <Circle fx:id="signUpButton1" fill="#f2642d" layoutX="387.0" layoutY="331.0" radius="12.0" stroke="#f2642d" strokeType="INSIDE" />
-      <Circle fx:id="signUpButton11" fill="#f2642d" layoutX="217.0" layoutY="331.0" radius="12.0" stroke="#f2642d" strokeType="INSIDE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2642d" height="24.0" layoutX="219.0" layoutY="319.0" onMouseClicked="#singUp" stroke="#f2642d" strokeType="INSIDE" width="170.0">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></Rectangle>
+      <Circle fx:id="signUpButton1" fill="#f2642d" layoutX="387.0" layoutY="331.0" onMouseClicked="#singUp" radius="12.0" stroke="#f2642d" strokeType="INSIDE">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></Circle>
+      <Circle fx:id="signUpButton11" fill="#f2642d" layoutX="217.0" layoutY="331.0" onMouseClicked="#singUp" radius="12.0" stroke="#f2642d" strokeType="INSIDE">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></Circle>
       <Text fill="WHITE" layoutX="274.0" layoutY="336.0" onMouseClicked="#singUp" strokeType="OUTSIDE" strokeWidth="0.0" text="Sing Up">
          <font>
             <Font name="Times New Roman Bold" size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
       </Text>
       <Text fill="WHITE" layoutX="191.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already have an account?">
          <font>
@@ -59,6 +72,9 @@
          <font>
             <Font name="Times New Roman Bold" size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
       </Text>
       <PasswordField fx:id="singUpPassword" layoutX="193.0" layoutY="237.0" prefHeight="25.0" prefWidth="221.0" promptText="Create Password">
          <font>

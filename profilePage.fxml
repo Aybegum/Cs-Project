@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Polygon?>
@@ -41,17 +42,29 @@
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Text>
-      <Polygon fx:id="backButtonTriangle" fill="#ff8800" layoutX="35.0" layoutY="34.0" onMouseClicked="#goToCommunityHub" points="-21.38007354736328, -6.760345458984375, -10.345657348632812, 9.791290283203125, -10.345657348632812, -20.001632690429688" stroke="#ff8800" strokeType="INSIDE" />
-      <Rectangle fx:id="backButtonRectangle" arcHeight="5.0" arcWidth="5.0" fill="#ff8800" height="8.0" layoutX="21.0" layoutY="25.0" onMouseClicked="#goToCommunityHub" stroke="#ff8800" strokeType="INSIDE" width="23.0" />
+      <Polygon fx:id="backButtonTriangle" fill="#ff8800" layoutX="35.0" layoutY="34.0" onMouseClicked="#goToCommunityHub" points="-21.38007354736328, -6.760345458984375, -10.345657348632812, 9.791290283203125, -10.345657348632812, -20.001632690429688" stroke="#ff8800" strokeType="INSIDE">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></Polygon>
+      <Rectangle fx:id="backButtonRectangle" arcHeight="5.0" arcWidth="5.0" fill="#ff8800" height="8.0" layoutX="21.0" layoutY="25.0" onMouseClicked="#goToCommunityHub" stroke="#ff8800" strokeType="INSIDE" width="23.0">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></Rectangle>
       <Text fx:id="communityText" fill="WHITE" layoutX="55.0" layoutY="40.0" onMouseClicked="#goToCommunityHub" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile Page">
          <font>
             <Font name="Gabriola" size="40.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
       </Text>
       <Text fx:id="goToSettings" fill="WHITE" layoutX="457.0" layoutY="35.0" onMouseClicked="#goToSettings" strokeType="OUTSIDE" strokeWidth="0.0" text="Go To Settings" underline="true">
          <font>
             <Font name="Times New Roman" size="20.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
       </Text>
    </children>
 </AnchorPane>

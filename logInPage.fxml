@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
@@ -32,13 +34,34 @@
                   <Font name="Times New Roman Bold" size="15.0" />
                </font>
             </Text>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2642d" height="24.0" layoutX="223.0" layoutY="278.0" onMouseClicked="#logIn" stroke="#f2642d" strokeType="INSIDE" width="159.0" />
-            <Circle fx:id="signUpButton1" fill="#f2642d" layoutX="377.0" layoutY="290.0" radius="12.0" stroke="#f2642d" strokeType="INSIDE" />
-            <Circle fx:id="signUpButton11" fill="#f2642d" layoutX="224.0" layoutY="290.0" radius="12.0" stroke="#f2642d" strokeType="INSIDE" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2642d" height="24.0" layoutX="223.0" layoutY="278.0" onMouseClicked="#logIn" stroke="#f2642d" strokeType="INSIDE" width="159.0">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <Blend />
+               </effect></Rectangle>
+            <Circle fx:id="signUpButton1" fill="#f2642d" layoutX="377.0" layoutY="290.0" radius="12.0" stroke="#f2642d" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <Blend />
+               </effect></Circle>
+            <Circle fx:id="signUpButton11" fill="#f2642d" layoutX="224.0" layoutY="290.0" radius="12.0" stroke="#f2642d" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <Blend />
+               </effect></Circle>
             <Text fill="WHITE" layoutX="280.0" layoutY="294.0" onMouseClicked="#logIn" strokeType="OUTSIDE" strokeWidth="0.0" text="Log in ">
                <font>
                   <Font name="Times New Roman Bold" size="15.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
             </Text>
             <Text fill="WHITE" layoutX="227.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Here?">
                <font>
@@ -49,6 +72,9 @@
                <font>
                   <Font name="Times New Roman Bold" size="15.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
             </Text>
             <Circle fx:id="logInButton" fill="#d9d9d9" layoutX="297.0" layoutY="73.0" radius="59.0" stroke="#d9d9d9" strokeType="INSIDE" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="67.0" layoutX="274.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
