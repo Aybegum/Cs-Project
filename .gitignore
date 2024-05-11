@@ -17,3 +17,5 @@
 # Built Visual Studio Code Extensions
 *.vsix
 >>>>>>> Stashed changes
+
+.vscode/launch.json

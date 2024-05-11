@@ -22,13 +22,6 @@ import java.util.ArrayList;
 import org.w3c.dom.Text;
 import javafx.scene.Node;
 public class communityHubController {
-<<<<<<< Updated upstream
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
-    @FXML
-    private ScrollBar scrollCommunities;
-=======
     private FlowPane flowPane;
         private Stage stage;
         private Scene scene;
@@ -36,12 +29,9 @@ public class communityHubController {
         private static int coordinateY = 122;
         private static int playlistNoNCounter = 1;
         private static Playlist playlistOnScreen;
->>>>>>> Stashed changes
 
 
-    public void scrollCommunities(){
-        scrollCommunities
-    }
+
     public void goToCommunity(MouseEvent event) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("postPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
