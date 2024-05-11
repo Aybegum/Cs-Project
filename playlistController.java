@@ -7,6 +7,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -24,15 +25,17 @@ import com.mysql.cj.xdevapi.AddResult;
 
 import javafx.scene.Node;
 public class playlistController {
+      
+      private Stage stage;
+      private Scene scene;
+      private Parent root;
+      private static int coordinateY = 122;
+      private static int playlistNoNCounter = 1;
+      private static Playlist playlistOnScreen;
+      @FXML
+      private ScrollPane allPlaylistScrollPane;
       @FXML
       private FlowPane flowPane;
-        private Stage stage;
-        private Scene scene;
-        private Parent root;
-        private static int coordinateY = 122;
-        private static int playlistNoNCounter = 1;
-        private static Playlist playlistOnScreen;
-
 
       public void renderPlaylistsOnSidebar() throws SQLException {
 
