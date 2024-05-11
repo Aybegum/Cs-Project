@@ -38,9 +38,7 @@ public class playlistController {
       private FlowPane flowPane;
 
       public void renderPlaylistsOnSidebar(MouseEvent event) throws SQLException {
-
             ArrayList<Playlist> playlists = new ArrayList<>();
-
             Connection connection = Main.connect();
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("select * from playlists where creatorid = '" + User.getCurrentUser().getId() + "' order by id desc");
