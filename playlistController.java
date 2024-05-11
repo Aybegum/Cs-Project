@@ -55,13 +55,12 @@ public class playlistController {
                   newPlaylist.setPrefSize(154,29);
                   flow.getChildren().add(newPlaylist);
             }
-            flowPane.getChildren().add(flow);
-            /*Button newPlaylist = new Button("Playlist " + playlistNoNCounter);
+           /*  Button newPlaylist = new Button("Playlist " + playlistNoNCounter);
             newPlaylist.setLayoutX(437); // it is the coordinate of the liked songs button
             newPlaylist.setLayoutY(coordinateY);
             root.getChildrenUnmodifiable().add(newPlaylist);
             playlistNoNCounter++;
-            coordinateY += 35;*/
+            coordinateY += 35; */
       }
 
         /*public void createPlaylist (String playlistName, String coverURL, Song song) {
@@ -81,4 +80,9 @@ public class playlistController {
               stage.setScene(scene);
               stage.show();
         }
+
+        public void createPlaylist1 (MouseEvent event) throws SQLException{
+            Playlist.createPlaylist(User.getCurrentUser(), "Playlist", "efuhjıdfsjjd");
+            renderPlaylistsOnSidebar(event);
+        } 
 } 
