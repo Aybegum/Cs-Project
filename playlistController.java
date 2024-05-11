@@ -39,6 +39,7 @@ public class playlistController {
       private ScrollPane allPlaylistScrollPane;
       @FXML
       private FlowPane flowPane;
+      public int countPlay = 0;
 
       public void renderPlaylistsOnSidebar(MouseEvent event) throws SQLException {
             FlowPane flow = new FlowPane();
@@ -53,14 +54,13 @@ public class playlistController {
                         playlists.add(Playlist.getPlaylistByIdAndUser(i, User.getCurrentUser()));
                   }
             }
-            count = 0;
             for (Playlist playlist : playlists) {
                   Button newPlaylist = new Button("Playlist");
-                  newPlaylist.setFont(Font.font("Times New Roman", 14));
+                  newPlaylist.setFont(Font.font("Times New Roman", 16));
                   newPlaylist.setPrefSize(154,29);
                   flowPane.getChildren().add(newPlaylist);
-                  count++;
-                  if(count == 6){
+                  countPlay++;
+                  if(countPlay == 6){
                         break;
                   }
             }
