@@ -78,33 +78,31 @@ private Pane createMessagePane(String userName, String text, String alignment) t
     messageBox.setAlignment(Pos.CENTER); // Align text to center horizontally
 
     // Create the text node
-    Text messageText = new Text(text+"\n");
+    Text messageText = new Text(text);
     messageText.setFont(Font.font("Times New Roman", 14));
 
     Text name = new Text("@"+userName);
-    name.setFont(Font.font("Times New Roman", 14));
+    name.setFont(Font.font("Times New Roman", 12));
 
-    // Add the text to the HBox
+  
     messageBox.getChildren().add(messageText);
-    messageBox.getChildren().add(name);
-
-    // Create a Pane to contain the HBox
     FlowPane messagePane = new FlowPane();
-    messagePane.setPrefWidth(400); // Set preferred width
+    messagePane.setPrefWidth(400); 
 
-    // Set alignment of the HBox within the Pane based on the specified alignment
     if ("right".equals(alignment)) {
         messageText.setFill(Color.WHITE);
         name.setFill(Color.WHITE);
         messageBox.setStyle("-fx-background-color: #053c75; -fx-padding: 5px; -fx-background-radius: 5px;");
-        messagePane.getChildren().add(messageBox); // Add the HBox to the Pane
-        messagePane.setAlignment(Pos.CENTER_RIGHT); // Align the HBox to the right
+        messagePane.getChildren().add(messageBox); 
+        messagePane.getChildren().add(name);
+        messagePane.setAlignment(Pos.CENTER_RIGHT); 
     } else {
         messageText.setFill(Color.BLACK);
         name.setFill(Color.BLACK);
         messageBox.setStyle("-fx-background-color: #b4bfc9; -fx-padding: 5px; -fx-background-radius: 5px;");
-        messagePane.getChildren().add(messageBox); // Add the HBox to the Pane
-        messagePane.setAlignment(Pos.CENTER_LEFT); // Align the HBox to the left
+        messagePane.getChildren().add(messageBox); 
+        messagePane.getChildren().add(name);
+        messagePane.setAlignment(Pos.CENTER_LEFT); 
     }
 
     return messagePane;
