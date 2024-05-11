@@ -20,6 +20,7 @@ import javafx.fxml.*;
 import javafx.geometry.Pos;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 
@@ -74,8 +75,8 @@ public class chatroomController implements Initializable {
 private Pane createMessagePane(String userName, String text, String alignment) throws SQLException{
     // Create an HBox to hold the text
     HBox messageBox = new HBox();
-    messageBox.setSpacing(10); // Set spacing between elements
-    messageBox.setAlignment(Pos.CENTER); // Align text to center horizontally
+    messageBox.setSpacing(5); 
+    messageBox.setAlignment(Pos.CENTER); 
 
     // Create the text node
     Text messageText = new Text(text);
