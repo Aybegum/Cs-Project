@@ -258,5 +258,16 @@
             </AnchorPane>
          </content>
       </ScrollPane>
+<<<<<<< Updated upstream
+=======
+      <Button layoutX="451.0" layoutY="66.0" mnemonicParsing="false" onMouseClicked="#goToPlaylist" prefHeight="29.0" prefWidth="149.0" text="Liked Songs">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </Button>
+      <Circle fill="#b4bfc9" layoutX="405.0" layoutY="21.0" onMouseClicked="#goToProfile" radius="16.0" stroke="#b4bfc9" strokeType="INSIDE" />
+      <Circle fill="#053c75" layoutX="405.0" layoutY="11.0" onMouseClicked="#goToProfile" radius="6.0" stroke="#053c75" strokeType="INSIDE" />
+      <Circle fill="#053c75" layoutX="405.0" layoutY="28.0" onMouseClicked="#goToProfile" radius="9.0" stroke="#053c75" strokeType="INSIDE" />
+>>>>>>> Stashed changes
    </children>
 </AnchorPane>

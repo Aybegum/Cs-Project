@@ -132,6 +132,7 @@
                   <Font name="Times New Roman" size="12.0" />
                </font>
             </Text>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c1cad3" height="5.0" layoutX="483.0" layoutY="322.0" stroke="BLACK" strokeType="INSIDE" width="170.0" />
          </children>
       </AnchorPane>
    </children>

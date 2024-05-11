@@ -82,6 +82,7 @@
                   <ScrollBar orientation="VERTICAL" prefHeight="214.0" prefWidth="16.0" />
                </children>
             </FlowPane>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c1cad3" height="5.0" layoutX="477.0" layoutY="321.0" stroke="BLACK" strokeType="INSIDE" width="170.0" />
       </children>
     </AnchorPane>
   </children>

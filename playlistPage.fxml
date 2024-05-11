@@ -97,6 +97,7 @@
                   </Button>
                </children>
             </FlowPane>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c1cad3" height="5.0" layoutX="483.0" layoutY="322.0" stroke="BLACK" strokeType="INSIDE" width="170.0" />
          </children>
       </AnchorPane>
       <Accordion />
