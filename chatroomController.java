@@ -4,6 +4,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.ScrollEvent.VerticalTextScrollUnits;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -14,7 +15,9 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
+import javafx.geometry.VerticalDirection;
 import javafx.fxml.*;
 import javafx.geometry.Pos;
 import javafx.scene.layout.HBox;
@@ -95,6 +98,7 @@ private Pane createMessagePane(String userName, String text, String alignment) t
         messageBox.setStyle("-fx-background-color: #053c75; -fx-padding: 5px; -fx-background-radius: 5px;");
         messagePane.getChildren().add(messageBox); 
         messagePane.getChildren().add(name);
+        messagePane.setOrientation(Orientation.VERTICAL);
         messagePane.setAlignment(Pos.CENTER_RIGHT); 
     } else {
         messageText.setFill(Color.BLACK);
@@ -102,6 +106,7 @@ private Pane createMessagePane(String userName, String text, String alignment) t
         messageBox.setStyle("-fx-background-color: #b4bfc9; -fx-padding: 5px; -fx-background-radius: 5px;");
         messagePane.getChildren().add(messageBox); 
         messagePane.getChildren().add(name);
+        messagePane.setOrientation(Orientation.VERTICAL);
         messagePane.setAlignment(Pos.CENTER_LEFT); 
     }
 
