@@ -35,6 +35,7 @@ public class postPageController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+        
     }
     public void goToCommunityHub(MouseEvent  event) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));

@@ -73,7 +73,4 @@ public class welcomePageController {
             stage.show();
         }
     }
-
-
- 
 }

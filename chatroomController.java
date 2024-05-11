@@ -24,11 +24,13 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 import javafx.scene.Node;
-public class chatroomController {
+public class chatroomController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -50,6 +52,9 @@ public class chatroomController {
             }
         }
     }*/
+
+    
+
     public void renderMessages() throws SQLException {
 
     ArrayList<Message> messages = Message.getMessages();
@@ -65,6 +70,19 @@ public class chatroomController {
         }
     }
 }
+
+    public void renderMessage(Message message) throws SQLException {
+
+        if (message.isSentByCurrentUser()) {
+            // Render on the right
+            Pane messagePane = createMessagePane(message.getBody(), "right");
+            chatPane.getChildren().add(messagePane);
+        } else {
+            // Render on the left
+            Pane messagePane = createMessagePane(message.getBody(), "left");
+            chatPane.getChildren().add(messagePane);
+        }
+    }
 private Pane createMessagePane(String text, String alignment) throws SQLException{
     // Create an HBox to hold the text
     HBox messageBox = new HBox();
@@ -127,9 +145,18 @@ private Pane createMessagePane(String text, String alignment) throws SQLExceptio
     }
     public void postMessage()throws SQLException{
         String text = messageField.getText(); 
-        Message.createMessage(User.getCurrentUser().getId(), Community.getCurrentCommunityId(), text);
-        renderMessages();
+        Message message = Message.createMessage(User.getCurrentUser().getId(), Community.getCurrentCommunityId(), text);
+        renderMessage(message);
         messageField.setText("");
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        try {
+            renderMessages();
+        } catch (SQLException e) {
+            System.out.println("Error in rendering messages: SQLException");
+        }
     }
 }
 

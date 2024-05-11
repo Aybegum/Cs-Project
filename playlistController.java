@@ -37,7 +37,7 @@ public class playlistController {
       @FXML
       private FlowPane flowPane;
 
-      public void renderPlaylistsOnSidebar() throws SQLException {
+      public void renderPlaylistsOnSidebar(MouseEvent event) throws SQLException {
 
             ArrayList<Playlist> playlists = new ArrayList<>();
 
@@ -81,4 +81,3 @@ public class playlistController {
               stage.show();
         }
 } 
-

@@ -13,9 +13,8 @@ public class User {
 	private String pictureUrl;
 	private String email;
 	private String password;
-	private ArrayList<User> following;
-	private ArrayList<User> followers;
-
+	private ArrayList<User> followingList;
+	private ArrayList<User> followerList;
 
 	private static User currentUser;
 
@@ -26,6 +25,8 @@ public class User {
 		this.email = email;
 		this.password = password;
 		this.pictureUrl = pictureUrl;
+		setFollowingList();
+		setFollowerList();
 
 	}
 
@@ -79,6 +80,36 @@ public class User {
 		this.password = password;
 	}
 
+	public void setFollowingList() throws SQLException {
+		Connection connection = Main.connect();
+		Statement statement = connection.createStatement();
+		ResultSet result = statement.executeQuery("select * from follower_following where followerid ='" + id + "'");
+
+		for (int i = 0; result.next(); i++) {
+			followingList.set(i, User.getById(result.getInt("followingid")));
+		}
+
+	}
+
+	public void setFollowerList() throws SQLException {
+		Connection connection = Main.connect();
+		Statement statement = connection.createStatement();
+		ResultSet result = statement.executeQuery("select * from follower_following where followingid ='" + id + "'");
+
+		for (int i = 0; result.next(); i++) {
+			followerList.set(i, User.getById(result.getInt("followerid")));
+		}
+
+	}
+
+	public ArrayList<User> getFollowerList() {
+		return followerList;
+	}
+
+	public ArrayList<User> getFollowingList() {
+		return followingList;
+	}
+
 	// Methods
 
 	public static ResultSet getByUsername(String username) throws SQLException {
@@ -100,7 +131,7 @@ public class User {
 		PreparedStatement stat = connection.prepareStatement(query);
 		stat.setInt(1, id);
 		ResultSet r = stat.executeQuery();
-		if(r.next()) {
+		if (r.next()) {
 			String username = r.getString("username");
 			String password = r.getString("password");
 			String email = r.getString("email");
@@ -149,7 +180,7 @@ public class User {
 		if (!isValidUsername(username)) {
 			welcomePage.showInvalidUsernameError();
 			return null;
-		} 
+		}
 
 		if (!isUsernameUnique(username)) {
 			welcomePage.showNotUniqueUsernameError();
@@ -192,6 +223,7 @@ public class User {
 		}
 		return true;
 	}
+
 	private static boolean isUsernameUnique(String username) throws SQLException {
 		Connection connection = Main.connect();
 		Statement statement = connection.createStatement();
@@ -287,56 +319,58 @@ public class User {
 		statement.executeUpdate();
 	}
 
-	public ArrayList<User> follow(User user) throws SQLException{
-		ArrayList<User> followingList = new ArrayList<User>();
+	public ArrayList<User> follow(User user) throws SQLException {
+
 		Connection connection = null;
 		Statement statement = null;
 		try {
 			connection = Main.connect();
-			String query = "INSERT INTO follower_following VALUES('"+ currentUser.id +"', '"+ user.id +"')";
+			String query = "INSERT INTO follower_following VALUES('" + currentUser.id + "', '" + user.id + "')";
 			statement = connection.createStatement();
 			statement.executeUpdate(query);
 
 			followingList.add(user);
-		}
-		finally {
+		} finally {
 			if (statement != null) {
-                statement.close();
-            }
-            if (connection != null) {
-                connection.close();
-            }
+				statement.close();
+			}
+			if (connection != null) {
+				connection.close();
+			}
 		}
 		return followingList;
 	}
 
 	public ArrayList<User> unfollow(User user) throws SQLException {
-		ArrayList<User> remainingFollowers = new ArrayList<User>();
+
 		Connection connection = null;
-        Statement statement = null;
+		Statement statement = null;
 
 		try {
 			connection = Main.connect();
-			String query = "DELETE FROM follower_following VALUES('"+ currentUser.id +"', '"+ user.id +"')";
+			String query = "DELETE FROM follower_following VALUES('" + currentUser.id + "', '" + user.id + "')";
 			statement = connection.createStatement();
 			statement.executeUpdate(query);
 
-			remainingFollowers.remove(user);
-		}
-		finally {
+			followingList.remove(user);
+		} finally {
 			if (statement != null) {
-                statement.close();
-            }
-            if (connection != null) {
-                connection.close();
-            }
+				statement.close();
+			}
+			if (connection != null) {
+				connection.close();
+			}
 		}
-		return remainingFollowers;
+		return followingList;
 	}
 
-	/* public boolean isFriendsWith (User user) {
+	public boolean isFriendsWith(User user) {
 
-	} */
+		boolean isFriendsWith = followerList.get(followerList.indexOf(user)) == followingList
+				.get(followingList.indexOf(user));
+		return isFriendsWith;
+	}
+
 }
 =======
 import java.sql.*;
