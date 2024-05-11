@@ -1,5 +1,4 @@
 import javafx.event.ActionEvent ;
-import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
@@ -14,7 +13,6 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.geometry.VerticalDirection;
@@ -22,7 +20,6 @@ import javafx.fxml.*;
 import javafx.geometry.Pos;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 
@@ -84,7 +81,7 @@ private Pane createMessagePane(String userName, String text, String alignment) t
     Text messageText = new Text(text);
     messageText.setFont(Font.font("Times New Roman", 14));
 
-    Text name = new Text("@"+userName);
+    Text name = new Text("\n"+"@"+userName);
     name.setFont(Font.font("Times New Roman", 12));
 
   
@@ -92,10 +89,12 @@ private Pane createMessagePane(String userName, String text, String alignment) t
     FlowPane messagePane = new FlowPane();
     FlowPane messageP = new FlowPane();
     messagePane.setPrefWidth(400); 
+    messageP.setPrefHeight(55); 
+    messagePane.setPrefHeight(0); 
 
     if ("right".equals(alignment)) {
         messageText.setFill(Color.WHITE);
-        name.setFill(Color.WHITE);
+        name.setFill(Color.BLACK);
         messageBox.setStyle("-fx-background-color: #053c75; -fx-padding: 5px; -fx-background-radius: 5px;");
         messageP.getChildren().add(messageBox); 
         messageP.getChildren().add(name);
