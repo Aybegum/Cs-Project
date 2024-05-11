@@ -38,6 +38,7 @@ public class playlistController {
       private FlowPane flowPane;
 
       public void renderPlaylistsOnSidebar(MouseEvent event) throws SQLException {
+            FlowPane flow = new FlowPane();
             ArrayList<Playlist> playlists = new ArrayList<>();
             Connection connection = Main.connect();
             Statement statement = connection.createStatement();
@@ -51,14 +52,16 @@ public class playlistController {
             }
             for (Playlist playlist : playlists) {
                   Button newPlaylist = new Button("Playlist");
-                  flowPane.getChildren().add(newPlaylist);
+                  newPlaylist.setPrefSize(154,29);
+                  flow.getChildren().add(newPlaylist);
             }
-            Button newPlaylist = new Button("Playlist " + playlistNoNCounter);
+            flowPane.getChildren().add(flow);
+            /*Button newPlaylist = new Button("Playlist " + playlistNoNCounter);
             newPlaylist.setLayoutX(437); // it is the coordinate of the liked songs button
             newPlaylist.setLayoutY(coordinateY);
             root.getChildrenUnmodifiable().add(newPlaylist);
             playlistNoNCounter++;
-            coordinateY += 35;
+            coordinateY += 35;*/
       }
 
         /*public void createPlaylist (String playlistName, String coverURL, Song song) {
