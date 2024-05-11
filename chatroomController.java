@@ -75,8 +75,6 @@ public class chatroomController implements Initializable {
 private Pane createMessagePane(String userName, String text, String alignment) throws SQLException{
     // Create an HBox to hold the text
     HBox messageBox = new HBox();
-    HBox nameBox = new HBox();
-    nameBox.setSpacing(5);
     messageBox.setSpacing(5); 
     messageBox.setAlignment(Pos.CENTER); 
 
@@ -104,8 +102,6 @@ private Pane createMessagePane(String userName, String text, String alignment) t
         messageP.getChildren().add(messageBox); 
         messageP.getChildren().add(name);
         messageP.setOrientation(Orientation.VERTICAL);
-        messagePane.getChildren().add(messageBox);
-        //messagePane.getChildren().add(nameBox);
         messagePane.getChildren().add(messageP);
         messageP.setAlignment(Pos.CENTER_RIGHT); 
         messagePane.setAlignment(Pos.CENTER_RIGHT); 
@@ -117,7 +113,6 @@ private Pane createMessagePane(String userName, String text, String alignment) t
         messageP.getChildren().add(name);
         messageP.setOrientation(Orientation.VERTICAL);
         messagePane.getChildren().add(messageBox);
-        //messagePane.getChildren().add(nameBox);
         messagePane.getChildren().add(messageP);
         messagePane.setAlignment(Pos.CENTER_LEFT);
         messageP.setAlignment(Pos.CENTER_LEFT);  
