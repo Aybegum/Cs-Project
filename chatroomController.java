@@ -76,17 +76,19 @@ private Pane createMessagePane(String userName, String text, String alignment) t
     // Create an HBox to hold the text
     HBox messageBox = new HBox();
     HBox nameBox = new HBox();
-    nameBox.setSpacing(0);
+    nameBox.setSpacing(5);
     messageBox.setSpacing(5); 
     messageBox.setAlignment(Pos.CENTER); 
+
 
     // Create the text node
     Text messageText = new Text(text);
     messageText.setFont(Font.font("Times New Roman", 14));
+    messageText.setWrappingWidth(0);
 
-    Text name = new Text("\n"+"@"+userName);
+    Text name = new Text("@"+userName);
     name.setFont(Font.font("Times New Roman", 12));
-    nameBox.getChildren().add(name);
+    //nameBox.getChildren().add(name);
 
     messageBox.getChildren().add(messageText);
     FlowPane messagePane = new FlowPane();
@@ -103,8 +105,8 @@ private Pane createMessagePane(String userName, String text, String alignment) t
         messageP.getChildren().add(name);
         messageP.setOrientation(Orientation.VERTICAL);
         messagePane.getChildren().add(messageBox);
-        messagePane.getChildren().add(nameBox);
-        //messagePane.getChildren().add(messageP);
+        //messagePane.getChildren().add(nameBox);
+        messagePane.getChildren().add(messageP);
         messageP.setAlignment(Pos.CENTER_RIGHT); 
         messagePane.setAlignment(Pos.CENTER_RIGHT); 
     } else {
@@ -115,8 +117,8 @@ private Pane createMessagePane(String userName, String text, String alignment) t
         messageP.getChildren().add(name);
         messageP.setOrientation(Orientation.VERTICAL);
         messagePane.getChildren().add(messageBox);
-        messagePane.getChildren().add(nameBox);
-        //messagePane.getChildren().add(messageP);
+        //messagePane.getChildren().add(nameBox);
+        messagePane.getChildren().add(messageP);
         messagePane.setAlignment(Pos.CENTER_LEFT);
         messageP.setAlignment(Pos.CENTER_LEFT);  
     }
