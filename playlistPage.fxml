@@ -91,7 +91,7 @@
             </Text>
             <FlowPane fx:id="flowPane" layoutX="481.0" layoutY="56.0" orientation="VERTICAL" prefHeight="228.0" prefWidth="170.0">
                <children>
-                  <Button fx:id="likedSongs" mnemonicParsing="false" onMouseClicked="#goToPlaylist" prefHeight="29.0" prefWidth="154.0" text="Liked Songs">
+                  <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="154.0" text="Liked Songs">
                      <font>
                         <Font name="Times New Roman" size="16.0" />
                      </font>
