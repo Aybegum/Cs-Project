@@ -55,6 +55,7 @@ public class playlistController {
                   newPlaylist.setPrefSize(154,29);
                   flow.getChildren().add(newPlaylist);
             }
+            flowPane.getChildren().add(flow);
            /*  Button newPlaylist = new Button("Playlist " + playlistNoNCounter);
             newPlaylist.setLayoutX(437); // it is the coordinate of the liked songs button
             newPlaylist.setLayoutY(coordinateY);
