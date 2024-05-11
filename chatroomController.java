@@ -78,7 +78,7 @@ private Pane createMessagePane(String userName, String text, String alignment) t
     messageBox.setAlignment(Pos.CENTER); // Align text to center horizontally
 
     // Create the text node
-    Text messageText = new Text(text);
+    Text messageText = new Text(text+"\n");
     messageText.setFont(Font.font("Times New Roman", 14));
 
     Text name = new Text("@"+userName);
@@ -95,11 +95,13 @@ private Pane createMessagePane(String userName, String text, String alignment) t
     // Set alignment of the HBox within the Pane based on the specified alignment
     if ("right".equals(alignment)) {
         messageText.setFill(Color.WHITE);
+        name.setFill(Color.WHITE);
         messageBox.setStyle("-fx-background-color: #053c75; -fx-padding: 5px; -fx-background-radius: 5px;");
         messagePane.getChildren().add(messageBox); // Add the HBox to the Pane
         messagePane.setAlignment(Pos.CENTER_RIGHT); // Align the HBox to the right
     } else {
         messageText.setFill(Color.BLACK);
+        name.setFill(Color.BLACK);
         messageBox.setStyle("-fx-background-color: #b4bfc9; -fx-padding: 5px; -fx-background-radius: 5px;");
         messagePane.getChildren().add(messageBox); // Add the HBox to the Pane
         messagePane.setAlignment(Pos.CENTER_LEFT); // Align the HBox to the left
