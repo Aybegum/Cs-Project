@@ -6,6 +6,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollBar;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,8 +18,13 @@ public class communityHubController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    @FXML
+    private ScrollBar scrollCommunities;
 
 
+    public void scrollCommunities(){
+        scrollCommunities
+    }
     public void goToCommunity(MouseEvent event) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("postPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
