@@ -10,6 +10,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 import java.io.IOException;
@@ -50,10 +53,16 @@ public class playlistController {
                         playlists.add(Playlist.getPlaylistByIdAndUser(i, User.getCurrentUser()));
                   }
             }
+            count = 0;
             for (Playlist playlist : playlists) {
                   Button newPlaylist = new Button("Playlist");
+                  newPlaylist.setFont(Font.font("Times New Roman", 14));
                   newPlaylist.setPrefSize(154,29);
                   flowPane.getChildren().add(newPlaylist);
+                  count++;
+                  if(count == 6){
+                        break;
+                  }
             }
             //flowPane.getChildren().add(flow);
            /*  Button newPlaylist = new Button("Playlist " + playlistNoNCounter);
