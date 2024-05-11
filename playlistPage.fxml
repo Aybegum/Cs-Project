@@ -44,7 +44,7 @@
                   <Font name="Gabriola" size="45.0" />
                </font>
             </Text>
-            <Text fx:id="createPlaylist" fill="WHITE" layoutX="480.0" layoutY="309.0" onMouseClicked="#renderPlaylistsOnSidebar" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Playlist" textAlignment="CENTER" wrappingWidth="179.0">
+            <Text fx:id="createPlaylist" fill="WHITE" layoutX="480.0" layoutY="309.0" onMouseClicked="#createPlaylist1" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Playlist" textAlignment="CENTER" wrappingWidth="179.0">
                <font>
                   <Font name="Times New Roman" size="18.0" />
                </font>
