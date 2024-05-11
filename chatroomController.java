@@ -57,31 +57,21 @@ public class chatroomController implements Initializable {
         
     ArrayList<Message> messages = Message.getMessages();
     for (Message message : messages) {
-        if (message.isSentByCurrentUser()) {
-            // Render on the right
-            Pane messagePane = createMessagePane(message.getBody(), "right");
-            chatPane.getChildren().add(messagePane);
-        } else {
-            // Render on the left
-            Pane messagePane = createMessagePane(message.getBody(), "left");
-            chatPane.getChildren().add(messagePane);
-        }
+        renderMessage(message);
     }
 }
 
     public void renderMessage(Message message) throws SQLException {
-
+        String name = User.getById(message.getSenderId()).getUsername();
         if (message.isSentByCurrentUser()) {
-            // Render on the right
-            Pane messagePane = createMessagePane(message.getBody(), "right");
+            Pane messagePane = createMessagePane(name,message.getBody(), "right");
             chatPane.getChildren().add(messagePane);
         } else {
-            // Render on the left
-            Pane messagePane = createMessagePane(message.getBody(), "left");
+            Pane messagePane = createMessagePane(name,message.getBody(), "left");
             chatPane.getChildren().add(messagePane);
         }
     }
-private Pane createMessagePane(String text, String alignment) throws SQLException{
+private Pane createMessagePane(String userName, String text, String alignment) throws SQLException{
     // Create an HBox to hold the text
     HBox messageBox = new HBox();
     messageBox.setSpacing(10); // Set spacing between elements
@@ -91,8 +81,12 @@ private Pane createMessagePane(String text, String alignment) throws SQLExceptio
     Text messageText = new Text(text);
     messageText.setFont(Font.font("Times New Roman", 14));
 
+    Text name = new Text("@"+userName);
+    name.setFont(Font.font("Times New Roman", 14));
+
     // Add the text to the HBox
     messageBox.getChildren().add(messageText);
+    messageBox.getChildren().add(name);
 
     // Create a Pane to contain the HBox
     FlowPane messagePane = new FlowPane();
