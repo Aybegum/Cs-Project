@@ -89,7 +89,7 @@ private Pane createMessagePane(String userName, String text, String alignment) t
     FlowPane messagePane = new FlowPane();
     FlowPane messageP = new FlowPane();
     messagePane.setPrefWidth(400); 
-    messageP.setPrefHeight(55); 
+    messageP.setPrefHeight(52); 
     messagePane.setPrefHeight(0); 
 
     if ("right".equals(alignment)) {
@@ -100,7 +100,8 @@ private Pane createMessagePane(String userName, String text, String alignment) t
         messageP.getChildren().add(name);
         messageP.setOrientation(Orientation.VERTICAL);
         messagePane.getChildren().add(messageP);
-        messagePane.setAlignment(Pos.BOTTOM_RIGHT); 
+        messageP.setAlignment(Pos.CENTER_RIGHT); 
+        messagePane.setAlignment(Pos.CENTER_RIGHT); 
     } else {
         messageText.setFill(Color.BLACK);
         name.setFill(Color.BLACK);
@@ -109,7 +110,8 @@ private Pane createMessagePane(String userName, String text, String alignment) t
         messageP.getChildren().add(name);
         messageP.setOrientation(Orientation.VERTICAL);
         messagePane.getChildren().add(messageP);
-        messagePane.setAlignment(Pos.BOTTOM_LEFT); 
+        messagePane.setAlignment(Pos.CENTER_LEFT);
+        messageP.setAlignment(Pos.CENTER_LEFT);  
     }
 
     return messagePane;
