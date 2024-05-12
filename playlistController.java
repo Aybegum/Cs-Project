@@ -55,6 +55,7 @@ public class playlistController implements Initializable{
                   count = rs.getInt("id");
                   for (int i = count - 1; i >= 0; i--) {
                         playlists.add(Playlist.getPlaylistByIdAndUser(i, User.getCurrentUser()));
+                        playlistNoNCounter++;
                   }
             }
             if(playlistNoNCounter <= 6){
