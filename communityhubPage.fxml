@@ -50,7 +50,7 @@
          </font>
       </Text>
       <Rectangle fx:id="createPlaylist" arcHeight="5.0" arcWidth="5.0" fill="#eb8f05" height="30.0" layoutX="440.0" layoutY="334.0" stroke="BLACK" strokeType="INSIDE" width="163.0" />
-      <Text fx:id="createPlaylist1" fill="WHITE" layoutX="444.0" layoutY="355.0" onMouseClicked="#renderPlaylistsOnSidebar" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Playlist" textAlignment="CENTER" wrappingWidth="156.0">
+      <Text fx:id="createPlaylist1" fill="WHITE" layoutX="444.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Playlist" textAlignment="CENTER" wrappingWidth="156.0">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
@@ -72,6 +72,19 @@
       <Circle fx:id="playButton1" fill="#cfdad9" layoutX="523.0" layoutY="442.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
       <Polygon fill="#c1cad3" layoutX="529.0" layoutY="398.0" points="47.49627685546875, 45.17755126953125, 22.41064453125, 60.36004638671875, 22.41064453125, 25.9464111328125" stroke="BLACK" strokeType="INSIDE" />
       <Polygon fx:id="playButton" layoutX="494.0" layoutY="399.0" points="40.30889892578125, 43.64715576171875, 22.41064453125, 52.25054931640625, 22.41064453125, 34.031585693359375" stroke="BLACK" strokeType="INSIDE" />
+      <FlowPane layoutX="441.0" layoutY="75.0" orientation="VERTICAL" prefHeight="257.0" prefWidth="165.0">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#goToPlaylist" prefHeight="29.0" prefWidth="149.0" text="Liked Songs">
+               <font>
+                  <Font name="Times New Roman" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+            <ScrollBar orientation="VERTICAL" prefHeight="233.0" prefWidth="16.0" />
+         </children>
+      </FlowPane>
       <ScrollPane layoutX="12.0" layoutY="141.0" prefHeight="316.0" prefWidth="414.0">
          <content>
             <AnchorPane prefHeight="446.0" prefWidth="386.0">
@@ -245,18 +258,5 @@
             </AnchorPane>
          </content>
       </ScrollPane>
-      <FlowPane fx:id="flowPane" layoutX="440.0" layoutY="75.0" orientation="VERTICAL" prefHeight="258.0" prefWidth="170.0">
-         <children>
-            <Button mnemonicParsing="false" onMouseClicked="#goToPlaylist" prefHeight="29.0" prefWidth="154.0" text="Liked Songs">
-               <font>
-                  <Font name="Times New Roman" size="16.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="OPEN_HAND" />
-               </cursor>
-            </Button>
-            <ScrollBar orientation="VERTICAL" prefHeight="255.0" prefWidth="16.0" />
-         </children>
-      </FlowPane>
    </children>
 </AnchorPane>
