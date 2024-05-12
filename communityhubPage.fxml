@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -49,8 +50,8 @@
             <Font name="Times New Roman" size="14.0" />
          </font>
       </Text>
-      <Rectangle fx:id="createPlaylist" arcHeight="5.0" arcWidth="5.0" fill="#eb8f05" height="30.0" layoutX="440.0" layoutY="334.0" onMouseClicked="#createPlaylist1" stroke="BLACK" strokeType="INSIDE" width="163.0" />
-      <Text fx:id="createPlaylist1" fill="WHITE" layoutX="444.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Playlist" textAlignment="CENTER" wrappingWidth="156.0">
+      <Rectangle fx:id="createPlaylist" arcHeight="5.0" arcWidth="5.0" fill="#eb8f05" height="30.0" layoutX="440.0" layoutY="334.0" stroke="BLACK" strokeType="INSIDE" width="163.0" />
+      <Text fx:id="createPlaylist1" fill="WHITE" layoutX="444.0" layoutY="355.0" onMouseClicked="#createPlaylist1" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Playlist" textAlignment="CENTER" wrappingWidth="156.0">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
@@ -258,5 +259,22 @@
             </AnchorPane>
          </content>
       </ScrollPane>
+      <Circle fill="#b4bfc9" layoutX="405.0" layoutY="23.0" onMouseClicked="#goToProfile" radius="16.0" stroke="#b4bfc9" strokeType="INSIDE">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Circle>
+      <Circle fill="#053c75" layoutX="405.0" layoutY="14.0" onMouseClicked="#goToProfile" radius="6.0" stroke="#053c75" strokeType="INSIDE">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Circle>
+      <Circle fill="#053c75" layoutX="405.0" layoutY="29.0" onMouseClicked="#goToProfile" radius="9.0" stroke="#053c75" strokeType="INSIDE">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Circle>
+      <Circle fill="#c1cad3" layoutX="357.0" layoutY="19.0" onMouseClicked="#goToSearchPage" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Line endX="-28.999969482421875" endY="4.999996185302734" layoutX="401.0" layoutY="29.0" startX="-37.999969482421875" startY="-4.000005722045898" />
    </children>
 </AnchorPane>

@@ -86,6 +86,20 @@ public class communityHubController implements Initializable{
                   displayPlaylist();
             }
       }
+      public void goToProfile(MouseEvent event) throws Exception {
+            Parent root = FXMLLoader.load(getClass().getResource("profilePage.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+      }
+      public void goToSearchPage(MouseEvent event) throws Exception {
+            Parent root = FXMLLoader.load(getClass().getResource("searchpage.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+      }
       public void displayPlaylist()throws SQLException{
             Button newPlaylist = new Button("Playlist");
             newPlaylist.setFont(Font.font("Times New Roman", 16));

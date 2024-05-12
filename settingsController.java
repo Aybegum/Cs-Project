@@ -1,23 +1,54 @@
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.shape.Circle;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
-import java.io.IOException;
-import org.w3c.dom.Text;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+
+
+
 import javafx.scene.Node;
 public class settingsController {
     private Stage stage;
     private Scene scene;
     private Parent root;
   
+    @FXML
+    private PasswordField confirmPassword;
+
+    @FXML
+    private Button savePasswordButton;
+
+    @FXML
+    private Button saveUsernameButton;
+
+    @FXML
+    private PasswordField updatePassword;
+
+    @FXML
+    private TextField updateUsername;
+
+    @FXML
+    private Pane updatePasswordPane;
+
+    @FXML
+    private Pane updateUsernamePane;
+
     public void saveChanges () {
   
     }
@@ -68,5 +99,116 @@ public class settingsController {
     alert.setContentText("The current password you entered is wrong.");
     alert.showAndWait();
 }
+private static boolean isValidUsername(String username) throws SQLException {
+  if (!username.trim().equals(username) || username.length() < 3 || !username.toLowerCase().equals(username)) {
+    return false;
+  }
+  return true;
+}
+public void updateUsername (MouseEvent event) throws SQLException {
+
+		if(!isValidUsername(updateUsername.getText())) {
+			settingsController.showInvalidUsernameError();
+			return;
+		}
+
+		if(!isUsernameUnique(updateUsername.getText())) {
+			settingsController.showNotUniqueUsernameError();
+			return;
+		}
+
+		Connection connection = Main.connect();
+		java.sql.Statement statement = connection.createStatement();
+		int count = statement.executeUpdate("update users set username = '" + updateUsername.getText() + "' where id = '" + User.getCurrentUser().getId() + "'");
+		
+		statement.close();
+		connection.close();
+    Label updatedUsername = new Label("Username is updated!");
+    updatedUsername.setFont(Font.font("Times New Roman", 12));
+    updatedUsername.setStyle("-fx-background-color: #ffffff");
+    updateUsernamePane.getChildren().add(updatedUsername);
+
+
+	}
+  public void updatePassword (MouseEvent event) throws SQLException {
+    //String enterPassword, String confirmPassword, String oldPassword
+        //if(!(User.getCurrentUser().getPassword().equals(oldPass.getText().trim()))) {
+          //System.out.println("  bc  " + User.getCurrentUser().getPassword()+ "  b ");
+          //System.out.println(oldPass.getText().trim()+"u");
+          //System.out.println(updatePassword.getText());
+          //settingsController.showInvalidOldPasswordError();
+          //re//turn;
+        //}
+    
+        if(!isValidPassword(updatePassword.getText())) {
+          settingsController.showInvalidPasswordError();
+          return;
+        }
+    
+        if(!isPasswordConfirmed(updatePassword.getText(), confirmPassword.getText())) {
+          settingsController.showInvalidConfirmPasswordError();
+          return;
+        }
+    
+        Connection connection = Main.connect();
+        Statement statement = connection.createStatement();
+        int count = statement.executeUpdate("update users set password = '" + updatePassword.getText() + "' where id = '" + User.getCurrentUser().getId() + "'");
+        
+        statement.close();
+        connection.close();
+        Label updatedPassword = new Label("Password is updated!");
+        updatedPassword.setFont(Font.font("Times New Roman", 12));
+        updatedPassword.setStyle("-fx-background-color: #ffffff");
+        updatePasswordPane.getChildren().add(updatedPassword);
+        
+      }
+  public static boolean isValidPassword(String password) {
+
+		if (password.length() <= 8 || password.toLowerCase().equals(password)) {
+			return false;
+		}
+
+		int count = 0;
+
+		for (int i = 0; i < password.length(); i++) {
+			if (password.charAt(i) < '/' && password.charAt(i) > ':') {
+				count++;
+			}
+		}
+
+		if (count == password.length()) {
+			return false;
+		}
+
+		count = 0;
+
+		for (int i = 0; i < password.length(); i++) {
+			if (password.charAt(i) < '0' && password.charAt(i) > ' ') {
+				count++;
+			}
+		}
+
+		if (count == password.length()) {
+			return false;
+		}
+
+		return true;
+
+	}
+  public boolean isPasswordConfirmed(String enterPassword, String confirmPassword) {
+		return enterPassword.equals(confirmPassword);
+	}
+ 
+
+  private static boolean isUsernameUnique(String username) throws SQLException {
+		Connection connection = Main.connect();
+		Statement statement = connection.createStatement();
+		ResultSet resultSet = statement.executeQuery("SELECT * FROM users WHERE username='" + username + "';");
+		if (resultSet.next()) {
+			return false;
+		}
+		return true;
+	}
+
 }
 

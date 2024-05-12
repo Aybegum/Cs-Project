@@ -72,7 +72,7 @@ public class User {
 	}
 
 	public String getPassword() {
-		return password;
+		return this.password;
 	}
 
 	public void setPassword(String password) {
@@ -221,7 +221,7 @@ public class User {
 			return false;
 		}
 		return true;
-	}
+	} 
 
 	private static boolean isUsernameUnique(String username) throws SQLException {
 		Connection connection = Main.connect();
@@ -370,7 +370,7 @@ public class User {
 		return isFriendsWith;
 	}
 
-	public void updateUsername (String username) throws SQLException {
+	/*public void updateUsername (String username) throws SQLException {
 
 		if(!isValidUsername(username)) {
 			settingsController.showInvalidUsernameError();
@@ -388,13 +388,13 @@ public class User {
 		
 		statement.close();
 		connection.close();
-	}
+	}*/
 
 	public boolean isPasswordConfirmed(String enterPassword, String confirmPassword) {
 		return enterPassword.equals(confirmPassword);
 	}
 
-	public void updatePassword (String enterPassword, String confirmPassword, String oldPassword) throws SQLException {
+	/*public void updatePassword (String enterPassword, String confirmPassword, String oldPassword) throws SQLException {
 
 		if(!oldPassword.equals(password)) {
 			settingsController.showInvalidOldPasswordError();
@@ -417,6 +417,5 @@ public class User {
 		
 		statement.close();
 		connection.close();
-	}
-
+	} */
 }

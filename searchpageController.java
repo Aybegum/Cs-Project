@@ -99,6 +99,7 @@ public class searchpageController {
 		}
 		return resultSongs;
 	}
+    
     public void renderSearchedSongs(MouseEvent event) throws SQLException{
         ArrayList<Song> searchedSongs = searchSongsByNameorArtist(searchBarTextField.getText());
         for(Song songs: searchedSongs){
@@ -109,5 +110,5 @@ public class searchpageController {
             song.getChildren().addAll(playButton, songName, deleteButton);
             songsFlowPane.getChildren().add(song);
         }
-    }
+    } 
 }
