@@ -2,8 +2,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
@@ -17,19 +15,24 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+import org.w3c.dom.Text;
 
 import com.mysql.cj.xdevapi.AddResult;
 
 import javafx.scene.Node;
-
-public class playlistController {
-
+public class playlistController implements Initializable{
+      
       private Stage stage;
       private Scene scene;
       private Parent root;
@@ -40,22 +43,29 @@ public class playlistController {
       private ScrollPane allPlaylistScrollPane;
       @FXML
       private FlowPane flowPane;
-      private Image defaultPlaylistPhoto = new Image("beren's computer url");
-      @FXML
-      private static ImageView playlistCover;
       public int countPlay = 0;
-      public static void main(String[] args) {
-            Image defaultPlaylistPhoto = new Image("beren's computer url");
-            playlistCover.setImage(defaultPlaylistPhoto);
-      }
 
       public void renderPlaylistsOnSidebar(MouseEvent event) throws SQLException {
-            FlowPane flow = new FlowPane();
             ArrayList<Playlist> playlists = new ArrayList<>();
             Connection connection = Main.connect();
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("select * from playlists where creatorid = '"
-                        + User.getCurrentUser().getId() + "' order by id desc");
+            ResultSet rs = statement.executeQuery("select * from playlists where creatorid = '" + User.getCurrentUser().getId() + "' order by id desc");
+            int count;
+            if (rs.next()) {
+                  count = rs.getInt("id");
+                  for (int i = count - 1; i >= 0; i--) {
+                        playlists.add(Playlist.getPlaylistByIdAndUser(i, User.getCurrentUser()));
+                  }
+            }
+            if(playlistNoNCounter <= 6){
+                  displayPlaylist();
+            }
+      }
+      public void renderPlaylistsOnSidebar()throws SQLException{
+            ArrayList<Playlist> playlists = new ArrayList<>();
+            Connection connection = Main.connect();
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("select * from playlists where creatorid = '" + User.getCurrentUser().getId() + "' order by id desc");
             int count;
             if (rs.next()) {
                   count = rs.getInt("id");
@@ -64,46 +74,47 @@ public class playlistController {
                   }
             }
             for (Playlist playlist : playlists) {
-                  Button newPlaylist = new Button("Playlist");
-                  newPlaylist.setFont(Font.font("Times New Roman", 16));
-                  newPlaylist.setPrefSize(154, 29);
-                  flowPane.getChildren().add(newPlaylist);
+                  displayPlaylist();
                   countPlay++;
-                  if (countPlay == 6) {
+                  if(countPlay == 6){
                         break;
                   }
             }
-            // flowPane.getChildren().add(flow);
-            /*
-             * Button newPlaylist = new Button("Playlist " + playlistNoNCounter);
-             * newPlaylist.setLayoutX(437); // it is the coordinate of the liked songs
-             * button
-             * newPlaylist.setLayoutY(coordinateY);
-             * root.getChildrenUnmodifiable().add(newPlaylist);
-             * playlistNoNCounter++;
-             * coordinateY += 35;
-             */
       }
 
-      public void goToProfile(MouseEvent event) throws Exception {
-            Parent root = FXMLLoader.load(getClass().getResource("profilePage.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-      }
 
-      public void goToCommunityHub(MouseEvent event) throws Exception {
-            Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+      public void displayPlaylist()throws SQLException{
+            Button newPlaylist = new Button("Playlist");
+            newPlaylist.setFont(Font.font("Times New Roman", 16));
+            newPlaylist.setPrefSize(154,29);
+            flowPane.getChildren().add(newPlaylist);
       }
+        
+        public void goToProfile(MouseEvent event) throws Exception{
+              Parent root = FXMLLoader.load(getClass().getResource("profilePage.fxml"));
+              stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+              scene = new Scene(root);
+              stage.setScene(scene);
+              stage.show();
+        }
+        public void goToCommunityHub(MouseEvent event) throws Exception{
+              Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
+              stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+              scene = new Scene(root);
+              stage.setScene(scene);
+              stage.show();
+        }
 
-      public void createPlaylist1(MouseEvent event) throws SQLException {
-            Playlist.createPlaylist(User.getCurrentUser(), "Playlist" + playlistNoNCounter, "efuhjıdfsjjd");
-            playlistNoNCounter++;
+        public void createPlaylist1 (MouseEvent event) throws SQLException{
+            Playlist.createPlaylist(User.getCurrentUser(), "Playlist", "efuhjıdfsjjd");
             renderPlaylistsOnSidebar(event);
-      }
-}
+        } 
+        @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        try {
+            renderPlaylistsOnSidebar();
+        } catch (SQLException e) {
+            System.out.println("Error in rendering messages: SQLException");
+        }
+    }
+} 
