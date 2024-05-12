@@ -1,4 +1,11 @@
 import javafx.scene.Node;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
@@ -6,10 +13,12 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -38,6 +47,9 @@ public class searchpageController {
     @FXML
     private TextField searchBarTextField;
 
+    @FXML
+    private VBox songsFlowPane;
+
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -48,5 +60,53 @@ public class searchpageController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public static ArrayList<Song> searchSongsByNameorArtist(String searchTerm) throws SQLException {
+		ArrayList<Song> resultSongs = new ArrayList<Song>();
+		Connection connection = Main.connect();
+		PreparedStatement stat = null;
+		ResultSet rs = null;
+
+		try {
+			String query = "select * from songs where name like ? OR artist like ?";
+			stat = connection.prepareStatement(query);
+			stat.setString(1, "%" + searchTerm + "%");
+			stat.setString(2, "%" + searchTerm + "%");
+
+			rs = stat.executeQuery();
+			while (rs.next()) {
+				int id = rs.getInt("id");
+				String songTitle = rs.getString("name");
+				String artist = rs.getString("artist");
+				Song song = new Song(id, songTitle, artist);
+				resultSongs.add(song);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (rs != null) {
+					stat.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return resultSongs;
+	}
+    public void renderSearchedSongs() throws SQLException{
+        ArrayList<Song> searchedSongs = searchSongsByNameorArtist(searchBarTextField.getText());
+        for(Song songs: searchedSongs){
+            HBox song = new HBox();
+            Button playButton = new Button("start");
+            Label songName = new Label(songs.getName() + " - " + songs.getArtist());
+            Button deleteButton = new Button(" - ");
+            
+        }
+
     }
 }
