@@ -22,13 +22,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import org.w3c.dom.Text;
-
 import com.mysql.cj.xdevapi.AddResult;
 
 import javafx.scene.Node;
+
 public class playlistController {
-      
+
       private Stage stage;
       private Scene scene;
       private Parent root;
@@ -46,7 +45,8 @@ public class playlistController {
             ArrayList<Playlist> playlists = new ArrayList<>();
             Connection connection = Main.connect();
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("select * from playlists where creatorid = '" + User.getCurrentUser().getId() + "' order by id desc");
+            ResultSet rs = statement.executeQuery("select * from playlists where creatorid = '"
+                        + User.getCurrentUser().getId() + "' order by id desc");
             int count;
             if (rs.next()) {
                   count = rs.getInt("id");
@@ -57,42 +57,44 @@ public class playlistController {
             for (Playlist playlist : playlists) {
                   Button newPlaylist = new Button("Playlist");
                   newPlaylist.setFont(Font.font("Times New Roman", 16));
-                  newPlaylist.setPrefSize(154,29);
+                  newPlaylist.setPrefSize(154, 29);
                   flowPane.getChildren().add(newPlaylist);
                   countPlay++;
-                  if(countPlay == 6){
+                  if (countPlay == 6) {
                         break;
                   }
             }
-            //flowPane.getChildren().add(flow);
-           /*  Button newPlaylist = new Button("Playlist " + playlistNoNCounter);
-            newPlaylist.setLayoutX(437); // it is the coordinate of the liked songs button
-            newPlaylist.setLayoutY(coordinateY);
-            root.getChildrenUnmodifiable().add(newPlaylist);
-            playlistNoNCounter++;
-            coordinateY += 35; */
+            // flowPane.getChildren().add(flow);
+            /*
+             * Button newPlaylist = new Button("Playlist " + playlistNoNCounter);
+             * newPlaylist.setLayoutX(437); // it is the coordinate of the liked songs
+             * button
+             * newPlaylist.setLayoutY(coordinateY);
+             * root.getChildrenUnmodifiable().add(newPlaylist);
+             * playlistNoNCounter++;
+             * coordinateY += 35;
+             */
       }
 
-        /*public void createPlaylist (String playlistName, String coverURL, Song song) {
-              
-        }*/
-        public void goToProfile(MouseEvent event) throws Exception{
-              Parent root = FXMLLoader.load(getClass().getResource("profilePage.fxml"));
-              stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-              scene = new Scene(root);
-              stage.setScene(scene);
-              stage.show();
-        }
-        public void goToCommunityHub(MouseEvent event) throws Exception{
-              Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
-              stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-              scene = new Scene(root);
-              stage.setScene(scene);
-              stage.show();
-        }
+      public void goToProfile(MouseEvent event) throws Exception {
+            Parent root = FXMLLoader.load(getClass().getResource("profilePage.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+      }
 
-        public void createPlaylist1 (MouseEvent event) throws SQLException{
-            Playlist.createPlaylist(User.getCurrentUser(), "Playlist", "efuhjıdfsjjd");
+      public void goToCommunityHub(MouseEvent event) throws Exception {
+            Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+      }
+
+      public void createPlaylist1(MouseEvent event) throws SQLException {
+            Playlist.createPlaylist(User.getCurrentUser(), "Playlist" + playlistNoNCounter, "efuhjıdfsjjd");
+            playlistNoNCounter++;
             renderPlaylistsOnSidebar(event);
-        } 
-} 
+      }
+}
