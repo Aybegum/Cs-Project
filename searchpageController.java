@@ -53,6 +53,7 @@ public class searchpageController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private static int songCounter = 1;
 
     public void goToCommunityHub(MouseEvent  event) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
@@ -98,15 +99,15 @@ public class searchpageController {
 		}
 		return resultSongs;
 	}
-    public void renderSearchedSongs() throws SQLException{
+    public void renderSearchedSongs(MouseEvent event) throws SQLException{
         ArrayList<Song> searchedSongs = searchSongsByNameorArtist(searchBarTextField.getText());
         for(Song songs: searchedSongs){
             HBox song = new HBox();
             Button playButton = new Button("start");
-            Label songName = new Label(songs.getName() + " - " + songs.getArtist());
+            Label songName = new Label(songCounter + "- " + songs.getName() + " - " + songs.getArtist());
             Button deleteButton = new Button(" - ");
-            
+            song.getChildren().addAll(playButton, songName, deleteButton);
+            songsFlowPane.getChildren().add(song);
         }
-
     }
 }
