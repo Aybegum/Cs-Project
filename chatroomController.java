@@ -1,3 +1,4 @@
+import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
@@ -27,7 +28,10 @@ import javafx.scene.layout.HBox;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -41,6 +45,7 @@ public class chatroomController implements Initializable {
     private FlowPane chatPane;
     @FXML
     private TextField messageField;
+
 
     /*
      * public void renderMessages() throws SQLException {
@@ -97,7 +102,6 @@ public class chatroomController implements Initializable {
         Text name = new Text("@" + userName);
         name.setFont(Font.font("Times New Roman", 12));
         // nameBox.getChildren().add(name);
-
         messageBox.getChildren().add(messageText);
         FlowPane messagePane = new FlowPane();
         FlowPane messageP = new FlowPane();
