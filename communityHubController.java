@@ -25,7 +25,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-
 import org.w3c.dom.Text;
 import javafx.scene.Node;
 public class communityHubController implements Initializable{
@@ -87,7 +86,6 @@ public class communityHubController implements Initializable{
                   displayPlaylist();
             }
       }
-
       public void displayPlaylist()throws SQLException{
             Button newPlaylist = new Button("Playlist");
             newPlaylist.setFont(Font.font("Times New Roman", 16));
@@ -101,6 +99,7 @@ public class communityHubController implements Initializable{
                               flowPane.setPrefHeight(flowPane.getHeight() + 50);
                           }
                       }
+                      
                   }
               });
       }

@@ -82,7 +82,6 @@ public class playlistController implements Initializable{
             }
       }
 
-
       public void displayPlaylist()throws SQLException{
             Button newPlaylist = new Button("Playlist");
             newPlaylist.setFont(Font.font("Times New Roman", 16));
