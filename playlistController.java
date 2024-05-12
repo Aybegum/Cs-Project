@@ -22,8 +22,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import org.w3c.dom.Text;
-
 import com.mysql.cj.xdevapi.AddResult;
 
 import javafx.scene.Node;
@@ -73,9 +71,6 @@ public class playlistController {
             coordinateY += 35; */
       }
 
-        /*public void createPlaylist (String playlistName, String coverURL, Song song) {
-              
-        }*/
         public void goToProfile(MouseEvent event) throws Exception{
               Parent root = FXMLLoader.load(getClass().getResource("profilePage.fxml"));
               stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -92,7 +87,8 @@ public class playlistController {
         }
 
         public void createPlaylist1 (MouseEvent event) throws SQLException{
-            Playlist.createPlaylist(User.getCurrentUser(), "Playlist", "efuhjıdfsjjd");
+            Playlist.createPlaylist(User.getCurrentUser(), "Playlist" + playlistNoNCounter, "efuhjıdfsjjd");
+            playlistNoNCounter++;
             renderPlaylistsOnSidebar(event);
         } 
 } 
