@@ -42,9 +42,12 @@ public class playlistController {
       private FlowPane flowPane;
       private Image defaultPlaylistPhoto = new Image("beren's computer url");
       @FXML
-      private ImageView playlistCover;
-      playlistCover.setImage(defaultPlaylistPhoto);
+      private static ImageView playlistCover;
       public int countPlay = 0;
+      public static void main(String[] args) {
+            Image defaultPlaylistPhoto = new Image("beren's computer url");
+            playlistCover.setImage(defaultPlaylistPhoto);
+      }
 
       public void renderPlaylistsOnSidebar(MouseEvent event) throws SQLException {
             FlowPane flow = new FlowPane();
