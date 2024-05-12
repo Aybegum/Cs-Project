@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
@@ -16,6 +16,6 @@
       <Rectangle fx:id="backRect" arcHeight="5.0" arcWidth="5.0" height="8.0" layoutX="31.0" layoutY="41.0" stroke="BLACK" strokeType="INSIDE" width="23.0" />
       <Circle fx:id="enterSongCircle" fill="#f8fcff" layoutX="370.0" layoutY="41.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
       <Polygon fx:id="backTria" layoutX="70.0" layoutY="4.0" points="-50.0, 40.0, -37.39997482299805, 51.79999923706055, -37.39997482299805, 30.199993133544922" stroke="BLACK" strokeType="INSIDE" />
-      <ScrollBar layoutX="593.0" layoutY="72.0" orientation="VERTICAL" prefHeight="308.0" prefWidth="16.0" />
+      <ScrollPane layoutX="25.0" layoutY="79.0" prefHeight="298.0" prefWidth="556.0" />
    </children>
 </AnchorPane>
