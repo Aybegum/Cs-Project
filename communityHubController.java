@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 import org.w3c.dom.Text;
 import javafx.scene.Node;
-public class communityHubController extends controller{
+public class communityHubController {
     private FlowPane flowPane;
         private Stage stage;
         private Scene scene;

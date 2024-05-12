@@ -1,4 +1,3 @@
-import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -59,8 +58,9 @@ public class playlistController implements Initializable{
                         playlistNoNCounter++;
                   }
             }
-            displayPlaylist();
-              
+            if(playlistNoNCounter <= 6){
+                  displayPlaylist();
+            }
       }
       public void renderPlaylistsOnSidebar()throws SQLException{
             ArrayList<Playlist> playlists = new ArrayList<>();
@@ -76,6 +76,10 @@ public class playlistController implements Initializable{
             }
             for (Playlist playlist : playlists) {
                   displayPlaylist();
+                  countPlay++;
+                  if(countPlay == 6){
+                        break;
+                  }
             }
       }
 
@@ -85,29 +89,7 @@ public class playlistController implements Initializable{
             newPlaylist.setFont(Font.font("Times New Roman", 16));
             newPlaylist.setPrefSize(154,29);
             flowPane.getChildren().add(newPlaylist);
-            flowPane.getChildren().addListener(new ListChangeListener<Node>() {
-                  @Override
-                  public void onChanged(Change<? extends Node> c) {
-                      while (c.next()) {
-                          if (c.wasAdded()) {
-                              flowPane.setPrefHeight(flowPane.getHeight() + 50);
-                          }
-                      }
-                  }
-              });
       }
-      public void createPlaylist1 (MouseEvent event) throws SQLException{
-            Playlist.createPlaylist(User.getCurrentUser(), "Playlist", "efuhjıdfsjjd");
-            renderPlaylistsOnSidebar(event);
-        } 
-        @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        try {
-            renderPlaylistsOnSidebar();
-        } catch (SQLException e) {
-            System.out.println("Error in rendering messages: SQLException");
-        }
-    }
         
         public void goToProfile(MouseEvent event) throws Exception{
               Parent root = FXMLLoader.load(getClass().getResource("profilePage.fxml"));
@@ -124,4 +106,16 @@ public class playlistController implements Initializable{
               stage.show();
         }
 
+        public void createPlaylist1 (MouseEvent event) throws SQLException{
+            Playlist.createPlaylist(User.getCurrentUser(), "Playlist", "efuhjıdfsjjd");
+            renderPlaylistsOnSidebar(event);
+        } 
+        @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        try {
+            renderPlaylistsOnSidebar();
+        } catch (SQLException e) {
+            System.out.println("Error in rendering messages: SQLException");
+        }
+    }
 } 
