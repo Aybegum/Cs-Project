@@ -1,27 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="622.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="searchpageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="622.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c1cad3" height="410.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="622.0" />
       <TextField fx:id="searchBarTextField" layoutX="68.0" layoutY="27.0" prefHeight="36.0" prefWidth="338.0" />
       <Line fx:id="enterSongLine" endX="-91.0" endY="189.00001525878906" layoutX="463.0" layoutY="-146.0" startX="-78.20001220703125" startY="201.59999084472656" />
       <Rectangle fx:id="backRect" arcHeight="5.0" arcWidth="5.0" height="8.0" layoutX="31.0" layoutY="41.0" stroke="BLACK" strokeType="INSIDE" width="23.0" />
-      <Circle fx:id="enterSongCircle" fill="#f8fcff" layoutX="370.0" layoutY="41.0" onMouseClicked="#renderSearchedSongs" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="enterSongCircle" fill="#f8fcff" layoutX="370.0" layoutY="41.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
       <Polygon fx:id="backTria" layoutX="70.0" layoutY="4.0" points="-50.0, 40.0, -37.39997482299805, 51.79999923706055, -37.39997482299805, 30.199993133544922" stroke="BLACK" strokeType="INSIDE" />
-      <ScrollPane layoutX="25.0" layoutY="79.0" prefHeight="298.0" prefWidth="556.0">
-         <content>
-            <VBox fx:id="songsFlowPane" prefHeight="644.0" prefWidth="539.0" />
-         </content></ScrollPane>
-      <ComboBox fx:id="comboBoxSearch" layoutX="422.0" layoutY="32.0" prefWidth="150.0" promptText="select search" />
+      <ScrollPane layoutX="25.0" layoutY="79.0" prefHeight="298.0" prefWidth="556.0" />
    </children>
 </AnchorPane>
+
