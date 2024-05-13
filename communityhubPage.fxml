@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.shape.Circle?>
@@ -274,7 +275,16 @@
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
       </Circle>
-      <Circle fill="#c1cad3" layoutX="357.0" layoutY="19.0" onMouseClicked="#goToSearchPage" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Line endX="-28.999969482421875" endY="4.999996185302734" layoutX="401.0" layoutY="29.0" startX="-37.999969482421875" startY="-4.000005722045898" />
+      <Circle fill="#c1cad3" layoutX="357.0" layoutY="19.0" onMouseClicked="#goToSearchPage" radius="9.0" stroke="BLACK" strokeType="INSIDE">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+         <effect>
+            <Glow />
+         </effect></Circle>
+      <Line endX="-28.999969482421875" endY="4.999996185302734" layoutX="401.0" layoutY="29.0" startX="-37.999969482421875" startY="-4.000005722045898">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></Line>
    </children>
 </AnchorPane>
