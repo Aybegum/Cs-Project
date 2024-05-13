@@ -418,4 +418,8 @@ public class User {
 		statement.close();
 		connection.close();
 	} */
+
+	public int getNoOfFollowers (User user) {
+		return User.getCurrentUser().getFollowerList().size();
+	}
 }
