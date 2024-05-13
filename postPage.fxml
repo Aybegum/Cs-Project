@@ -134,7 +134,7 @@
                </font>
             </Text>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c1cad3" height="5.0" layoutX="483.0" layoutY="322.0" stroke="BLACK" strokeType="INSIDE" width="170.0" />
-            <Circle fill="#cacdd3" layoutX="396.0" layoutY="25.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#cacdd3" layoutX="396.0" layoutY="25.0" onMouseClicked="#goToSearchPage" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
             <Line endX="-84.0" endY="12.999996185302734" layoutX="487.0" layoutY="19.0" startX="-75.0" startY="22.400005340576172" />
          </children>
       </AnchorPane>
