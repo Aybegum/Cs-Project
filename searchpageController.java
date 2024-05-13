@@ -5,6 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+import javax.print.DocFlavor.URL;
+
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
@@ -16,12 +20,15 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.layout.HBox;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
-public class searchpageController {
+public class searchpageController implements Initializable {
 
     @FXML
     private Rectangle backRect;
@@ -48,10 +55,6 @@ public class searchpageController {
     private Parent root;
     private static int songCounter = 1;
 	
-	public void initialize(URL url, ResourceBundle rb){
-        ObservableList<String> options = FXCollections.observableArrayList("User", "Song", "Playlist");
-        comboBoxSearch.setItems(options);
-    }
 
     public void goToCommunityHub(MouseEvent event) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
@@ -191,4 +194,10 @@ public class searchpageController {
 		}
 		return resultPlaylists;
 	}
+
+    @Override
+    public void initialize(java.net.URL location, ResourceBundle resources) {
+        ObservableList<String> options = FXCollections.observableArrayList("User", "Song", "Playlist");
+        comboBoxSearch.setItems(options);
+    }
 }
