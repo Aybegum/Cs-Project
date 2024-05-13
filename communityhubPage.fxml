@@ -155,10 +155,10 @@
                         <Cursor fx:constant="OPEN_HAND" />
                      </cursor>
                   </Text>
-                  <Rectangle  arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="208.0" layoutY="123.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
-                  <Rectangle  arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="14.0" layoutY="276.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="208.0" layoutY="123.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="14.0" layoutY="276.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="113.0" layoutY="276.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
-                  <Rectangle  arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="208.0" layoutY="276.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="208.0" layoutY="276.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
                   <Text fx:id="indie" accessibleText="3" fill="WHITE" layoutX="208.0" layoutY="137.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
@@ -202,7 +202,7 @@
                      </cursor>
                   </Text>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="19.0" layoutY="327.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
-                  <Rectangle  arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="13.0" layoutY="432.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="13.0" layoutY="432.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
                   <Text fx:id="RandB" accessibleText="9" fill="WHITE" layoutX="13.0" layoutY="444.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
@@ -216,7 +216,7 @@
                      </font>
                   </Text>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="118.0" layoutY="327.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
-                  <Rectangle  arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="112.0" layoutY="432.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="112.0" layoutY="432.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
                   <Text fx:id="country" accessibleText="10" fill="WHITE" layoutX="112.0" layoutY="444.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
@@ -237,8 +237,8 @@
                      </font>
                   </Text>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="306.0" layoutY="172.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
-                  <Rectangle  arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="301.0" layoutY="123.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
-                  <Rectangle  arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="301.0" layoutY="276.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="301.0" layoutY="123.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="301.0" layoutY="276.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
                   <Text fx:id="classical" accessibleText="4" fill="WHITE" layoutX="301.0" layoutY="136.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
