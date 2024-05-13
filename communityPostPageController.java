@@ -117,7 +117,7 @@ public void goToPost(MouseEvent  event) throws Exception{
         @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-            communityText.setText(Community.getCurrentCommunity().getName());
+            communityText.setText(Community.getCommunityById(Community.getCurrentCommunityId()).getName());
             renderPlaylistsOnSidebar();
         } catch (SQLException e) {
             System.out.println("Error in rendering messages: SQLException");

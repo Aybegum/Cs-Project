@@ -10,6 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
@@ -28,7 +29,7 @@ public class searchpageController {
     @FXML
     private Polygon backTria;
     @FXML
-    private ComboBox <String> comboBoxSearch
+    private ComboBox <String> comboBoxSearch;
 	
     @FXML
     private Circle enterSongCircle;

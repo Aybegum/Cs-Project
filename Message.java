@@ -65,22 +65,21 @@ public class Message {
 		return false;
 	}
 
-	public static ArrayList<Message> getMessages() throws SQLException {
+	public static ArrayList<Message> getMessages(int communityId) throws SQLException {
 
 		ArrayList<Message> messages = new ArrayList<>();
 
 		Connection connection = Main.connect();
 		Statement statement = connection.createStatement();
-		ResultSet rs = statement.executeQuery("select count(*) from messages");
+		ResultSet rs = statement.executeQuery("select count(*) from messages where communityid = '" + communityId + "'");
 		long count;
 		if (rs.next()) {
 			count = rs.getLong(1);
-			ResultSet rs2 = statement.executeQuery("select * from messages");
+			ResultSet rs2 = statement.executeQuery("select * from messages where communityid = '" + communityId + "'");
 			rs2.next();
 			for (long i = count - 1; i >= 0; i--) {
 				int senderId = rs2.getInt("senderid");
 				String body = rs2.getString("body");
-				int communityId = rs2.getInt("communityid");
 				messages.add(new Message(senderId, communityId, body));
 				rs2.next();
 			}
