@@ -103,20 +103,41 @@ public class searchpageController implements Initializable {
     
     public void renderSongs(MouseEvent event){
         ArrayList<Song> searchedSongs = new ArrayList<>();
-        try {
-            searchedSongs = searchSongsByNameorArtist(searchBarTextField.getText());
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        for(Song songs: searchedSongs){
-            HBox song = new HBox();
-            Button playButton = new Button("start");
-            Label songName = new Label(songCounter + "- " + songs.getName() + " - " + songs.getArtist());
-            Button deleteButton = new Button(" - ");
-            song.getChildren().addAll(playButton, songName, deleteButton);
-            songsFlowPane.getChildren().add(song);
-            songsFlowPane.setVisible(true);
-        }
+		ArrayList<User> searchedUser = new ArrayList<>();
+		ArrayList<Playlist> searchedPlaylist = new ArrayList<>();
+		if(comboBoxSearch.getValue().equals("Song") || comboBoxSearch.getValue() == null){
+			try {
+				searchedSongs = searchSongsByNameorArtist(searchBarTextField.getText());
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			for(Song songs: searchedSongs){
+				HBox song = new HBox();
+				Label songNo = new Label(songCounter + "");
+				Button playButton = new Button("start");
+				Label songName = new Label("- " + songs.getName() + " - " + songs.getArtist());
+				Button deleteButton = new Button(" - ");
+				song.getChildren().addAll(songNo, playButton, songName, deleteButton);
+				songsFlowPane.getChildren().add(song);
+				songsFlowPane.setVisible(true);
+				songCounter++;
+			}
+		}
+		else if(comboBoxSearch.getValue().equals("User")){
+			try {
+				searchedUser = searchUserByName(searchBarTextField.getText());
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			for(User users: searchedUser){
+				HBox user = new HBox();
+				Label songName = new Label(songCounter + "- " + users.getUsername() + " - " + users.getArtist());
+				Button deleteButton = new Button(" - ");
+				user.getChildren().addAll(songName, deleteButton);
+				songsFlowPane.getChildren().add(user);
+				songsFlowPane.setVisible(true);
+			}
+		}
     }
     
     public ArrayList<User> searchUserByName(String searchTerm) throws SQLException {
