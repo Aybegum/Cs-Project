@@ -41,13 +41,7 @@ public class playlistController implements Initializable{
       private ScrollPane allPlaylistScrollPane;
       @FXML
       private FlowPane flowPane;
-      //private Image defaultPlaylistPhoto = new Image("beren's computer url");
-
       public int countPlay = 0;
-      //public static void main(String[] args) {
-          //  Image defaultPlaylistPhoto = new Image("beren's computer url");
-        //    playlistCover.setImage(defaultPlaylistPhoto);
-      //}
 
       public void renderPlaylistsOnSidebar(MouseEvent event) throws SQLException {
             ArrayList<Playlist> playlists = new ArrayList<>();

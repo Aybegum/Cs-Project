@@ -131,15 +131,6 @@ public void updateUsername (MouseEvent event) throws SQLException {
 
 	}
   public void updatePassword (MouseEvent event) throws SQLException {
-    //String enterPassword, String confirmPassword, String oldPassword
-        //if(!(User.getCurrentUser().getPassword().equals(oldPass.getText().trim()))) {
-          //System.out.println("  bc  " + User.getCurrentUser().getPassword()+ "  b ");
-          //System.out.println(oldPass.getText().trim()+"u");
-          //System.out.println(updatePassword.getText());
-          //settingsController.showInvalidOldPasswordError();
-          //re//turn;
-        //}
-    
         if(!isValidPassword(updatePassword.getText())) {
           settingsController.showInvalidPasswordError();
           return;

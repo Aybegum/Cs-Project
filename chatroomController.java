@@ -46,22 +46,6 @@ public class chatroomController implements Initializable {
     @FXML
     private TextField messageField;
 
-
-    /*
-     * public void renderMessages() throws SQLException {
-     * 
-     * ArrayList<Message> messages = Message.getMessages();
-     * 
-     * for (Message message : messages) {
-     * if(message.isSentByCurrentUser()) {
-     * //TODO: Render on the right
-     * } else {
-     * //TODO: Render on the left
-     * }
-     * }
-     * }
-     */
-
     public void renderMessages() throws SQLException {
 
         ArrayList<Message> messages = Message.getMessages();

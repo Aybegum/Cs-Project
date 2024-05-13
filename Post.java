@@ -108,10 +108,5 @@ public class Post {
 		connection.close();
 		
 		return new Post(id, null, null, -1, playlistId, userId);
-		
-	}
-
-	
-	
-	
+	}	
 }

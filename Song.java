@@ -1,6 +1,5 @@
 
 import java.io.File;
-import java.io.FilenameFilter;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -130,11 +129,15 @@ public class Song {
 					stat.close();
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				e.printStackTrace(); 
 			}
 		}
 		return resultSongs;
 	}
 
-	
+	public String getSongNameWithSpaces(Song song) {
+
+		String name = song.getName().replace("_", " ");
+		return name;
+	}
 }
