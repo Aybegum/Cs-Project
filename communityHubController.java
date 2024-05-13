@@ -60,7 +60,8 @@ public class communityHubController implements Initializable{
     public void goToCommunity(MouseEvent event) throws Exception{
             Text clickedText = (Text) event.getSource();
             Community.setCurrentCommunityId(Integer.parseInt(((Node) clickedText).getAccessibleText()));
-            System.out.println(((Node) clickedText).getAccessibleText());
+            int a = Integer.parseInt(((Node) clickedText).getAccessibleText());
+            System.out.println(a);
             goCommunity(event);
 
     }
