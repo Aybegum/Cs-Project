@@ -55,7 +55,13 @@ public class playlistController implements Initializable{
                         playlists.add(Playlist.getPlaylistByIdAndUser(i, User.getCurrentUser()));
                   }
             }
-            if(playlistNoNCounter <= 6){
+
+            flowPane.setPrefHeight(180);
+
+            if(playlists.size() <= 6){
+                  displayPlaylist();
+            } else {
+                  flowPane.setPrefHeight(flowPane.getPrefHeight() + 30);
                   displayPlaylist();
             }
       }
@@ -71,11 +77,14 @@ public class playlistController implements Initializable{
                         playlists.add(Playlist.getPlaylistByIdAndUser(i, User.getCurrentUser()));
                   }
             }
-            for (Playlist playlist : playlists) {
+            for (int i = 0; i < playlists.size(); i++) {
+                  
                   displayPlaylist();
-                  countPlay++;
-                  if(countPlay == 6){
-                        break;
+
+                  if(i > 6){
+                        flowPane.setPrefHeight(flowPane.getPrefHeight() + 30);
+                        displayPlaylist();
+
                   }
             }
       }
@@ -83,7 +92,7 @@ public class playlistController implements Initializable{
       public void displayPlaylist()throws SQLException{
             Button newPlaylist = new Button("Playlist");
             newPlaylist.setFont(Font.font("Times New Roman", 16));
-            newPlaylist.setPrefSize(154,29);
+            newPlaylist.setPrefSize(154,30);
             flowPane.getChildren().add(newPlaylist);
       }
         
