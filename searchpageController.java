@@ -47,6 +47,11 @@ public class searchpageController {
     private Scene scene;
     private Parent root;
     private static int songCounter = 1;
+	
+	public void initialize(URL url, ResourceBundle rb){
+        ObservableList<String> options = FXCollections.observableArrayList("User", "Song", "Playlist");
+        comboBoxSearch.setItems(options);
+    }
 
     public void goToCommunityHub(MouseEvent event) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
