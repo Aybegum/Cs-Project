@@ -40,10 +40,18 @@ public class searchpageController {
     @FXML
     private VBox songsFlowPane;
 
+    @FXML
+    private ComboBox<String> comboBoxSearch; 
+
     private Stage stage;
     private Scene scene;
     private Parent root;
     private static int songCounter = 1;
+
+    public void initialize(URL url, ResourceBundle rb){
+        ObservableList<String> options = FXCollections.observableArrayList("User", "Song", "Playlist");
+        comboBoxSearch.setItems(options);
+    }
 
     public void goToCommunityHub(MouseEvent event) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("communityhubPage.fxml"));
