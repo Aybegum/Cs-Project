@@ -42,6 +42,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -161,6 +162,8 @@
                      </content>
                   </ScrollPane>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c1cad3" height="5.0" layoutX="483.0" layoutY="322.0" stroke="BLACK" strokeType="INSIDE" width="170.0" />
+                  <Circle fill="#c1cad3" layoutX="390.0" layoutY="26.0" onMouseClicked="#goToSearchPage" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Line endX="-91.79998779296875" endY="18.050769805908203" layoutX="495.0" layoutY="25.0" startX="-100.0" startY="7.999988555908203" />
                </children>
             </AnchorPane>
          </children>
