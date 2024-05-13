@@ -99,6 +99,7 @@ public class searchpageController {
             Button deleteButton = new Button(" - ");
             song.getChildren().addAll(playButton, songName, deleteButton);
             songsFlowPane.getChildren().add(song);
+	    songsFlowPane.setVisible(true);
         }
     } 
 }
