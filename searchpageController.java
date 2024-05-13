@@ -54,6 +54,7 @@ public class searchpageController implements Initializable {
     private Scene scene;
     private Parent root;
     private static int songCounter = 1;
+	private static int userCounter = 1;
 	
 
     public void goToCommunityHub(MouseEvent event) throws Exception {
@@ -131,12 +132,33 @@ public class searchpageController implements Initializable {
 			}
 			for(User users: searchedUser){
 				HBox user = new HBox();
-				Label songName = new Label(songCounter + "- " + users.getUsername() + " - " + users.getArtist());
+				Label songName = new Label(songCounter + "- " + users.getUsername() + " - " + users.getUsername());
 				Button deleteButton = new Button(" - ");
 				user.getChildren().addAll(songName, deleteButton);
 				songsFlowPane.getChildren().add(user);
 				songsFlowPane.setVisible(true);
 			}
+		}
+		else if(comboBoxSearch.getValue().equals("User")){{
+			try {
+				searchedPlaylist = searchPlaylistsByName(searchBarTextField.getText());
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			for(Playlist playlists: searchedPlaylist){
+				HBox playlist = new HBox();
+				Label playlistName = new Label();
+				try {
+					playlistName = new Label(songCounter + "- " + playlists.getPlaylistName() + " - " + User.getById(playlists.getCreatorID()));
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				Button viewButton = new Button("view");
+				playlist.getChildren().addAll(playlistName, viewButton);
+				songsFlowPane.getChildren().add(playlist);
+				songsFlowPane.setVisible(true);
+			}
+		}
 		}
     }
     
