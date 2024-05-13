@@ -59,7 +59,15 @@
                <content>
                   <VBox fx:id="songsFlowPane" prefHeight="488.0" prefWidth="578.0" />
                </content></ScrollPane>
-            <ComboBox fx:id="comboBoxSearch" layoutX="463.0" layoutY="36.0" prefWidth="150.0" promptText="select search" />
+           <ComboBox fx:id="comboBoxSearch">
+    <items>
+        <FXCollections fx:factory="observableArrayList">
+            <String fx:value="User" />
+            <String fx:value="Song" />
+            <String fx:value="Playlist" />
+        </FXCollections>
+    </items>
+</ComboBox>
             <Circle fx:id="enterSongCircle" fill="#c1cad3" layoutX="419.0" layoutY="47.0" onMouseClicked="#renderSongs" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
             <Line fx:id="enterSongLine" endX="-80.39999389648438" endY="27.600006103515625" layoutX="518.0" layoutY="41.0" onMouseClicked="#renderSongs" startX="-90.99996948242188" startY="14.0" />
             <Polygon fx:id="backTria" fill="#053c75" layoutX="26.0" layoutY="62.0" onMouseClicked="#goToCommunityHub" points="-12.400001525878906, -12.79998779296875, -7.62939453125E-6, 2.399993896484375, -7.62939453125E-6, -29.600006103515625" stroke="BLACK" strokeType="INSIDE" />
@@ -68,3 +76,4 @@
     </AnchorPane>
   </children>
 </VBox>
+
