@@ -27,7 +27,9 @@ public class searchpageController {
 
     @FXML
     private Polygon backTria;
-
+    @FXML
+    private ComboBox <String> comboBoxSearch
+	
     @FXML
     private Circle enterSongCircle;
 
@@ -39,6 +41,9 @@ public class searchpageController {
 
     @FXML
     private VBox songsFlowPane;
+	
+    @FXML 
+    private FlowPane songsFlowPane
 
     private Stage stage;
     private Scene scene;
