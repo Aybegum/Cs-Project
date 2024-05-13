@@ -31,6 +31,7 @@ import com.mysql.cj.xdevapi.AddResult;
 import javafx.scene.Node;
 public class playlistController implements Initializable{
       
+      
       private Stage stage;
       private Scene scene;
       private Parent root;
@@ -41,6 +42,7 @@ public class playlistController implements Initializable{
       private ScrollPane allPlaylistScrollPane;
       @FXML
       private FlowPane flowPane;
+      private FlowPane trial = new FlowPane();
       public int countPlay = 0;
 
       public void renderPlaylistsOnSidebar(MouseEvent event) throws SQLException {
@@ -64,6 +66,7 @@ public class playlistController implements Initializable{
                   flowPane.setPrefHeight(flowPane.getPrefHeight() + 30);
                   displayPlaylist();
             }
+            flowPane.getChildren().add(trial);
       }
       public void renderPlaylistsOnSidebar()throws SQLException{
             ArrayList<Playlist> playlists = new ArrayList<>();
@@ -83,17 +86,18 @@ public class playlistController implements Initializable{
 
                   if(i > 6){
                         flowPane.setPrefHeight(flowPane.getPrefHeight() + 30);
+                        trial.setPrefHeight(trial.getPrefHeight() + 30);
                         displayPlaylist();
-
                   }
             }
+            flowPane.getChildren().add(trial);
       }
 
       public void displayPlaylist()throws SQLException{
             Button newPlaylist = new Button("Playlist");
             newPlaylist.setFont(Font.font("Times New Roman", 16));
             newPlaylist.setPrefSize(154,30);
-            flowPane.getChildren().add(newPlaylist);
+            trial.getChildren().add(newPlaylist);
       }
         
         public void goToProfile(MouseEvent event) throws Exception{
