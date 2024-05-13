@@ -36,13 +36,40 @@ public class communityHubController implements Initializable{
       private static Playlist playlistOnScreen;
       @FXML
       private FlowPane flowPane;
+      @FXML
+      private Text rock;
+      @FXML
+      private Text pop;
+      @FXML
+      private Text indie;
+      @FXML
+      private Text classical;
+      @FXML
+      private Text jazz;
+      @FXML
+      private Text metal;
+      @FXML
+      private Text alternative;
+      @FXML
+      private Text hiphop;
+      @FXML
+      private Text RandB;
+      @FXML
+      private Text country;
 
     public void goToCommunity(MouseEvent event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("postPage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+            Text clickedText = (Text) event.getSource();
+            Community.setCurrentCommunityId(Integer.parseInt(((Node) clickedText).getAccessibleText()));
+            System.out.println(((Node) clickedText).getAccessibleText());
+            goCommunity(event);
+
+    }
+    public void goCommunity(MouseEvent event) throws IOException{
+      Parent root = FXMLLoader.load(getClass().getResource("postPage.fxml"));
+      stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+      scene = new Scene(root);
+      stage.setScene(scene);
+      stage.show();
 
     }
 
