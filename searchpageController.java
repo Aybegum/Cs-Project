@@ -41,9 +41,6 @@ public class searchpageController {
 
     @FXML
     private VBox songsFlowPane;
-	
-    @FXML 
-    private FlowPane songsFlowPane
 
     private Stage stage;
     private Scene scene;
