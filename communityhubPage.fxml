@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.shape.Circle?>
@@ -116,7 +115,7 @@
                   </Text>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="21.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
                   <Rectangle fx:id="rock" arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="15.0" layoutY="124.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
-                  <Text fx:id="rock" accessibleText="1" fill="WHITE" layoutX="16.0" layoutY="137.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
+                  <Text accessibleText="1" fill="WHITE" layoutX="16.0" layoutY="137.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
@@ -148,7 +147,7 @@
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="214.0" layoutY="172.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
                   <Text layoutX="227.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" />
                   <Rectangle fx:id="pop" arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="113.0" layoutY="124.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
-                  <Text fx:id="pop" accessibleText="2" fill="WHITE" layoutX="115.0" layoutY="137.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
+                  <Text accessibleText="2" fill="WHITE" layoutX="115.0" layoutY="137.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
@@ -160,7 +159,7 @@
                   <Rectangle fx:id="jazz" arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="14.0" layoutY="276.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
                   <Rectangle fx:id="metal" arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="113.0" layoutY="276.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
                   <Rectangle fx:id="alternative" arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="208.0" layoutY="276.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
-                  <Text fx:id="indie" accessibleText="3" fill="WHITE" layoutX="208.0" layoutY="137.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
+                  <Text accessibleText="3" fill="WHITE" layoutX="208.0" layoutY="137.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
@@ -168,7 +167,7 @@
                         <Cursor fx:constant="OPEN_HAND" />
                      </cursor>
                   </Text>
-                  <Text fx:id="jazz" accessibleText="5" fill="WHITE" layoutX="14.0" layoutY="289.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
+                  <Text accessibleText="5" fill="WHITE" layoutX="14.0" layoutY="289.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
@@ -176,7 +175,7 @@
                         <Cursor fx:constant="OPEN_HAND" />
                      </cursor>
                   </Text>
-                  <Text fx:id="metal" accessibleText="6" fill="WHITE" layoutX="115.0" layoutY="289.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
+                  <Text accessibleText="6" fill="WHITE" layoutX="115.0" layoutY="289.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
@@ -184,7 +183,7 @@
                         <Cursor fx:constant="OPEN_HAND" />
                      </cursor>
                   </Text>
-                  <Text fx:id="alternative" accessibleText="7" fill="WHITE" layoutX="208.0" layoutY="289.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
+                  <Text accessibleText="7" fill="WHITE" layoutX="208.0" layoutY="289.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
@@ -204,7 +203,7 @@
                   </Text>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="19.0" layoutY="327.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
                   <Rectangle fx:id="classical1" arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="13.0" layoutY="432.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
-                  <Text fx:id="RandB" accessibleText="9" fill="WHITE" layoutX="13.0" layoutY="444.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
+                  <Text accessibleText="9" fill="WHITE" layoutX="13.0" layoutY="444.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
@@ -218,7 +217,7 @@
                   </Text>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="118.0" layoutY="327.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
                   <Rectangle fx:id="classical2" arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="112.0" layoutY="432.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
-                  <Text fx:id="country" accessibleText="10" fill="WHITE" layoutX="112.0" layoutY="444.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
+                  <Text accessibleText="10" fill="WHITE" layoutX="112.0" layoutY="444.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
@@ -240,7 +239,7 @@
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="69.0" layoutX="306.0" layoutY="172.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
                   <Rectangle fx:id="classical" arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="301.0" layoutY="123.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
                   <Rectangle fx:id="rap" arcHeight="5.0" arcWidth="5.0" fill="#124371" height="34.0" layoutX="301.0" layoutY="276.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
-                  <Text fx:id="classical" accessibleText="4" fill="WHITE" layoutX="301.0" layoutY="136.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
+                  <Text accessibleText="4" fill="WHITE" layoutX="301.0" layoutY="136.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
@@ -248,7 +247,7 @@
                         <Cursor fx:constant="OPEN_HAND" />
                      </cursor>
                   </Text>
-                  <Text fx:id="hiphop" accessibleText="8" fill="WHITE" layoutX="300.0" layoutY="289.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
+                  <Text accessibleText="8" fill="WHITE" layoutX="300.0" layoutY="289.0" onMouseClicked="#goToCommunity" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Community" textAlignment="CENTER" wrappingWidth="84.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
@@ -275,16 +274,7 @@
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
       </Circle>
-      <Circle fill="#c1cad3" layoutX="357.0" layoutY="19.0" onMouseClicked="#goToSearchPage" radius="9.0" stroke="BLACK" strokeType="INSIDE">
-         <cursor>
-            <Cursor fx:constant="OPEN_HAND" />
-         </cursor>
-         <effect>
-            <Glow />
-         </effect></Circle>
-      <Line endX="-28.999969482421875" endY="4.999996185302734" layoutX="401.0" layoutY="29.0" startX="-37.999969482421875" startY="-4.000005722045898">
-         <cursor>
-            <Cursor fx:constant="OPEN_HAND" />
-         </cursor></Line>
+      <Circle fill="#c1cad3" layoutX="357.0" layoutY="19.0" onMouseClicked="#goToSearchPage" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Line endX="-28.999969482421875" endY="4.999996185302734" layoutX="401.0" layoutY="29.0" startX="-37.999969482421875" startY="-4.000005722045898" />
    </children>
 </AnchorPane>
