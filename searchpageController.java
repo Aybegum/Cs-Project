@@ -64,6 +64,7 @@ public class searchpageController implements Initializable {
     private Parent root;
     private static int songCounter = 1;
 	private static int playlistNoCounter = 1;
+	private static boolean isPlaying = false;
 	
 
     public void goToCommunityHub(MouseEvent event) throws Exception {
@@ -128,8 +129,22 @@ public class searchpageController implements Initializable {
 				playButton.setOnAction(new EventHandler<ActionEvent>() {
 					@Override
 					public void handle(ActionEvent e) {
-					
-						//playSong(song);
+					try {
+						if(!isPlaying){
+						playSong(songs);
+						}
+						else{
+							stopSong(songs);
+						}
+					} catch (UnsupportedAudioFileException e1) {
+						e1.printStackTrace();
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					} catch (LineUnavailableException e1) {
+						e1.printStackTrace();
+					} catch (SQLException e1) {
+						e1.printStackTrace();
+					}
                 }
             });
 				song.getChildren().addAll(songInfo, playButton);
@@ -290,13 +305,23 @@ public class searchpageController implements Initializable {
         comboBoxSearch.setItems(options);
     }
 	public void playSong(Song song) throws UnsupportedAudioFileException, IOException, LineUnavailableException{
-		File file = new File("we have to get the files name to play");
+		File file = new File(song.getName());
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
         Clip clip = AudioSystem.getClip();
         clip.open(audioStream);
 		clip.start();
-		clip.stop();
-		clip.setMicrosecondPosition(0);
+		//clip.setMicrosecondPosition(0);
 		// we'll use these methods  
+		isPlaying = true;
+	}
+	public void stopSong(Song song) throws UnsupportedAudioFileException, IOException, LineUnavailableException{
+		File file = new File(song.getName());
+        AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioStream);
+		clip.stop();
+		//clip.setMicrosecondPosition(0);
+		// we'll use these methods  
+		isPlaying = false;
 	}
 }
