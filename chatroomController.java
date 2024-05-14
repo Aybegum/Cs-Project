@@ -7,7 +7,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent.VerticalTextScrollUnits;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
@@ -26,7 +25,6 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -35,7 +33,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-
 import javafx.scene.Node;
 
 public class chatroomController implements Initializable {
@@ -65,34 +62,29 @@ public class chatroomController implements Initializable {
             chatPane.getChildren().add(messagePane);
         }
     }
-    
+
     private Pane createMessagePane(String userName, String text, String alignment) throws SQLException {
         // Create an HBox to hold the text
         HBox messageBox = new HBox();
-        VBox generalBox = new VBox();
-        generalBox.setSpacing(5);
+        HBox nameBox = new HBox();
+        nameBox.setSpacing(5);
         messageBox.setSpacing(5);
         messageBox.setAlignment(Pos.CENTER);
-        generalBox.setAlignment(Pos.CENTER);
 
         // Create the text node
         Text messageText = new Text(text);
         messageText.setFont(Font.font("Times New Roman", 14));
-        messageBox.getChildren().add(messageText);
-   /*      if (messageText.getWrappingWidth() > 200) {
+        if (messageText.getText().length() > 100) {
             messageText.setWrappingWidth(200);
-        } */
+        }
         /* Label longText = new Label(messageText.getText());
         longText.setWrapText(true);
  */
 
         Text name = new Text("@" + userName);
-        Text B = new Text("");
-        B.setFont(Font.font("Times New Roman", 2));
         name.setFont(Font.font("Times New Roman", 12));
-        generalBox.getChildren().addAll(messageBox,name,B);
-        
-
+        // nameBox.getChildren().add(name);
+        messageBox.getChildren().add(messageText);
         FlowPane messagePane = new FlowPane();
         FlowPane messageP = new FlowPane();
         messagePane.setPrefWidth(400);
@@ -101,35 +93,29 @@ public class chatroomController implements Initializable {
         name.setTextAlignment(TextAlignment.JUSTIFY);
 
         if ("right".equals(alignment)) {
-            generalBox.setAlignment(Pos.CENTER_RIGHT);
             messageText.setFill(Color.WHITE);
             name.setFill(Color.BLACK);
             messageBox.setStyle("-fx-background-color: #053c75; -fx-padding: 5px; -fx-background-radius: 5px;");
-            /* messageP.getChildren().add(messageBox);
+            messageP.getChildren().add(messageBox);
             messageP.getChildren().add(name);
             messageP.setOrientation(Orientation.VERTICAL);
             messagePane.getChildren().add(messageBox);
-            messagePane.getChildren().add(nameBox);
+            // messagePane.getChildren().add(nameBox);
             messagePane.getChildren().add(messageP);
             messageP.setAlignment(Pos.CENTER_RIGHT);
-            messagePane.setAlignment(Pos.CENTER_RIGHT); */
-            messagePane.getChildren().add(generalBox);
-            messagePane.setAlignment(Pos.CENTER_RIGHT); 
+            messagePane.setAlignment(Pos.CENTER_RIGHT);
         } else {
-            generalBox.setAlignment(Pos.CENTER_LEFT);
             messageText.setFill(Color.BLACK);
             name.setFill(Color.BLACK);
             messageBox.setStyle("-fx-background-color: #b4bfc9; -fx-padding: 5px; -fx-background-radius: 5px;");
-            /* messageP.getChildren().add(messageBox);
+            messageP.getChildren().add(messageBox);
             messageP.getChildren().add(name);
             messageP.setOrientation(Orientation.VERTICAL);
             messagePane.getChildren().add(messageBox);
             // messagePane.getChildren().add(nameBox);
             messagePane.getChildren().add(messageP);
             messagePane.setAlignment(Pos.CENTER_LEFT);
-            messageP.setAlignment(Pos.CENTER_LEFT); */
-            messagePane.getChildren().add(generalBox);
-            messagePane.setAlignment(Pos.CENTER_LEFT);
+            messageP.setAlignment(Pos.CENTER_LEFT);
         }
 
         return messagePane;
