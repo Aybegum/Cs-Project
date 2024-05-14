@@ -17,7 +17,7 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c1cad3" height="11.0" layoutX="38.0" layoutY="29.0" onMouseClicked="#goToProfile" stroke="#c1cad3" strokeType="INSIDE" width="38.0" />
             <ScrollPane layoutX="59.0" layoutY="59.0" prefHeight="310.0" prefWidth="525.0">
                <content>
-                  <VBox prefHeight="1112.0" prefWidth="507.0" />
+                  <VBox fx:id="followersVBox" prefHeight="1112.0" prefWidth="507.0" />
                </content></ScrollPane>
             <Text layoutX="88.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Followers (number of followers)" wrappingWidth="367.21630859375">
                <font>

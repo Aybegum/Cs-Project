@@ -145,7 +145,10 @@ public class User {
 		return null;
 
 	}
-
+	public void addFollowers (User user) {
+		followerList.add(user);
+	}
+	
 	public static ResultSet getByEmail(String email) throws SQLException {
 
 		Connection connection = Main.connect();
