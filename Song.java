@@ -92,7 +92,10 @@ public class Song {
 				String url = resultSet.getString("url");
 				return new Song(songId, songName, artist, url);
 			}
+			statement.close();
+			connection.close();
 		}
+		connection.close();
 		return null; // Return null if song with given ID is not found
 	}
 
@@ -108,7 +111,10 @@ public class Song {
 				String url = resultSet.getString("url");
 				return new Song(songId, songName, artist, url);
 			}
+			statement.close();
+			connection.close();
 		}
+		connection.close();
 		return null; // Return null if song with given ID is not found
 	}
 
@@ -184,4 +190,3 @@ public class Song {
 		this.isPlaying = !this.isPlaying;
 	}
 } 
-
