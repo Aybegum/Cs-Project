@@ -115,7 +115,7 @@ public class searchpageController implements Initializable {
         ArrayList<Song> searchedSongs = new ArrayList<>();
 		ArrayList<User> searchedUser = new ArrayList<>();
 		ArrayList<Playlist> searchedPlaylist = new ArrayList<>();
-		if(comboBoxSearch.getValue().equals("Song") || comboBoxSearch.getValue().equals(null)){
+		if(comboBoxSearch.getValue().equals("Song")){
 			try {
 				searchedSongs = searchSongsByNameorArtist(searchBarTextField.getText());
 			} catch (SQLException e) {
@@ -153,7 +153,7 @@ public class searchpageController implements Initializable {
 				songsFlowPane.setVisible(true);
 			}
 		}
-		else if(comboBoxSearch.getValue().equals("Playlist")){{
+		else if(comboBoxSearch.getValue().equals("Playlist")){
 			try {
 				searchedPlaylist = searchPlaylistsByName(searchBarTextField.getText());
 			} catch (SQLException e) {
@@ -174,6 +174,28 @@ public class searchpageController implements Initializable {
 				playlistNoCounter++;
 			}
 		}
+		else{
+			try {
+				searchedSongs = searchSongsByNameorArtist(searchBarTextField.getText());
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			for(Song songs: searchedSongs){
+				HBox song = new HBox();
+				Label songInfo = new Label(songCounter + "- " + songs.getName() + " - " + songs.getArtist() + "                                          ");
+				Button playButton = new Button("play");
+				playButton.setOnAction(new EventHandler<ActionEvent>() {
+					@Override
+					public void handle(ActionEvent e) {
+					
+						//playSong(song);
+                }
+            });
+				song.getChildren().addAll(songInfo, playButton);
+				songsFlowPane.getChildren().add(song);
+				songsFlowPane.setVisible(true);
+				songCounter++;
+			}
 		}
     }
     
