@@ -22,6 +22,54 @@ public class Post {
 		this.playlistId = playlistId;
 		this.userId = userId;
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+	public int getPlaylistId() {
+		return playlistId;
+	}
+
+	public void setPlaylistId(int playlistId) {
+		this.playlistId = playlistId;
+	}
+
+	public int getSongId() {
+		return songId;
+	}
+
+	public void setSongId(int songId) {
+		this.songId = songId;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
 	
 	public static Post createTextPost(String text, int userId) throws SQLException {
 		
