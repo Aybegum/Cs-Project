@@ -106,7 +106,7 @@
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor></Circle>
-            <Text accessibleText="image" fill="#053c75" layoutX="42.0" layoutY="206.0" onMouseClicked="#postImage" strokeType="OUTSIDE" strokeWidth="0.0" text="+ Image">
+            <Text accessibleText="image" fill="#053c75" layoutX="42.0" layoutY="206.0" onMouseClicked="#image" strokeType="OUTSIDE" strokeWidth="0.0" text="+ Image">
                <font>
                   <Font name="Times New Roman" size="12.0" />
                </font>
@@ -126,7 +126,7 @@
             <Line endX="-84.0" endY="12.999996185302734" layoutX="487.0" layoutY="19.0" startX="-75.0" startY="22.400005340576172" />
             <ScrollPane layoutX="25.0" layoutY="219.0" prefHeight="194.0" prefWidth="427.0">
                <content>
-                  <FlowPane fx:id="postPane" prefHeight="374.0" prefWidth="411.0" />
+                  <FlowPane fx:id="postPane" orientation="VERTICAL" prefHeight="374.0" prefWidth="411.0" />
                </content>
             </ScrollPane>
             <ScrollPane layoutX="481.0" layoutY="63.0" prefHeight="223.0" prefWidth="170.0">
@@ -143,3 +143,4 @@
       </AnchorPane>
    </children>
 </VBox>
+
