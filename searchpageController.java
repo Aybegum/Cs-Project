@@ -8,8 +8,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-
-import javax.print.DocFlavor.URL;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -38,7 +36,7 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 public class searchpageController implements Initializable {
-
+	
     @FXML
     private Rectangle backRect;
 
@@ -92,7 +90,8 @@ public class searchpageController implements Initializable {
 				int id = rs.getInt("id");
 				String songTitle = rs.getString("name");
 				String artist = rs.getString("artist");
-				Song song = new Song(id, songTitle, artist);
+				String url = rs.getString("url");
+				Song song = new Song(id, songTitle, artist, url);
 				resultSongs.add(song);
 			}
 		} catch (SQLException e) {
@@ -112,117 +111,77 @@ public class searchpageController implements Initializable {
 		return resultSongs;
 	}
     
-    public void renderSongs(MouseEvent event){
-        ArrayList<Song> searchedSongs = new ArrayList<>();
-		ArrayList<User> searchedUser = new ArrayList<>();
-		ArrayList<Playlist> searchedPlaylist = new ArrayList<>();
-		if(comboBoxSearch.getValue().equals("Song")){
-			try {
-				searchedSongs = searchSongsByNameorArtist(searchBarTextField.getText());
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			for(Song songs: searchedSongs){
-				HBox song = new HBox();
-				Label songInfo = new Label(songCounter + "- " + songs.getName() + " - " + songs.getArtist() + "                                          ");
-				Button playButton = new Button("play");
-				playButton.setOnAction(new EventHandler<ActionEvent>() {
-					@Override
-					public void handle(ActionEvent e) {
-					try {
-						if(!isPlaying){
-						playSong(songs);
-						}
-						else{
-							stopSong(songs);
-						}
-					} catch (UnsupportedAudioFileException e1) {
-						e1.printStackTrace();
-					} catch (IOException e1) {
-						e1.printStackTrace();
-					} catch (LineUnavailableException e1) {
-						e1.printStackTrace();
-					} catch (SQLException e1) {
-						e1.printStackTrace();
-					}
-                }
-            });
-				song.getChildren().addAll(songInfo, playButton);
-				songsFlowPane.getChildren().add(song);
-				songsFlowPane.setVisible(true);
-				songCounter++;
-			}
-		}
-		else if(comboBoxSearch.getValue().equals("User")){
-			try {
-				searchedUser = searchUserByName(searchBarTextField.getText());
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			for(User users: searchedUser){
-				HBox user = new HBox();
-				Label songName = new Label(songCounter + "- " + users.getUsername() + " - " + users.getUsername());
-				Button deleteButton = new Button(" - ");
-				user.getChildren().addAll(songName, deleteButton);
-				songsFlowPane.getChildren().add(user);
-				songsFlowPane.setVisible(true);
-			}
-		}
-		else if(comboBoxSearch.getValue().equals("Playlist")){
-			try {
-				searchedPlaylist = searchPlaylistsByName(searchBarTextField.getText());
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			for(Playlist playlists: searchedPlaylist){
-				HBox playlist = new HBox();
-				Label playlistName = new Label();
+	public void renderSongs(MouseEvent event) {
+		ArrayList<Song> searchedSongs = new ArrayList<>();
+		ArrayList<User> searchedUsers = new ArrayList<>();
+		ArrayList<Playlist> searchedPlaylists = new ArrayList<>();
+		
+		if (!comboBoxSearch.getSelectionModel().isEmpty()) {
+			if (comboBoxSearch.getValue().equals("Song")) {
 				try {
-					playlistName = new Label(playlistNoCounter + "- " + playlists.getPlaylistName() + " - " + User.getById(playlists.getCreatorID()));
+					searchedSongs = searchSongsByNameorArtist(searchBarTextField.getText());
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
-				Button viewButton = new Button("view");
-				playlist.getChildren().addAll(playlistName, viewButton);
-				songsFlowPane.getChildren().add(playlist);
-				songsFlowPane.setVisible(true);
-				playlistNoCounter++;
+				
+				for (Song song : searchedSongs) {
+					HBox songHBox = new HBox();
+					Label songInfo = new Label(songCounter + "- " + song.getName() + " - " + song.getArtist() + "                                          ");
+					Button playButton = new Button("Play");
+					
+					playButton.setOnAction(new EventHandler<ActionEvent>() {
+						@Override
+						public void handle(ActionEvent event) {
+							try {
+								arrangeSong(song);
+							} catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+								e.printStackTrace();
+							}
+						}
+					});
+					
+					songHBox.getChildren().addAll(songInfo, playButton);
+					songsFlowPane.getChildren().add(songHBox);
+					songsFlowPane.setVisible(true);
+					songCounter++;
+				}
+			} else if (comboBoxSearch.getValue().equals("User")) {
+				try {
+					searchedUsers = searchUserByName(searchBarTextField.getText());
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				for (User user : searchedUsers) {
+					HBox userHBox = new HBox();
+					Label userName = new Label(songCounter + "- " + user.getUsername() + " - " + user.getUsername());
+					Button deleteButton = new Button(" - ");
+					userHBox.getChildren().addAll(userName, deleteButton);
+					songsFlowPane.getChildren().add(userHBox);
+					songsFlowPane.setVisible(true);
+				}
+			} else if (comboBoxSearch.getValue().equals("Playlist")) {
+				try {
+					searchedPlaylists = searchPlaylistsByName(searchBarTextField.getText());
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				for (Playlist playlist : searchedPlaylists) {
+					HBox playlistHBox = new HBox();
+					Label playlistName = new Label();
+					try {
+						playlistName = new Label(playlistNoCounter + "- " + playlist.getPlaylistName() + " - " + User.getById(playlist.getCreatorID()));
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+					Button viewButton = new Button("View");
+					playlistHBox.getChildren().addAll(playlistName, viewButton);
+					songsFlowPane.getChildren().add(playlistHBox);
+					songsFlowPane.setVisible(true);
+					playlistNoCounter++;
+				}
 			}
 		}
-		else{
-			try {
-				searchedSongs = searchSongsByNameorArtist(searchBarTextField.getText());
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			for(Song songs: searchedSongs){
-				HBox song = new HBox();
-				Label songInfo = new Label(songCounter + "- " + songs.getName() + " - " + songs.getArtist() + "                                          ");
-				Button playButton = new Button("play");
-				playButton.setOnAction(new EventHandler<ActionEvent>() {
-					@Override
-					public void handle(ActionEvent e) {
-					try {
-						playSong(Song.getSongByName(songs.getName()));
-					} catch (UnsupportedAudioFileException e1) {
-						e1.printStackTrace();
-					} catch (IOException e1) {
-						e1.printStackTrace();
-					} catch (LineUnavailableException e1) {
-						e1.printStackTrace();
-					} catch (SQLException e1) {
-						e1.printStackTrace();
-					}
-                }
-            	});
-				song.getChildren().addAll(songInfo, playButton);
-				songsFlowPane.getChildren().add(song);
-				songsFlowPane.setVisible(true);
-				songCounter++;
-			}
-    }
-}
-    
+	}
     public ArrayList<User> searchUserByName(String searchTerm) throws SQLException {
 		ArrayList<User> resultUsers = new ArrayList<User>();
 		Connection connection = Main.connect();
@@ -304,18 +263,40 @@ public class searchpageController implements Initializable {
         ObservableList<String> options = FXCollections.observableArrayList("User", "Song", "Playlist");
         comboBoxSearch.setItems(options);
     }
-	public void playSong(Song song) throws UnsupportedAudioFileException, IOException, LineUnavailableException{
-		File file = new File(song.getName());
-        AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
-        Clip clip = AudioSystem.getClip();
-        clip.open(audioStream);
-		clip.start();
-		//clip.setMicrosecondPosition(0);
-		// we'll use these methods  
-		isPlaying = true;
+	
+	public void arrangeSong(Song song) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+		String filePath = song.getUrl().substring(39);
+		File file = new File(filePath);
+		AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
+	
+		Clip clip = song.getClip();
+		if (clip == null) {
+			clip = AudioSystem.getClip();
+			clip.open(audioStream);
+			song.setClip(clip);
+		}
+
+		if (Song.getCurrentlyPlayingClip() != null && Song.getCurrentlyPlayingClip().isRunning() && Song.getCurrentlyPlayingClip() != clip) {
+			Song.getCurrentlyPlayingClip().stop();
+			Song.getCurrentlyPlayingsSong().setIsPlaying(false);
+		}
+		if (song.getIsPlaying()) {
+			song.setPausedPosition(clip.getMicrosecondPosition());
+			clip.stop();
+			song.setIsPlaying(false);
+		} else {
+			clip.setMicrosecondPosition(song.getPausedPosition());
+			clip.start();
+			song.setIsPlaying(true);
+		}
+		Song.currentlyPlayingSong = song;
+		Song.currentlyPlayingClip = clip;
 	}
-	public void stopSong(Song song) throws UnsupportedAudioFileException, IOException, LineUnavailableException{
-		File file = new File(song.getName());
+	
+	
+	/*public void stopSong(Song song) throws UnsupportedAudioFileException, IOException, LineUnavailableException{
+		String a = song.getUrl().substring(39);
+		File file = new File(a);
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
         Clip clip = AudioSystem.getClip();
         clip.open(audioStream);
@@ -323,5 +304,5 @@ public class searchpageController implements Initializable {
 		//clip.setMicrosecondPosition(0);
 		// we'll use these methods  
 		isPlaying = false;
-	}
+	}*/
 }
