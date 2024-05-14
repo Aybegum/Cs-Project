@@ -1,5 +1,7 @@
 import javafx.scene.Node;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,6 +10,11 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javax.print.DocFlavor.URL;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -24,6 +31,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.layout.HBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
@@ -54,7 +63,7 @@ public class searchpageController implements Initializable {
     private Scene scene;
     private Parent root;
     private static int songCounter = 1;
-	private static int userCounter = 1;
+	private static int playlistNoCounter = 1;
 	
 
     public void goToCommunityHub(MouseEvent event) throws Exception {
@@ -114,11 +123,16 @@ public class searchpageController implements Initializable {
 			}
 			for(Song songs: searchedSongs){
 				HBox song = new HBox();
-				Label songNo = new Label(songCounter + "");
-				Button playButton = new Button("start");
-				Label songName = new Label("- " + songs.getName() + " - " + songs.getArtist());
-				Button deleteButton = new Button(" - ");
-				song.getChildren().addAll(songNo, playButton, songName, deleteButton);
+				Label songInfo = new Label(songCounter + "- " + songs.getName() + " - " + songs.getArtist() + "                                          ");
+				Button playButton = new Button("play");
+				playButton.setOnAction(new EventHandler<ActionEvent>() {
+					@Override
+					public void handle(ActionEvent e) {
+					
+						//playSong(song);
+                }
+            });
+				song.getChildren().addAll(songInfo, playButton);
 				songsFlowPane.getChildren().add(song);
 				songsFlowPane.setVisible(true);
 				songCounter++;
@@ -139,7 +153,7 @@ public class searchpageController implements Initializable {
 				songsFlowPane.setVisible(true);
 			}
 		}
-		else if(comboBoxSearch.getValue().equals("User")){{
+		else if(comboBoxSearch.getValue().equals("Playlist")){{
 			try {
 				searchedPlaylist = searchPlaylistsByName(searchBarTextField.getText());
 			} catch (SQLException e) {
@@ -149,7 +163,7 @@ public class searchpageController implements Initializable {
 				HBox playlist = new HBox();
 				Label playlistName = new Label();
 				try {
-					playlistName = new Label(songCounter + "- " + playlists.getPlaylistName() + " - " + User.getById(playlists.getCreatorID()));
+					playlistName = new Label(playlistNoCounter + "- " + playlists.getPlaylistName() + " - " + User.getById(playlists.getCreatorID()));
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
@@ -157,6 +171,7 @@ public class searchpageController implements Initializable {
 				playlist.getChildren().addAll(playlistName, viewButton);
 				songsFlowPane.getChildren().add(playlist);
 				songsFlowPane.setVisible(true);
+				playlistNoCounter++;
 			}
 		}
 		}
@@ -243,4 +258,14 @@ public class searchpageController implements Initializable {
         ObservableList<String> options = FXCollections.observableArrayList("User", "Song", "Playlist");
         comboBoxSearch.setItems(options);
     }
+	public void playSong(String songname) throws UnsupportedAudioFileException, IOException, LineUnavailableException{
+		File file = new File("we have to get the files name to play");
+        AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioStream);
+		clip.start();
+		clip.stop();
+		clip.setMicrosecondPosition(0);
+		// we'll use these methods  
+	}
 }
