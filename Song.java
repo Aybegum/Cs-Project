@@ -1,20 +1,57 @@
-
 import java.io.File;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import javax.sound.sampled.Clip;
 
 public class Song {
 	private int ID;
 	private String name;
 	private String artist;
-
-	public Song(int ID, String name, String artist) {
+	private String url;
+	private boolean isPlaying;
+	private Clip clip;
+    private long pausedPosition;
+	public static Song currentlyPlayingSong;
+	public static Clip currentlyPlayingClip;
+	public Song(int ID, String name, String artist, String url) {
 		this.ID = ID;
 		this.name = name;
 		this.artist = artist;
+		this.url = url;
 	}
 
+	public static Song getCurrentlyPlayingsSong () {
+		return currentlyPlayingSong;
+	}
+	public static Clip getCurrentlyPlayingClip () {
+		return currentlyPlayingClip;
+	}
+	public long getPausedPosition() {
+        return pausedPosition;
+    }
+
+    public void setPausedPosition(long pausedPosition) {
+        this.pausedPosition = pausedPosition;
+    }
+	public boolean getIsPlaying() {
+        return isPlaying;
+    }
+
+    public void setIsPlaying(boolean isPlaying) {
+        this.isPlaying = isPlaying;
+    }
+
+    public void setClip(Clip clip) {
+        this.clip = clip;
+    }
+	public Clip getClip() {
+        return clip;
+    }
+
+	public String getUrl () {
+		return this.url;
+	}
 	public int getID() {
 		return ID;
 	}
@@ -39,6 +76,10 @@ public class Song {
 		this.artist = artist;
 	}
 
+	public boolean getisPlaying(){
+		return this.isPlaying;
+	}
+
 	public static Song getSongById(int songId) throws SQLException {
 		String query = "SELECT * FROM songs WHERE id = ?";
 		Connection connection = Main.connect();
@@ -48,7 +89,8 @@ public class Song {
 			if (resultSet.next()) {
 				String songName = resultSet.getString("name");
 				String artist = resultSet.getString("artist");
-				return new Song(songId, songName, artist);
+				String url = resultSet.getString("url");
+				return new Song(songId, songName, artist, url);
 			}
 		}
 		return null; // Return null if song with given ID is not found
@@ -63,14 +105,15 @@ public class Song {
 			if (resultSet.next()) {
 				int songId = resultSet.getInt("id");
 				String artist = resultSet.getString("artist");
-				return new Song(songId, songName, artist);
+				String url = resultSet.getString("url");
+				return new Song(songId, songName, artist, url);
 			}
 		}
 		return null; // Return null if song with given ID is not found
 	}
 
 	// Method to upload songs from a folder to a database table
-	public static void uploadSongs() throws SQLException {
+	/*public static void uploadSongs() throws SQLException {
 		Connection connection = Main.connect();
 		String query = "insert into songs values (?, ?, ?, ?)";
 		PreparedStatement statement = connection.prepareStatement(query);
@@ -92,12 +135,7 @@ public class Song {
 		}
 
 	}
-
-	public static void main(String[] args) throws Exception {
-
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		uploadSongs();
-	}
+*/
 
 	public static ArrayList<Song> searchSongsByNameorArtist(String searchTerm) throws SQLException {
 		ArrayList<Song> resultSongs = new ArrayList<Song>();
@@ -116,7 +154,8 @@ public class Song {
 				int id = rs.getInt("id");
 				String songTitle = rs.getString("name");
 				String artist = rs.getString("artist");
-				Song song = new Song(id, songTitle, artist);
+				String url = rs.getString("url");
+				Song song = new Song(id, songTitle, artist, url);
 				resultSongs.add(song);
 			}
 		} catch (SQLException e) {
@@ -141,5 +180,8 @@ public class Song {
 		String name = song.getName().replace("_", " ");
 		return name;
 	}
-	
-}
+	public void setisPlaying() {
+		this.isPlaying = !this.isPlaying;
+	}
+} 
+
