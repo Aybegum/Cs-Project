@@ -115,7 +115,7 @@ public class searchpageController implements Initializable {
         ArrayList<Song> searchedSongs = new ArrayList<>();
 		ArrayList<User> searchedUser = new ArrayList<>();
 		ArrayList<Playlist> searchedPlaylist = new ArrayList<>();
-		if(comboBoxSearch.getValue().equals("Song") || comboBoxSearch.getValue() == null){
+		if(comboBoxSearch.getValue().equals("Song") || comboBoxSearch.getValue().equals(null)){
 			try {
 				searchedSongs = searchSongsByNameorArtist(searchBarTextField.getText());
 			} catch (SQLException e) {
