@@ -67,7 +67,7 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="16.0" layoutX="362.0" layoutY="182.0" stroke="#053c75" strokeType="INSIDE" width="77.0" />
             <Circle fx:id="playMusic1" fill="#053c75" layoutX="440.0" layoutY="190.0" radius="8.0" stroke="#053c75" strokeType="INSIDE" />
             <Circle fx:id="playMusic11" fill="#053c75" layoutX="362.0" layoutY="190.0" radius="8.0" stroke="#053c75" strokeType="INSIDE" />
-            <Text fill="WHITE" layoutX="362.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Post" textAlignment="CENTER" wrappingWidth="77.0">
+            <Text fill="WHITE" layoutX="362.0" layoutY="194.0" onMouseClicked="#renderPost" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Post" textAlignment="CENTER" wrappingWidth="77.0">
                <font>
                   <Font name="Times New Roman" size="15.0" />
                </font>
@@ -107,7 +107,7 @@
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor></Circle>
-            <Text accessibleText="image" fill="#053c75" layoutX="42.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ Image">
+            <Text accessibleText="image" fill="#053c75" layoutX="42.0" layoutY="194.0" onMouseClicked="#postImage" strokeType="OUTSIDE" strokeWidth="0.0" text="+ Image">
                <font>
                   <Font name="Times New Roman" size="12.0" />
                </font>

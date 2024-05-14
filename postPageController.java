@@ -80,6 +80,19 @@ public class postPageController implements Initializable{
         return imageBox;
 
     }
+    public void postImage(MouseEvent event)throws Exception{
+        HBox imageBox = new HBox();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Choose Image");
+        File selectedFile = fileChooser.showOpenDialog(stage);
+        if(selectedFile != null){
+            Image image = new Image(selectedFile.toURI().toString());
+            ImageView imageView = new ImageView(image);
+            imageBox.getChildren().add(imageView);
+        }
+        postPane.getChildren().add(imageBox);
+
+    }
     public Pane postPlaylist(){
         return null;
     }

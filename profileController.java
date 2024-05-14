@@ -32,6 +32,20 @@ public class profileController {
           stage.setScene(scene);
           stage.show();
   }
+    public void goToFollowers(MouseEvent event) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("followersPage.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void goToFollowing(MouseEvent event) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("followingPage.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
 
 
