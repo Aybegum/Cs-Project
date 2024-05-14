@@ -12,8 +12,8 @@ public class User {
 	private String pictureUrl;
 	private String email;
 	private String password;
-	private ArrayList<User> followingList;
-	private ArrayList<User> followerList;
+	private ArrayList<Integer> followingList;
+	private ArrayList<Integer> followerList;
 
 	private static User currentUser;
 
@@ -24,6 +24,8 @@ public class User {
 		this.email = email;
 		this.password = password;
 		this.pictureUrl = pictureUrl;
+		this.followerList = new ArrayList<Integer>();
+		this.followingList = new ArrayList<Integer>();
 		setFollowingList();
 		setFollowerList();
 
@@ -83,10 +85,13 @@ public class User {
 		Connection connection = Main.connect();
 		Statement statement = connection.createStatement();
 		ResultSet result = statement.executeQuery("select * from follower_following where followerid ='" + id + "'");
-
+		
 		for (int i = 0; result.next(); i++) {
-			followingList.set(i, User.getById(result.getInt("followingid")));
+			followingList.add(result.getInt("followingid"));
 		}
+
+		statement.close();
+		connection.close();
 
 	}
 
@@ -96,16 +101,19 @@ public class User {
 		ResultSet result = statement.executeQuery("select * from follower_following where followingid ='" + id + "'");
 
 		for (int i = 0; result.next(); i++) {
-			followerList.set(i, User.getById(result.getInt("followerid")));
+			followerList.add(result.getInt("followerid"));
 		}
+
+		statement.close();
+		connection.close();
 
 	}
 
-	public ArrayList<User> getFollowerList() {
+	public ArrayList<Integer> getFollowerList() {
 		return followerList;
 	}
 
-	public ArrayList<User> getFollowingList() {
+	public ArrayList<Integer> getFollowingList() {
 		return followingList;
 	}
 
@@ -146,7 +154,7 @@ public class User {
 
 	}
 	public void addFollowers (User user) {
-		followerList.add(user);
+		followerList.add(user.id);
 	}
 	
 	public static ResultSet getByEmail(String email) throws SQLException {
@@ -233,7 +241,10 @@ public class User {
 		if (resultSet.next()) {
 			return false;
 		}
+		statement.close();
+		connection.close();
 		return true;
+		
 	}
 
 	public static boolean isValidPassword(String password) {
@@ -283,6 +294,7 @@ public class User {
 
 		}
 
+		r.close();
 		welcomePage.showInvalidLoginError();
 		return null;
 
@@ -321,7 +333,7 @@ public class User {
 		statement.executeUpdate();
 	}
 
-	public ArrayList<User> follow(User user) throws SQLException {
+	public ArrayList<Integer> follow(User user) throws SQLException {
 
 		Connection connection = null;
 		Statement statement = null;
@@ -331,7 +343,7 @@ public class User {
 			statement = connection.createStatement();
 			statement.executeUpdate(query);
 
-			followingList.add(user);
+			followingList.add(user.id);
 		} finally {
 			if (statement != null) {
 				statement.close();
@@ -343,7 +355,7 @@ public class User {
 		return followingList;
 	}
 
-	public ArrayList<User> unfollow(User user) throws SQLException {
+	public ArrayList<Integer> unfollow(User user) throws SQLException {
 
 		Connection connection = null;
 		Statement statement = null;
@@ -354,7 +366,7 @@ public class User {
 			statement = connection.createStatement();
 			statement.executeUpdate(query);
 
-			followingList.remove(user);
+			followingList.remove(user.id);
 		} finally {
 			if (statement != null) {
 				statement.close();
@@ -368,8 +380,15 @@ public class User {
 
 	public boolean isFriendsWith(User user) {
 
-		boolean isFriendsWith = followerList.get(followerList.indexOf(user)) == followingList
-				.get(followingList.indexOf(user));
+		if (followerList.indexOf(user.id) == -1 ) {
+			return false;
+		}
+		if (followingList.indexOf(user.id) == -1 ) {
+			return false;
+		}
+
+		boolean isFriendsWith = followerList.get(followerList.indexOf(user.id)) == followingList
+				.get(followingList.indexOf(user.id));
 		return isFriendsWith;
 	}
 
