@@ -54,8 +54,12 @@ public class Community {
             ResultSet rs = statement.executeQuery("select * from community where id = '" + id + "'");
             if (rs.next()) {
                 String name = rs.getString("name");
+                statement.close();
+                connection.close();
                 return new Community(id, name);
             } else {
+                statement.close();
+                connection.close();
                 return null;
             }
         } catch (Exception e) {
