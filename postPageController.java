@@ -28,6 +28,7 @@ import javafx.geometry.Pos;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -44,50 +45,73 @@ public class postPageController implements Initializable{
     @FXML
     private TextField postText;
     @FXML
+    private TextField postTitle;
+    @FXML
     private FlowPane postPane;
     @FXML
     private VBox playlistBox;
     public void renderPost(MouseEvent event){
         String text = postText.getText();
         String currentPost = ((Node) event.getSource()).getAccessibleText();
+        Text nw = new Text("");
         if(currentPost == null){
             postPane.getChildren().add(postText(text));
-            
+            postPane.getChildren().add(nw);
+            postText.setText("");
+
         }else if(currentPost.equals("image")){
-            postPane.getChildren().add(postImage());
+            postPane.getChildren().add(postImage(image(event)));
             
         }else if(currentPost.equals("playlist")){
         
         }else {
 
         }
+        postText.setText("");
+        postTitle.setText("");
     }
 
     //to do 
     public void renderPost()throws SQLException{
     }
-    //Implemet this method when the post's data come
-    public Pane postImage(){
-        HBox imageBox = new HBox();
+    public File image(MouseEvent event){
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose Image");
         File selectedFile = fileChooser.showOpenDialog(stage);
+        return selectedFile;
+
+    }
+    //Implemet this method when the post's data come
+    public Pane postImage(File selectedFile){
+        VBox imageBox = new VBox();
+        Text title = new Text(postTitle.getText());
+        title.setFill(Color.WHITE);
+        title.setFont(Font.font("Times New Roman", 16));
         if(selectedFile != null){
             Image image = new Image(selectedFile.toURI().toString());
+            System.out.println(selectedFile.toURI().toString());
             ImageView imageView = new ImageView(image);
+            imageBox.getChildren().add(title);
             imageBox.getChildren().add(imageView);
         }
         return imageBox;
 
     }
     public void postImage(MouseEvent event)throws Exception{
-        HBox imageBox = new HBox();
+        VBox imageBox = new VBox();
+        Text title = new Text(postTitle.getText());
+        title.setFill(Color.WHITE);
+        title.setFont(Font.font("Times New Roman", 16));
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose Image");
         File selectedFile = fileChooser.showOpenDialog(stage);
         if(selectedFile != null){
             Image image = new Image(selectedFile.toURI().toString());
             ImageView imageView = new ImageView(image);
+            System.out.println(selectedFile.toURI().toString());
+            imageView.setFitHeight(200);
+            imageView.setFitWidth(200);
+            imageBox.getChildren().add(title);
             imageBox.getChildren().add(imageView);
         }
         postPane.getChildren().add(imageBox);
@@ -100,14 +124,32 @@ public class postPageController implements Initializable{
         return null;
     }
     public Pane postText(String post){
-        HBox postBox = new HBox();
+        VBox postBox = new VBox();
+        HBox titleBox = new HBox();
+        HBox textBox = new HBox();
+        titleBox.setSpacing(5);
+        textBox.setSpacing(5);
+        titleBox.setAlignment(Pos.CENTER);
+        textBox.setAlignment(Pos.CENTER);
         postBox.setSpacing(5);
         postBox.setAlignment(Pos.CENTER);
+
         Text postText = new Text(post);
         postText.setFont(Font.font("Times New Roman", 14));
-        postText.setFill(Color.WHITE);
-        postBox.getChildren().add(postText);
+        postText.setFill(Color.BLACK);
+        textBox.getChildren().add(postText);
+        textBox.setStyle("-fx-background-color: #b4bfc9; -fx-padding: 5px; -fx-background-radius: 5px;");
+
+        Text title = new Text(postTitle.getText());
+        title.setFill(Color.BLACK);
+        title.setFont(Font.font("Times New Roman", 16));
+        titleBox.getChildren().add(title);
+        titleBox.setStyle("-fx-background-color: #b4bfc9; -fx-padding: 5px; -fx-background-radius: 5px;");
+        Text space = new Text("");
+        space.setFont(Font.font("Times New Roman", 5));
+        postBox.getChildren().addAll(titleBox,space,textBox);
         postBox.setStyle("-fx-background-color: #053c75; -fx-padding: 5px; -fx-background-radius: 5px;");
+        
         return postBox;
     }
     
