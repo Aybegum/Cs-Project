@@ -59,12 +59,12 @@
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
       </Text>
-      <Text fill="WHITE" layoutX="442.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Song Name" textAlignment="CENTER" wrappingWidth="156.0">
+      <Text fx:id="songNameText" fill="WHITE" layoutX="442.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Song Name" textAlignment="CENTER" wrappingWidth="156.0">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="449.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist" textAlignment="CENTER" wrappingWidth="148.5380859375">
+      <Text fx:id="artistText" fill="WHITE" layoutX="449.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist" textAlignment="CENTER" wrappingWidth="148.5380859375">
          <font>
             <Font name="Times New Roman" size="16.0" />
          </font>

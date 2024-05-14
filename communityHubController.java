@@ -56,6 +56,11 @@ public class communityHubController implements Initializable{
       private Text RandB;
       @FXML
       private Text country;
+      @FXML
+      private static Text songNameText;
+
+      @FXML
+      private static Text artistText;
 
     public void goToCommunity(MouseEvent event) throws Exception{
             Text clickedText = (Text) event.getSource();
@@ -65,6 +70,13 @@ public class communityHubController implements Initializable{
             goCommunity(event);
 
     }
+      public static void setSongNameText (Song song ) {
+            songNameText.setText(song.getSongNameWithSpaces(song));
+      }
+      public static void setSongArtist (Song song) {
+            artistText.setText(song.getArtist());
+      }
+      
     public void goCommunity(MouseEvent event) throws IOException{
       Parent root = FXMLLoader.load(getClass().getResource("postPage.fxml"));
       stage = (Stage)((Node)event.getSource()).getScene().getWindow();
