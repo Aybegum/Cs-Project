@@ -7,7 +7,6 @@ public class Playlist {
     private String pictureURL;
     private int ID;
     private int creatorID;
-    private Connection connection;
     private ArrayList<Song> songs = new ArrayList<>();
 
     public Playlist (String name, String pictureURL, int ID, int creatorID) throws SQLException {
@@ -105,13 +104,16 @@ public class Playlist {
 		try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, ID);
             statement.executeUpdate();
+			statement.close();
         }
 		
 		query = "DELETE FROM playlists WHERE id = ?";
 		try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, ID);
             statement.executeUpdate();
+			statement.close();
         }	
+		connection.close();
 
 	}
 	
@@ -124,7 +126,9 @@ public class Playlist {
             statement.setInt(1, ID);
             statement.setInt(2, songID);
             statement.executeUpdate();
+			statement.close();
         } 
+		connection.close();
 	}
 	
 	public void removeSong (int songID) throws SQLException {
@@ -136,13 +140,16 @@ public class Playlist {
             statement.setInt(1,ID);
             statement.setInt(2, songID);
             statement.executeUpdate();
+			statement.close();
         }
+		connection.close();
 	}
 	
 	
 	public ArrayList<Song> getSongsInPlaylist(int playlistId) throws SQLException {
 	    ArrayList<Song> songs = new ArrayList<>();
 	    String query = "SELECT * FROM playlistsongs WHERE playlistid = ?";
+		Connection connection = Main.connect();
 	    try (PreparedStatement statement = connection.prepareStatement(query)) {
 	        statement.setInt(1, playlistId);
 	        ResultSet resultSet = statement.executeQuery();
@@ -153,7 +160,9 @@ public class Playlist {
 	                songs.add(song);
 	            }
 	        }
+			statement.close();
 	    }
+		connection.close();
 	    return songs;
 	}
 	
@@ -170,9 +179,13 @@ public class Playlist {
 			
 			id = rs.getInt("id");
 			pictureUrl = rs.getString("pictureurl");
+			statement.close();
+			connection.close();
 			return new Playlist(name, pictureUrl, id, user.getId());
 			
 		}
+		statement.close();
+		connection.close();
 		return null;
 		
 	}
@@ -190,8 +203,11 @@ public class Playlist {
 			
 			name = rs.getString("name");
 			pictureUrl = rs.getString("pictureurl");
+			statement.close();
+			connection.close();
 			return new Playlist(name, pictureUrl, id, user.getId());
 		}
+		connection.close();
 		return null;
 		
 	}
