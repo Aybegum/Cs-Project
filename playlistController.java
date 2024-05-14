@@ -26,8 +26,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import com.mysql.cj.xdevapi.AddResult;
-
 import javafx.scene.Node;
 public class playlistController implements Initializable{
       
