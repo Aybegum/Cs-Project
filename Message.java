@@ -54,6 +54,9 @@ public class Message {
 		statement.setString(3, body);
 		int count = statement.executeUpdate();
 
+		statement.close();
+		connection.close();
+
 		return message;
 
 	}
