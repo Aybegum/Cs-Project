@@ -47,8 +47,6 @@ public class postPageController implements Initializable{
     private FlowPane postPane;
     @FXML
     private VBox playlistBox;
-    @FXML 
-    private TextField postTitle; 
     public void renderPost(MouseEvent event){
         String text = postText.getText();
         String currentPost = ((Node) event.getSource()).getAccessibleText();
@@ -101,20 +99,16 @@ public class postPageController implements Initializable{
     public Pane postSong(){
         return null;
     }
-    public Pane postText(String post){ 
-            VBox postBox = new VBox(); 
-            postBox.setSpacing(5); 
-            postBox.setAlignment(Pos.CENTER); 
-            Text title = new Text(postTitle.getText()); 
-            title.setFill(Color.WHITE); 
-            title.setFont(Font.font("Times New Roman", 16)); 
-            Text postText = new Text(post); 
-            Text name = new Text("@a"); 
-            name.setFont(Font.font("Times New Roman", 12)); 
-            name.setFill(Color.BEIGE); 
-            postText.setFont(Font.font("Times New Roman", 14)); 
-            postText.setFill(Color.WHITE); 
-            postBox.getChildren().add(postText); 
+    public Pane postText(String post){
+        HBox postBox = new HBox();
+        postBox.setSpacing(5);
+        postBox.setAlignment(Pos.CENTER);
+        Text postText = new Text(post);
+        postText.setFont(Font.font("Times New Roman", 14));
+        postText.setFill(Color.WHITE);
+        postBox.getChildren().add(postText);
+        postBox.setStyle("-fx-background-color: #053c75; -fx-padding: 5px; -fx-background-radius: 5px;");
+        return postBox;
     }
     
     public void goToChatroom(MouseEvent event) throws Exception{
