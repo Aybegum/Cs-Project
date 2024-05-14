@@ -18,6 +18,7 @@ import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -26,6 +27,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 import javafx.scene.Node;
 public class communityHubController implements Initializable{
       private Stage stage;
@@ -61,7 +69,9 @@ public class communityHubController implements Initializable{
 
       @FXML
       private static Text artistText;
-
+      public void arrangeSongOnCommunityHub(MouseEvent event) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+            searchpageController.arrangeSong(Song.currentlyPlayingSong);
+      }
     public void goToCommunity(MouseEvent event) throws Exception{
             Text clickedText = (Text) event.getSource();
             Community.setCurrentCommunityId(Integer.parseInt(((Node) clickedText).getAccessibleText()));

@@ -264,7 +264,7 @@ public class searchpageController implements Initializable {
         comboBoxSearch.setItems(options);
     }
 	
-	public void arrangeSong(Song song) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+	public static void arrangeSong(Song song) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		String filePath = song.getUrl().substring(39);
 		File file = new File(filePath);
 		AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
