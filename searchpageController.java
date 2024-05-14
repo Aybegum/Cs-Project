@@ -187,17 +187,26 @@ public class searchpageController implements Initializable {
 				playButton.setOnAction(new EventHandler<ActionEvent>() {
 					@Override
 					public void handle(ActionEvent e) {
-					
-						//playSong(song);
+					try {
+						playSong(Song.getSongByName(songs.getName()));
+					} catch (UnsupportedAudioFileException e1) {
+						e1.printStackTrace();
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					} catch (LineUnavailableException e1) {
+						e1.printStackTrace();
+					} catch (SQLException e1) {
+						e1.printStackTrace();
+					}
                 }
-            });
+            	});
 				song.getChildren().addAll(songInfo, playButton);
 				songsFlowPane.getChildren().add(song);
 				songsFlowPane.setVisible(true);
 				songCounter++;
 			}
-		}
     }
+}
     
     public ArrayList<User> searchUserByName(String searchTerm) throws SQLException {
 		ArrayList<User> resultUsers = new ArrayList<User>();
@@ -280,7 +289,7 @@ public class searchpageController implements Initializable {
         ObservableList<String> options = FXCollections.observableArrayList("User", "Song", "Playlist");
         comboBoxSearch.setItems(options);
     }
-	public void playSong(String songname) throws UnsupportedAudioFileException, IOException, LineUnavailableException{
+	public void playSong(Song song) throws UnsupportedAudioFileException, IOException, LineUnavailableException{
 		File file = new File("we have to get the files name to play");
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
         Clip clip = AudioSystem.getClip();
