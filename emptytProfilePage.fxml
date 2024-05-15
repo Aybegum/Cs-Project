@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS" />
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="409.0" layoutY="-4.0" stroke="#053c75" strokeType="INSIDE" width="640.0" />
+            <Circle fill="#b4bfc9" layoutX="146.0" layoutY="131.0" radius="61.0" stroke="#b4bfc9" strokeType="INSIDE" />
+            <Circle fill="#053c75" layoutX="146.0" layoutY="108.0" radius="17.0" stroke="#053c75" strokeType="INSIDE" />
+            <Circle fill="#053c75" layoutX="146.0" layoutY="161.0" radius="35.0" stroke="#053c75" strokeType="INSIDE" />
+            <Text fill="WHITE" layoutX="240.0" layoutY="100.0" onMouseClicked="#goToFollowers" strokeType="OUTSIDE" strokeWidth="0.0" text="Followers">
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="240.0" layoutY="156.0" onMouseClicked="#goToFollowing" strokeType="OUTSIDE" strokeWidth="0.0" text="Followings">
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="231.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PLAYLISTS" textAlignment="CENTER">
+               <font>
+                  <Font name="Gabriola" size="30.0" />
+               </font>
+            </Text>
+            <Text fill="#e8a27a" layoutX="110.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font>
+            </Text>
+            <Polygon fx:id="backButtonTriangle" fill="#ff8800" layoutX="35.0" layoutY="34.0" onMouseClicked="#goToCommunityHub" points="-21.38007354736328, -6.760345458984375, -10.345657348632812, 9.791290283203125, -10.345657348632812, -20.001632690429688" stroke="#ff8800" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Polygon>
+            <Rectangle fx:id="backButtonRectangle" arcHeight="5.0" arcWidth="5.0" fill="#ff8800" height="8.0" layoutX="21.0" layoutY="25.0" onMouseClicked="#goToCommunityHub" stroke="#ff8800" strokeType="INSIDE" width="23.0">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Rectangle>
+            <ScrollPane layoutX="20.0" layoutY="248.0" prefHeight="122.0" prefWidth="601.0" />
+         </children>
+      </AnchorPane>
+  </children>
+</VBox>
