@@ -26,7 +26,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -35,6 +38,7 @@ import javafx.fxml.FXML;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
 public class searchpageController implements Initializable {
 	
     @FXML
@@ -125,22 +129,33 @@ public class searchpageController implements Initializable {
 				}
 				
 				for (Song song : searchedSongs) {
-					HBox songHBox = new HBox();
-					Label songInfo = new Label(songCounter + "- " + song.getName() + " - " + song.getArtist() + "                                          ");
+					BorderPane songHBox = new BorderPane();
+					Label songInfo = new Label(songCounter + "- "  + getSongNameWithSpaces(song));
+					songInfo.setFont(Font.font("Times New Roman", 12));
 					Button playButton = new Button("Play");
+					playButton.setFont(Font.font("Times New Roman", 12));
+					Region spacer = new Region();
+					HBox.setHgrow(spacer, Priority.ALWAYS);
 					
 					playButton.setOnAction(new EventHandler<ActionEvent>() {
 						@Override
 						public void handle(ActionEvent event) {
 							try {
 								arrangeSong(song);
+								if(song.getisPlaying()){
+									playButton.setText("Pause");
+								}
+								else{
+									playButton.setText("Play");
+								}
 							} catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
 								e.printStackTrace();
 							}
 						}
 					});
 					
-					songHBox.getChildren().addAll(songInfo, playButton);
+					songHBox.setLeft(songInfo);
+					songHBox.setRight(playButton);
 					songsFlowPane.getChildren().add(songHBox);
 					songsFlowPane.setVisible(true);
 					songCounter++;
@@ -158,6 +173,9 @@ public class searchpageController implements Initializable {
 					userHBox.getChildren().addAll(userName, deleteButton);
 					songsFlowPane.getChildren().add(userHBox);
 					songsFlowPane.setVisible(true);
+					if(songsFlowPane == null){
+						songCounter = 1;
+					}
 				}
 			} else if (comboBoxSearch.getValue().equals("Playlist")) {
 				try {
@@ -260,6 +278,7 @@ public class searchpageController implements Initializable {
 
     @Override
     public void initialize(java.net.URL location, ResourceBundle resources) {
+		songsFlowPane.setStyle("-fx-background-color: 053c75;");
         ObservableList<String> options = FXCollections.observableArrayList("User", "Song", "Playlist");
         comboBoxSearch.setItems(options);
     }
@@ -280,7 +299,7 @@ public class searchpageController implements Initializable {
 			Song.getCurrentlyPlayingClip().stop();
 			Song.getCurrentlyPlayingsSong().setIsPlaying(false);
 		}
-		if (song.getIsPlaying()) {
+		if (song.getIsPlaying() || User.getCurrentUser() == null) {
 			song.setPausedPosition(clip.getMicrosecondPosition());
 			clip.stop();
 			song.setIsPlaying(false);
@@ -293,6 +312,11 @@ public class searchpageController implements Initializable {
 		Song.currentlyPlayingClip = clip;
 	}
 	
+	public String getSongNameWithSpaces(Song song) {
+
+		String name = song.getName().replace("_", " ");
+		return name;
+	}
 	
 	/*public void stopSong(Song song) throws UnsupportedAudioFileException, IOException, LineUnavailableException{
 		String a = song.getUrl().substring(39);
