@@ -6,9 +6,9 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -26,10 +26,7 @@
             <AnchorPane layoutX="14.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="415.0" layoutX="-16.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" width="649.0" />
-                  <Circle fill="#b4bfc9" layoutX="131.0" layoutY="178.0" radius="65.0" stroke="#b4bfc9" strokeType="INSIDE" />
-                  <Circle fill="#053c75" layoutX="131.0" layoutY="150.0" radius="20.0" stroke="#053c75" strokeType="INSIDE" />
-                  <Circle fill="#053c75" layoutX="131.0" layoutY="214.0" radius="38.0" stroke="#053c75" strokeType="INSIDE" />
-                  <Text fill="WHITE" layoutX="67.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Profile Picture" textAlignment="CENTER" wrappingWidth="128.3076171875">
+                  <Text fill="WHITE" layoutX="67.0" layoutY="266.0" onMouseClicked="#setProfilePicture" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Profile Picture" textAlignment="CENTER" underline="true" wrappingWidth="128.3076171875">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
@@ -111,6 +108,12 @@
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="25.0" layoutX="3.0" layoutY="2.0" stroke="#053c75" strokeType="INSIDE" width="23.0" />
                      </children>
                   </Pane>
+                  <FlowPane fx:id="imagePane" layoutX="58.0" layoutY="92.0" prefHeight="153.0" prefWidth="145.0" />
+                  <Text fill="WHITE" layoutX="460.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Account" underline="true">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Text>
                </children>
             </AnchorPane>
       </children>
