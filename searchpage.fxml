@@ -60,8 +60,8 @@
                   <VBox fx:id="songsFlowPane" prefHeight="488.0" prefWidth="503.0" />
                </content></ScrollPane>
             <ComboBox fx:id="comboBoxSearch" layoutX="463.0" layoutY="36.0" prefWidth="150.0" promptText="select search" />
-            <Circle fx:id="enterSongCircle" fill="#c1cad3" layoutX="419.0" layoutY="47.0" onMouseClicked="#renderSongs" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
-            <Line fx:id="enterSongLine" endX="-80.39999389648438" endY="27.600006103515625" layoutX="518.0" layoutY="41.0" onMouseClicked="#renderSongs" startX="-90.99996948242188" startY="14.0" />
+            <Circle fx:id="enterSongCircle" fill="#c1cad3" layoutX="416.0" layoutY="47.0" onMouseClicked="#renderSongs" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+            <Line fx:id="enterSongLine" endX="-83.33334350585938" endY="21.0" layoutX="512.0" layoutY="40.0" onMouseClicked="#renderSongs" startX="-90.99996948242188" startY="14.0" />
             <Polygon fx:id="backTria" fill="#053c75" layoutX="26.0" layoutY="62.0" onMouseClicked="#goToCommunityHub" points="-12.400001525878906, -12.79998779296875, -7.62939453125E-6, 2.399993896484375, -7.62939453125E-6, -29.600006103515625" stroke="BLACK" strokeType="INSIDE" />
             <Rectangle fx:id="backRect" arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="9.0" layoutX="27.0" layoutY="44.0" onMouseClicked="#goToCommunityHub" stroke="#053c75" strokeType="INSIDE" width="24.0" />
       </children>
