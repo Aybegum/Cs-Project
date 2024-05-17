@@ -1,4 +1,5 @@
 
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -16,6 +17,7 @@ public class User {
 	private ArrayList<Integer> followerList;
 
 	private static User currentUser;
+	public static User profileUser;
 
 	public User(int id, String username, String password, String pictureUrl, String email) throws SQLException {
 
@@ -85,7 +87,7 @@ public class User {
 		Connection connection = Main.connect();
 		Statement statement = connection.createStatement();
 		ResultSet result = statement.executeQuery("select * from follower_following where followerid ='" + id + "'");
-		
+
 		for (int i = 0; result.next(); i++) {
 			followingList.add(result.getInt("followingid"));
 		}
@@ -153,10 +155,11 @@ public class User {
 		return null;
 
 	}
-	public void addFollowers (User user) {
+
+	public void addFollowers(User user) {
 		followerList.add(user.id);
 	}
-	
+
 	public static ResultSet getByEmail(String email) throws SQLException {
 
 		Connection connection = Main.connect();
@@ -232,7 +235,7 @@ public class User {
 			return false;
 		}
 		return true;
-	} 
+	}
 
 	private static boolean isUsernameUnique(String username) throws SQLException {
 		Connection connection = Main.connect();
@@ -244,7 +247,7 @@ public class User {
 		statement.close();
 		connection.close();
 		return true;
-		
+
 	}
 
 	public static boolean isValidPassword(String password) {
@@ -362,7 +365,8 @@ public class User {
 
 		try {
 			connection = Main.connect();
-			String query = "DELETE FROM follower_following VALUES('" + currentUser.id + "', '" + user.id + "')";
+			String query = "DELETE FROM follower_following WHERE followerid = " + currentUser.id + " AND followingid = "
+					+ user.id;
 			statement = connection.createStatement();
 			statement.executeUpdate(query);
 
@@ -380,10 +384,10 @@ public class User {
 
 	public boolean isFriendsWith(User user) {
 
-		if (followerList.indexOf(user.id) == -1 ) {
+		if (followerList.indexOf(user.id) == -1) {
 			return false;
 		}
-		if (followingList.indexOf(user.id) == -1 ) {
+		if (followingList.indexOf(user.id) == -1) {
 			return false;
 		}
 
@@ -392,56 +396,75 @@ public class User {
 		return isFriendsWith;
 	}
 
-	/*public void updateUsername (String username) throws SQLException {
-
-		if(!isValidUsername(username)) {
-			settingsController.showInvalidUsernameError();
-			return;
-		}
-
-		if(!isUsernameUnique(username)) {
-			settingsController.showNotUniqueUsernameError();
-			return;
-		}
-
-		Connection connection = Main.connect();
-		Statement statement = connection.createStatement();
-		int count = statement.executeUpdate("update users set username = '" + username + "' where id = '" + this.id + "'");
-		
-		statement.close();
-		connection.close();
-	}*/
+	/*
+	 * public void updateUsername (String username) throws SQLException {
+	 * 
+	 * if(!isValidUsername(username)) {
+	 * settingsController.showInvalidUsernameError();
+	 * return;
+	 * }
+	 * 
+	 * if(!isUsernameUnique(username)) {
+	 * settingsController.showNotUniqueUsernameError();
+	 * return;
+	 * }
+	 * 
+	 * Connection connection = Main.connect();
+	 * Statement statement = connection.createStatement();
+	 * int count = statement.executeUpdate("update users set username = '" +
+	 * username + "' where id = '" + this.id + "'");
+	 * 
+	 * statement.close();
+	 * connection.close();
+	 * }
+	 */
 
 	public boolean isPasswordConfirmed(String enterPassword, String confirmPassword) {
 		return enterPassword.equals(confirmPassword);
 	}
 
-	/*public void updatePassword (String enterPassword, String confirmPassword, String oldPassword) throws SQLException {
+	/*
+	 * public void updatePassword (String enterPassword, String confirmPassword,
+	 * String oldPassword) throws SQLException {
+	 * 
+	 * if(!oldPassword.equals(password)) {
+	 * settingsController.showInvalidOldPasswordError();
+	 * return;
+	 * }
+	 * 
+	 * if(!isValidPassword(enterPassword)) {
+	 * settingsController.showInvalidPasswordError();
+	 * return;
+	 * }
+	 * 
+	 * if(!isPasswordConfirmed(enterPassword, confirmPassword)) {
+	 * settingsController.showInvalidConfirmPasswordError();
+	 * return;
+	 * }
+	 * 
+	 * Connection connection = Main.connect();
+	 * Statement statement = connection.createStatement();
+	 * int count = statement.executeUpdate("update users set password = '" +
+	 * password + "' where id = '" + this.id + "'");
+	 * 
+	 * statement.close();
+	 * connection.close();
+	 * }
+	 */
 
-		if(!oldPassword.equals(password)) {
-			settingsController.showInvalidOldPasswordError();
-			return;
-		}
+	public int getNoOfFollowers(User user) {
+		return User.getCurrentUser().getFollowerList().size();
+	}
 
-		if(!isValidPassword(enterPassword)) {
-			settingsController.showInvalidPasswordError();
-			return;
-		}
+	public boolean isFollowing(User user) {
+		return followingList.indexOf(user.id) != -1;
+	}
 
-		if(!isPasswordConfirmed(enterPassword, confirmPassword)) {
-			settingsController.showInvalidConfirmPasswordError();
-			return;
-		}
-
+	public void savePictureUrl(String url) throws SQLException {
 		Connection connection = Main.connect();
 		Statement statement = connection.createStatement();
-		int count = statement.executeUpdate("update users set password = '" + password + "' where id = '" + this.id + "'");
-		
+		statement.executeUpdate("update users set pictureUrl = '" + url + "' where id = '" + id + "'");
 		statement.close();
 		connection.close();
-	} */
-
-	public int getNoOfFollowers (User user) {
-		return User.getCurrentUser().getFollowerList().size();
 	}
 }
