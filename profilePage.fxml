@@ -2,7 +2,7 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -11,9 +11,6 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="profileController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="409.0" layoutY="-4.0" stroke="#053c75" strokeType="INSIDE" width="600.0" />
-      <Circle fill="#b4bfc9" layoutX="146.0" layoutY="131.0" radius="61.0" stroke="#b4bfc9" strokeType="INSIDE" />
-      <Circle fill="#053c75" layoutX="146.0" layoutY="108.0" radius="17.0" stroke="#053c75" strokeType="INSIDE" />
-      <Circle fill="#053c75" layoutX="146.0" layoutY="161.0" radius="35.0" stroke="#053c75" strokeType="INSIDE" />
       <Text fill="WHITE" layoutX="240.0" layoutY="100.0" onMouseClicked="#goToFollowers" strokeType="OUTSIDE" strokeWidth="0.0" text="Followers">
          <font>
             <Font name="Times New Roman" size="20.0" />
@@ -62,5 +59,6 @@
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
       </Text>
+      <FlowPane fx:id="imagePane" layoutX="73.0" layoutY="53.0" prefHeight="141.0" prefWidth="145.0" />
    </children>
 </AnchorPane>
