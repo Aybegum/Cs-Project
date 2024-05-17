@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Polygon?>
@@ -20,20 +18,7 @@
             <Font name="Gabriola" size="45.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb8f05" height="63.0" layoutX="10.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="293.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b4bfc9" height="63.0" layoutX="295.0" layoutY="44.0" stroke="#00152b" strokeType="INSIDE" width="125.0" />
-      <Text layoutX="21.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome back! Here's what your friend X has been listening to:" wrappingWidth="282.3994140625">
-         <font>
-            <Font name="Times New Roman" size="14.0" />
-         </font>
-      </Text>
-      <Text layoutX="82.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Let us know if you like it.">
-         <font>
-            <Font name="Times New Roman" size="14.0" />
-         </font>
-      </Text>
-      <Circle fill="WHITE" layoutX="314.0" layoutY="76.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-      <Polygon layoutX="322.0" layoutY="34.0" points="4.20001220703125, 41.59999084472656, -13.5999755859375, 51.19999694824219, -13.5999755859375, 31.599990844726562" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb8f05" height="63.0" layoutX="10.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="408.0" />
       <Text layoutX="12.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Communities" textAlignment="CENTER" wrappingWidth="414.0">
          <font>
             <Font name="Gabriola" size="40.0" />
@@ -45,13 +30,8 @@
             <Font name="Gabriola" size="50.0" />
          </font>
       </Text>
-      <Text layoutX="334.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Song Name" wrappingWidth="71.0">
-         <font>
-            <Font name="Times New Roman" size="14.0" />
-         </font>
-      </Text>
       <Rectangle fx:id="createPlaylist" arcHeight="5.0" arcWidth="5.0" fill="#eb8f05" height="30.0" layoutX="440.0" layoutY="334.0" stroke="BLACK" strokeType="INSIDE" width="163.0" />
-      <Text fx:id="createPlaylist1" fill="WHITE" layoutX="444.0" layoutY="355.0" onMouseClicked="#createPlaylist1" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Playlist" textAlignment="CENTER" wrappingWidth="156.0">
+      <Text fx:id="createPlaylist1" fill="WHITE" layoutX="444.0" layoutY="355.0" onMouseClicked="#goToCreatePlaylist" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Playlist" textAlignment="CENTER" wrappingWidth="156.0">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
@@ -69,23 +49,10 @@
             <Font name="Times New Roman" size="16.0" />
          </font>
       </Text>
-      <Polygon fill="#c1cad3" layoutX="473.0" layoutY="398.0" points="-2.963592529296875, 42.14105224609375, 22.41064453125, 60.36004638671875, 22.41064453125, 25.9464111328125" stroke="BLACK" strokeType="INSIDE" />
+      <Polygon fill="#c1cad3" layoutX="480.0" layoutY="398.0" points="-2.963592529296875, 42.14105224609375, 22.41064453125, 60.36004638671875, 22.41064453125, 25.9464111328125" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="playButton1" fill="#cfdad9" layoutX="523.0" layoutY="442.0" onMouseClicked="#arrangeSongOnCommunityHub" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
-      <Polygon fill="#c1cad3" layoutX="529.0" layoutY="398.0" points="47.49627685546875, 45.17755126953125, 22.41064453125, 60.36004638671875, 22.41064453125, 25.9464111328125" stroke="BLACK" strokeType="INSIDE" />
+      <Polygon fill="#c1cad3" layoutX="520.0" layoutY="398.0" points="47.49627685546875, 45.17755126953125, 22.41064453125, 60.36004638671875, 22.41064453125, 25.9464111328125" stroke="BLACK" strokeType="INSIDE" />
       <Polygon fx:id="playButton" layoutX="494.0" layoutY="399.0" onMouseClicked="#arrangeSongOnCommunityHub" points="40.30889892578125, 43.64715576171875, 22.41064453125, 52.25054931640625, 22.41064453125, 34.031585693359375" stroke="BLACK" strokeType="INSIDE" />
-      <FlowPane fx:id="flowPane" layoutX="441.0" layoutY="75.0" orientation="VERTICAL" prefHeight="257.0" prefWidth="165.0">
-         <children>
-            <Button mnemonicParsing="false" onMouseClicked="#goToPlaylist" prefHeight="29.0" prefWidth="149.0" text="Liked Songs">
-               <font>
-                  <Font name="Times New Roman" size="16.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="OPEN_HAND" />
-               </cursor>
-            </Button>
-            <ScrollBar orientation="VERTICAL" prefHeight="233.0" prefWidth="16.0" />
-         </children>
-      </FlowPane>
       <ScrollPane layoutX="12.0" layoutY="141.0" prefHeight="316.0" prefWidth="414.0">
          <content>
             <AnchorPane prefHeight="446.0" prefWidth="386.0">
@@ -276,5 +243,15 @@
       </Circle>
       <Circle fill="#c1cad3" layoutX="357.0" layoutY="19.0" onMouseClicked="#goToSearchPage" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
       <Line endX="-28.999969482421875" endY="4.999996185302734" layoutX="401.0" layoutY="29.0" startX="-37.999969482421875" startY="-4.000005722045898" />
+      <Text layoutX="105.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME">
+         <font>
+            <Font name="Gabriola" size="60.0" />
+         </font>
+      </Text>
+      <ScrollPane layoutX="440.0" layoutY="69.0" prefHeight="248.0" prefWidth="170.0">
+         <content>
+            <VBox fx:id="playlistBox" prefHeight="456.0" prefWidth="154.0" style="-fx-background-color: #053c75;;" />
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>
