@@ -6,7 +6,6 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Polygon?>
@@ -46,7 +45,7 @@
                   <Font name="Gabriola" size="45.0" />
                </font>
             </Text>
-            <Text fx:id="createPlaylist" fill="WHITE" layoutX="480.0" layoutY="309.0" onMouseClicked="#createPlaylist1" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Playlist" textAlignment="CENTER" wrappingWidth="179.0">
+            <Text fx:id="createPlaylist" fill="WHITE" layoutX="480.0" layoutY="309.0" onMouseClicked="#goToCreatePlaylist" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Playlist" textAlignment="CENTER" wrappingWidth="179.0">
                <font>
                   <Font name="Times New Roman" size="18.0" />
                </font>
@@ -54,7 +53,7 @@
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
             </Text>
-            <Polygon fill="#c1cad3" layoutX="568.0" layoutY="342.0" points="47.49627685546875, 45.17755126953125, 22.41064453125, 60.36004638671875, 22.41064453125, 25.9464111328125" stroke="BLACK" strokeType="INSIDE" />
+            <Polygon fill="#c1cad3" layoutX="568.0" layoutY="342.0" onMouseClicked="#playNextSong" points="47.49627685546875, 45.17755126953125, 22.41064453125, 60.36004638671875, 22.41064453125, 25.9464111328125" stroke="BLACK" strokeType="INSIDE" />
             <Polygon fx:id="playButton" layoutX="537.0" layoutY="343.0" points="40.30889892578125, 43.64715576171875, 22.41064453125, 52.25054931640625, 22.41064453125, 34.031585693359375" stroke="BLACK" strokeType="INSIDE" />
             <Circle fill="#b4bfc9" layoutX="440.0" layoutY="29.0" onMouseClicked="#goToProfile" radius="16.0" stroke="#b4bfc9" strokeType="INSIDE">
                <cursor>
@@ -81,29 +80,33 @@
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
             </Circle>
-            <Text layoutX="174.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlist Name" textAlignment="CENTER" wrappingWidth="134.0">
-               <font>
-                  <Font name="Times New Roman" size="20.0" />
-               </font>
-            </Text>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c1cad3" height="5.0" layoutX="483.0" layoutY="322.0" stroke="BLACK" strokeType="INSIDE" width="170.0" />
-            <ScrollPane layoutX="12.0" layoutY="218.0" prefHeight="191.0" prefWidth="450.0">
+            <ScrollPane layoutX="12.0" layoutY="126.0" prefHeight="283.0" prefWidth="450.0">
                <content>
-                  <AnchorPane fx:id="songsFlowPane" minHeight="0.0" minWidth="0.0" prefHeight="354.0" prefWidth="428.0" />
+                  <VBox fx:id="songsFlowPane" prefHeight="409.0" prefWidth="428.0" />
                </content>
             </ScrollPane>
-            <FlowPane fx:id="imageDisplay" layoutX="184.0" layoutY="56.0" prefHeight="107.0" prefWidth="113.0" />
             <ScrollPane layoutX="487.0" layoutY="65.0" prefHeight="218.0" prefWidth="170.0">
                <content>
                   <VBox fx:id="playlistBox" prefHeight="456.0" prefWidth="154.0" style="-fx-background-color: #053c75;;" />
                </content>
             </ScrollPane>
-            <TextField fx:id="searchBarTextField" layoutX="11.0" layoutY="185.0" prefHeight="25.0" prefWidth="416.0" promptText="Search Song">
+            <TextField fx:id="searchBarTextField" layoutX="29.0" layoutY="98.0" prefHeight="25.0" prefWidth="416.0" promptText="Search Song">
                <font>
                   <Font name="Times New Roman" size="14.0" />
                </font>
             </TextField>
-            <Button layoutX="401.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#searchSongsByNameorArtist" prefHeight="25.0" prefWidth="59.0" text="Search">
+            <Button layoutX="400.0" layoutY="98.0" mnemonicParsing="false" onMouseClicked="#renderSongs" prefHeight="25.0" prefWidth="59.0" text="Search">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Button>
+            <TextField fx:id="playlistName" layoutX="132.0" layoutY="65.0" promptText="Enter PlaylistName...">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </TextField>
+            <Button layoutX="292.0" layoutY="65.0" mnemonicParsing="false" onMouseClicked="#createPlaylist1" prefHeight="25.0" prefWidth="113.0" text="CreatePlaylist">
                <font>
                   <Font name="Times New Roman" size="14.0" />
                </font>
