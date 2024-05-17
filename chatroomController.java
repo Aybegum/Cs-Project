@@ -1,5 +1,6 @@
 import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
@@ -7,6 +8,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent.VerticalTextScrollUnits;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
@@ -33,6 +35,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 import javafx.scene.Node;
 
 public class chatroomController implements Initializable {
@@ -43,6 +49,15 @@ public class chatroomController implements Initializable {
     private FlowPane chatPane;
     @FXML
     private TextField messageField;
+    @FXML
+    private Text communityText;
+    @FXML
+    private VBox playlistBox;
+
+    public void playNextSong()
+            throws UnsupportedAudioFileException, IOException, LineUnavailableException, SQLException {
+        searchpageController.arrangeSong(Song.random());
+    }
 
     public void renderMessages() throws SQLException {
 
@@ -77,9 +92,10 @@ public class chatroomController implements Initializable {
         if (messageText.getText().length() > 100) {
             messageText.setWrappingWidth(200);
         }
-        /* Label longText = new Label(messageText.getText());
-        longText.setWrapText(true);
- */
+        /*
+         * Label longText = new Label(messageText.getText());
+         * longText.setWrapText(true);
+         */
 
         Text name = new Text("@" + userName);
         name.setFont(Font.font("Times New Roman", 12));
@@ -160,14 +176,72 @@ public class chatroomController implements Initializable {
         messageField.setText("");
     }
 
+    public void setChatroomName() {
+        communityText.setText(Community.getCommunityById(Community.getCurrentCommunityId()).getName() + " Community");
+    }
+
+    public void renderPlaylistsOnSidebar() throws SQLException {
+
+        ArrayList<Playlist> playlists = new ArrayList<>();
+
+        Connection connection = Main.connect();
+        Statement statement = connection.createStatement();
+        ResultSet rs = statement
+                .executeQuery("select * from playlists where creatorid = '" + User.getCurrentUser().getId() + "'");
+
+        while (rs.next()) {
+            playlists.add(Playlist.getPlaylistById(rs.getInt("id")));
+        }
+
+        rs.close();
+        connection.close();
+        for (int i = 0; i < playlists.size(); i++) {
+            System.out.println("AAAAAAAAAAAAAAAAAAAAA\n\n");
+            displayPlaylist(playlists.get(i));
+        }
+    }
+
+    public void displayPlaylist(Playlist playlist) throws SQLException {
+        Button newPlaylist = new Button(playlist.getPlaylistName());
+        playlistBox.getChildren().add(newPlaylist);
+        newPlaylist.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent arg0) {
+                try {
+                    Playlist.setCurrenPlaylistId(playlist.getPlaylistID());
+                    goToPlaylist(arg0);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        newPlaylist.setFont(Font.font("Times New Roman", 16));
+        newPlaylist.setPrefSize(153, 30);
+
+    }
+
+    public void goToCreatePlaylist(MouseEvent event) throws Exception {
+        Playlist.setCurrenPlaylistId(
+                Playlist.createPlaylist(User.getCurrentUser(), "Playlist", "efuhjıdfsjjd").getPlaylistID());
+        Parent root = FXMLLoader.load(getClass().getResource("createPlaylist2.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
+            setChatroomName();
             renderMessages();
+            renderPlaylistsOnSidebar();
         } catch (SQLException e) {
             System.out.println("Error in rendering messages: SQLException");
         }
     }
+
     public void goToSearchPage(MouseEvent event) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("searchpage.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
