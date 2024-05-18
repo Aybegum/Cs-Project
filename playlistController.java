@@ -84,13 +84,6 @@ public class playlistController implements Initializable {
                                           playButton.setText("Pause");
                                     } else {
                                           playButton.setText("Play");
-                                          Song.queue.clear();
-                                          for (int i = 0; i < playlist.getSongs().size(); i++) {
-                                               Song.queue.add(playlist.getSongs().get(i));
-                                               
-                                               System.out.println(playlist.getSongs().get(i).getName());
-
-                                          }
                                     }
                               } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
                                     e.printStackTrace();
@@ -119,7 +112,6 @@ public class playlistController implements Initializable {
             rs.close();
             connection.close();
             for (int i = 0; i < playlists.size(); i++) {
-                System.out.println("AAAAAAAAAAAAAAAAAAAAA\n\n");
                 displayPlaylist(playlists.get(i));
             }
         }
@@ -192,4 +184,5 @@ public class playlistController implements Initializable {
                   e.printStackTrace();
             }
       }
+      
 }
