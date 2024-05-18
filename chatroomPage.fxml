@@ -102,12 +102,12 @@
                   <Polygon fx:id="playButton" layoutX="537.0" layoutY="343.0" points="40.30889892578125, 43.64715576171875, 22.41064453125, 52.25054931640625, 22.41064453125, 34.031585693359375" stroke="BLACK" strokeType="INSIDE" />
                   <Polygon fill="#c1cad3" layoutX="568.0" layoutY="342.0" onMouseClicked="#playNextSong" points="47.49627685546875, 45.17755126953125, 22.41064453125, 60.36004638671875, 22.41064453125, 25.9464111328125" stroke="BLACK" strokeType="INSIDE" />
                   <Polygon fill="#c1cad3" layoutX="518.0" layoutY="343.0" points="-2.963592529296875, 42.14105224609375, 22.41064453125, 60.36004638671875, 22.41064453125, 25.9464111328125" stroke="BLACK" strokeType="INSIDE" />
-                  <Text fill="WHITE" layoutX="477.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Song Name" textAlignment="CENTER" wrappingWidth="179.0">
+                  <Text fx:id="songNameText" fill="WHITE" layoutX="477.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Song Name" textAlignment="CENTER" wrappingWidth="179.0">
                      <font>
                         <Font name="Times New Roman" size="18.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" layoutX="473.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist" textAlignment="CENTER" wrappingWidth="186.0">
+                  <Text fx:id="artistText" fill="WHITE" layoutX="473.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist" textAlignment="CENTER" wrappingWidth="186.0">
                      <font>
                         <Font name="Times New Roman" size="16.0" />
                      </font>
