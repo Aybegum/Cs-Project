@@ -105,4 +105,8 @@ public class profileController implements Initializable {
             e.printStackTrace();
         }
     }
+    public void playNextSong()
+            throws UnsupportedAudioFileException, IOException, LineUnavailableException, SQLException {
+        searchpageController.arrangeSong(Song.random());
+    }
 }
