@@ -85,7 +85,13 @@ public class postPageController implements Initializable {
     private TextField searchSongTextField;
     @FXML
     private VBox songsFlowPane2;
+    @FXML
+    private Polygon playNext;
     private static int playlistNoCounter = 1;
+    @FXML
+    private Text artistText;
+    @FXML
+    private Text songNameText;
 
     public void renderPost() throws Exception {
         ArrayList<Post> posts = Post.getPostsByCommunityId(Community.getCurrentCommunityId());
@@ -119,9 +125,9 @@ public class postPageController implements Initializable {
     }
 
     public void playNextSong(MouseEvent event) throws Exception {
-        Song.queue.remove(0);
-        searchpageController.arrangeSong(Song.queue.get(0));
-
+        searchpageController.arrangeSong(Song.random());
+        setSongNameText(Song.currentlyPlayingSong);
+        setSongArtist(Song.currentlyPlayingSong);
     }
 
     public void renderPost(MouseEvent event) throws SQLException {
@@ -297,10 +303,8 @@ public class postPageController implements Initializable {
         songs.setStyle("-fx-background-color: #053c75; -fx-padding: 5px; -fx-background-radius: 5px;");
         return songs;
     }
-
     public void goToCreatePlaylist(MouseEvent event) throws Exception {
-        Playlist.setCurrenPlaylistId(
-                Playlist.createPlaylist(User.getCurrentUser(), "Playlist", "efuhjıdfsjjd").getPlaylistID());
+        Playlist.setCurrenPlaylistId(Playlist.createPlaylist(User.getCurrentUser(), "Playlist", "efuhjıdfsjjd").getPlaylistID());
         Parent root = FXMLLoader.load(getClass().getResource("createPlaylist2.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -706,6 +710,13 @@ public class postPageController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        /* if (Song.currentlyPlayingSong == null) {
+            songNameText.setText(" ");
+            artistText.setText(" ");
+        } else {
+            setSongNameText(Song.currentlyPlayingSong);
+            setSongArtist(Song.currentlyPlayingSong);
+        } */
         try {
             close.setVisible(false);
             newPost = new Post(-1, null, null, null, -1, -1, -1, -1);
@@ -713,10 +724,24 @@ public class postPageController implements Initializable {
             renderPost();
             renderPlaylistsOnSidebar();
             ObservableList<String> options = FXCollections.observableArrayList("User", "Song", "Playlist");
+            if (Song.currentlyPlayingSong == null) {
+                songNameText.setText(" ");
+                artistText.setText(" ");
+            } else {
+                setSongNameText(Song.currentlyPlayingSong);
+                setSongArtist(Song.currentlyPlayingSong);
+            }
 
         } catch (Exception e) {
             System.out.println("Error in rendering messages: SQLException");
             e.printStackTrace();
         }
+    }
+    public void setSongNameText(Song song) {
+        songNameText.setText(song.getSongNameWithSpaces());
+    }
+
+    public void setSongArtist(Song song) {
+        artistText.setText(song.getArtistNameWithSpaces());
     }
 }
