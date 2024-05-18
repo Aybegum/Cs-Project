@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#053c75" height="409.0" layoutY="-4.0" stroke="#053c75" strokeType="INSIDE" width="600.0" />
+      <Text fx:id="otherUserFollowers" fill="WHITE" layoutX="240.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Followers">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="otherUserFollowing" fill="WHITE" layoutX="240.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Followings">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="233.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PLAYLISTS" textAlignment="CENTER">
+         <font>
+            <Font name="Gabriola" size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="otherUsername" fill="#e8a27a" layoutX="110.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Text>
+      <Polygon fx:id="backButtonTriangle" fill="#ff8800" layoutX="35.0" layoutY="34.0" onMouseClicked="#goToSearchPage" points="-21.38007354736328, -6.760345458984375, -10.345657348632812, 9.791290283203125, -10.345657348632812, -20.001632690429688" stroke="#ff8800" strokeType="INSIDE">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Polygon>
+      <Rectangle fx:id="backButtonRectangle" arcHeight="5.0" arcWidth="5.0" fill="#ff8800" height="8.0" layoutX="21.0" layoutY="25.0" onMouseClicked="#goToSearchPage" stroke="#ff8800" strokeType="INSIDE" width="23.0">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Rectangle>
+      <Text fx:id="communityText" fill="WHITE" layoutX="55.0" layoutY="40.0" onMouseClicked="#goToSearchPage" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Page">
+         <font>
+            <Font name="Gabriola" size="40.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Text>
+      <FlowPane fx:id="imagePane" layoutX="73.0" layoutY="53.0" prefHeight="141.0" prefWidth="145.0" />
+   </children>
+</AnchorPane>
