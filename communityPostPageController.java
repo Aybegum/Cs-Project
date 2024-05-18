@@ -7,6 +7,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Polygon;
 import javafx.scene.text.Font;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -24,6 +25,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 import javafx.scene.text.Text;
 import javafx.scene.Node;
 
@@ -35,6 +39,14 @@ public class communityPostPageController implements Initializable{
     private FlowPane flowPane;
     @FXML
     private Text communityText;
+    @FXML
+    private Polygon backButton; 
+    @FXML
+    private Polygon nextButton;
+    @FXML
+    private Text artistText;
+    @FXML
+    private Text songNameText;
     private static int playlistNoNCounter = 1;
     private static int countPlay = 0;
     private static Playlist playlistOnScreen;
@@ -114,8 +126,28 @@ public void goToPost(MouseEvent  event) throws Exception{
             Playlist.createPlaylist(User.getCurrentUser(), "Playlist", "efuhjıdfsjjd");
             renderPlaylistsOnSidebar(event);
         } 
+        public void setSongNameText(Song song) {
+            songNameText.setText(song.getSongNameWithSpaces());
+        }
+    
+        public void setSongArtist(Song song) {
+            artistText.setText(song.getArtistNameWithSpaces());
+        }
+        public void playNextSong()
+            throws UnsupportedAudioFileException, IOException, LineUnavailableException, SQLException {
+        searchpageController.arrangeSong(Song.random());
+        setSongNameText(Song.currentlyPlayingSong);
+        setSongArtist(Song.currentlyPlayingSong);
+    }
         @Override
     public void initialize(URL location, ResourceBundle resources) {
+        if (Song.currentlyPlayingSong == null) {
+            songNameText.setText(" ");
+            artistText.setText(" ");
+        } else {
+            setSongNameText(Song.currentlyPlayingSong);
+            setSongArtist(Song.currentlyPlayingSong);
+        }
         try {
             communityText.setText(Community.getCommunityById(Community.getCurrentCommunityId()).getName());
             renderPlaylistsOnSidebar();
