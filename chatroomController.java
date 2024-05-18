@@ -53,10 +53,16 @@ public class chatroomController implements Initializable {
     private Text communityText;
     @FXML
     private VBox playlistBox;
+    @FXML
+    private Text artistText;
+    @FXML
+    private Text songNameText;
 
     public void playNextSong()
             throws UnsupportedAudioFileException, IOException, LineUnavailableException, SQLException {
         searchpageController.arrangeSong(Song.random());
+        setSongNameText(Song.currentlyPlayingSong);
+        setSongArtist(Song.currentlyPlayingSong);
     }
 
     public void renderMessages() throws SQLException {
@@ -92,10 +98,7 @@ public class chatroomController implements Initializable {
         if (messageText.getText().length() > 100) {
             messageText.setWrappingWidth(200);
         }
-        /*
-         * Label longText = new Label(messageText.getText());
-         * longText.setWrapText(true);
-         */
+        
 
         Text name = new Text("@" + userName);
         name.setFont(Font.font("Times New Roman", 12));
@@ -233,6 +236,13 @@ public class chatroomController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        if (Song.currentlyPlayingSong == null) {
+            songNameText.setText(" ");
+            artistText.setText(" ");
+        } else {
+            setSongNameText(Song.currentlyPlayingSong);
+            setSongArtist(Song.currentlyPlayingSong);
+        }
         try {
             setChatroomName();
             renderMessages();
@@ -248,5 +258,12 @@ public class chatroomController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+    public void setSongNameText(Song song) {
+        songNameText.setText(song.getSongNameWithSpaces());
+    }
+
+    public void setSongArtist(Song song) {
+        artistText.setText(song.getArtistNameWithSpaces());
     }
 }
