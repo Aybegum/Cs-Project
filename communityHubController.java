@@ -9,6 +9,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Polygon;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.control.Button;
@@ -45,6 +46,7 @@ public class communityHubController implements Initializable {
     private static int playlistNoNCounter = 1;
     private static int countPlay = 0;
     private static Playlist playlistOnScreen;
+    private ArrayList<Song> queue = new ArrayList<>();
     @FXML
     private FlowPane flowPane;
     @FXML
@@ -70,13 +72,23 @@ public class communityHubController implements Initializable {
     @FXML
     private Text songNameText;
     @FXML
-    private VBox playlistBox;
-
+    private VBox playlistBox;   
     @FXML
     private Text artistText;
+    @FXML
+    private Polygon backButton; 
+    @FXML
+    private Polygon nextButton;
+
+    public void playNextSong()
+            throws UnsupportedAudioFileException, IOException, LineUnavailableException, SQLException {
+        searchpageController.arrangeSong(Song.random());
+        setSongNameText(Song.currentlyPlayingSong);
+        setSongArtist(Song.currentlyPlayingSong);
+    }
 
     public void arrangeSongOnCommunityHub(MouseEvent event)
-            throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+            throws UnsupportedAudioFileException, IOException, LineUnavailableException, SQLException {
         setSongNameText(Song.currentlyPlayingSong);
         setSongArtist(Song.currentlyPlayingSong);
         searchpageController.arrangeSong(Song.currentlyPlayingSong);
@@ -165,7 +177,6 @@ public class communityHubController implements Initializable {
         rs.close();
         connection.close();
         for (int i = 0; i < playlists.size(); i++) {
-            System.out.println("AAAAAAAAAAAAAAAAAAAAA\n\n");
             displayPlaylist(playlists.get(i));
         }
     }
@@ -210,5 +221,14 @@ public class communityHubController implements Initializable {
             e.printStackTrace();
         }
     }
-
+    public Song getCurrentlyPlayingSong() throws SQLException{
+        ArrayList<Song> allSongs = Song.getAllSongs();
+        for (int i = 0; i < allSongs.size(); i++) {
+            if(allSongs.get(i).getIsPlaying() == true){
+                return allSongs.get(i);
+            }
+        }
+        // otherwise return the first song as default
+        return allSongs.get(0);
+    }
 }
