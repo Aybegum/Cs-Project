@@ -396,61 +396,10 @@ public class User {
 		return isFriendsWith;
 	}
 
-	/*
-	 * public void updateUsername (String username) throws SQLException {
-	 * 
-	 * if(!isValidUsername(username)) {
-	 * settingsController.showInvalidUsernameError();
-	 * return;
-	 * }
-	 * 
-	 * if(!isUsernameUnique(username)) {
-	 * settingsController.showNotUniqueUsernameError();
-	 * return;
-	 * }
-	 * 
-	 * Connection connection = Main.connect();
-	 * Statement statement = connection.createStatement();
-	 * int count = statement.executeUpdate("update users set username = '" +
-	 * username + "' where id = '" + this.id + "'");
-	 * 
-	 * statement.close();
-	 * connection.close();
-	 * }
-	 */
-
 	public boolean isPasswordConfirmed(String enterPassword, String confirmPassword) {
 		return enterPassword.equals(confirmPassword);
 	}
 
-	/*
-	 * public void updatePassword (String enterPassword, String confirmPassword,
-	 * String oldPassword) throws SQLException {
-	 * 
-	 * if(!oldPassword.equals(password)) {
-	 * settingsController.showInvalidOldPasswordError();
-	 * return;
-	 * }
-	 * 
-	 * if(!isValidPassword(enterPassword)) {
-	 * settingsController.showInvalidPasswordError();
-	 * return;
-	 * }
-	 * 
-	 * if(!isPasswordConfirmed(enterPassword, confirmPassword)) {
-	 * settingsController.showInvalidConfirmPasswordError();
-	 * return;
-	 * }
-	 * 
-	 * Connection connection = Main.connect();
-	 * Statement statement = connection.createStatement();
-	 * int count = statement.executeUpdate("update users set password = '" +
-	 * password + "' where id = '" + this.id + "'");
-	 * 
-	 * statement.close();
-	 * connection.close();
-	 * }
-	 */
 
 	public int getNoOfFollowers(User user) {
 		return User.getCurrentUser().getFollowerList().size();
