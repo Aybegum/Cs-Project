@@ -137,32 +137,6 @@ public class Song {
 		return null; // Return null if song with given ID is not found
 	}
 
-	// Method to upload songs from a folder to a database table
-	/*
-	 * public static void uploadSongs() throws SQLException {
-	 * Connection connection = Main.connect();
-	 * String query = "insert into songs values (?, ?, ?, ?)";
-	 * PreparedStatement statement = connection.prepareStatement(query);
-	 * 
-	 * String directoryPath = "C:/Users/beren/OneDrive/Masaüstü/songs";
-	 * File directory = new File(directoryPath);
-	 * 
-	 * File[] files = directory.listFiles();
-	 * 
-	 * for (int i = 0; i < files.length; i++) {
-	 * String url = directoryPath + "/" + files[i].getName();
-	 * String name = files[i].getName().split("-")[1].trim().split(".w")[0];
-	 * String artist = files[i].getName().split("-")[0].trim();
-	 * statement.setInt(1, i + 1);
-	 * statement.setString(2, name);
-	 * statement.setString(3, url);
-	 * statement.setString(4, artist);
-	 * statement.executeUpdate();
-	 * }
-	 * 
-	 * }
-	 */
-
 	public static ArrayList<Song> searchSongsByNameorArtist(String searchTerm) throws SQLException {
 		ArrayList<Song> resultSongs = new ArrayList<Song>();
 		Connection connection = Main.connect();
@@ -215,7 +189,7 @@ public class Song {
 
 	public void setisPlaying() {
 		this.isPlaying = !this.isPlaying;
-	}
+	} 
 
 	public static ArrayList<Song> getAllSongs() throws SQLException {
 		ArrayList<Song> allSongs = new ArrayList<Song>();
