@@ -241,7 +241,7 @@ public class searchpageController implements Initializable {
 							Parent root;
 							try {
 								User.profileUser = user;
-								root = FXMLLoader.load(getClass().getResource("defa.fxml"));
+								root = FXMLLoader.load(getClass().getResource("default.fxml"));
 								stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 								scene = new Scene(root);
 								stage.setScene(scene);
@@ -287,6 +287,23 @@ public class searchpageController implements Initializable {
 					}
 					Button viewButton = new Button("View");
 					viewButton.setFont(new Font("Times New Roman", 16));
+					viewButton.setOnAction(new EventHandler<ActionEvent>() {
+						@Override
+						public void handle(ActionEvent event) {
+							Parent root;
+							try {
+								Playlist.setCurrenPlaylistId(playlist.getPlaylistID());
+								root = FXMLLoader.load(getClass().getResource("playlistOther.fxml"));
+								stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+								scene = new Scene(root);
+								stage.setScene(scene);
+								stage.show();
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+
+						}
+					});
 					playlistHBox.setLeft(playlistName);
 					playlistHBox.setRight(viewButton);
 					songsFlowPane.getChildren().add(playlistHBox);
@@ -375,7 +392,7 @@ public class searchpageController implements Initializable {
 
 	@Override
 	public void initialize(java.net.URL location, ResourceBundle resources) {
-		songsFlowPane.setStyle("-fx-background-color: 053c75;");
+		//songsFlowPane.setStyle("-fx-background-color: 053c75;");
 		ObservableList<String> options = FXCollections.observableArrayList("User", "Song", "Playlist");
 		comboBoxSearch.setItems(options);
 	}
@@ -459,30 +476,7 @@ public class searchpageController implements Initializable {
 		String name = song.getName().replace("_", " ");
 		return name;
 	}
-
-	/*
-	 * public void goToOthersProfilePage(MouseEvent event) throws Exception {
-	 * Parent root = FXMLLoader.load(getClass().getResource("emptyprofile.fxml"));
-	 * stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-	 * scene = new Scene(root);
-	 * stage.setScene(scene);
-	 * stage.show();
-	 * }
-	 */
-	/*
-	 * public void stopSong(Song song) throws UnsupportedAudioFileException,
-	 * IOException, LineUnavailableException{
-	 * String a = song.getUrl().substring(39);
-	 * File file = new File(a);
-	 * AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
-	 * Clip clip = AudioSystem.getClip();
-	 * clip.open(audioStream);
-	 * clip.stop();
-	 * //clip.setMicrosecondPosition(0);
-	 * // we'll use these methods
-	 * isPlaying = false;
-	 * }
-	 */
+	
 	public static int getSongIndex(Song song) {
 		for (int i = 0; i < Song.queue.size(); i++) {
 			if (Song.queue.get(i).getName().equals(song.getName())) {
